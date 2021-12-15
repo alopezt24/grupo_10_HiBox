@@ -1,4 +1,4 @@
-# grupo_10_TBD
+# grupo_10_Proyecto_Integrador
 Proyecto DH
 
 Resumen de entregables
