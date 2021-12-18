@@ -1,0 +1,34 @@
+body{
+    color: black;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: #050302;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+main.index{
+    display: block;
+    width: 80.5%;
+    text-align: center;
+    position: absolute;
+    top: 30%;
+    color: rgb(255, 255, 255);
+    text-shadow: 1px 1px 40px black;
+    
+}
+main.index h1{
+    color: rgb(255, 255, 255);
+    font-size: 44px;
+}
+img{
+    /*width: auto;*/
+    display: block;
+    width: 80.5%;
+    text-align: center;
+    position: absolute;
+}
+p.index{
+    padding-left: 30%;
+    padding-right: 30%;
+
+}
+
