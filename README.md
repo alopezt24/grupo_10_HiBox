@@ -1,6 +1,12 @@
 # grupo_10_HiBox
 Proyecto Digital House
 
+//Páginas de Ejemplo
+https://starbox.co/
+https://www.peppersarg.com/
+https://www.bigbox.com.ar/
+https://fanbag.com.ar/
+https://www.smartbox.com/es/
 
 // Una breve descripción de los integrantes del equipo.
 
