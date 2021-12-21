@@ -30,7 +30,7 @@ Tengo 37 años y vivo en concubinato con la madre de mi única hija de 3 años.
 Tebajo en el sector de Telecomunicaciones hace 12 años en empresas que ofrecen conectividad. Comence en el sector de call-center, escale por los distintos puestos de Operaciones y actualmente soy el encargado de Planeación y Optimización de las redes de Transporte.
 Mi objetivo de este curso es poder adquirir las herramientas para responder a solicitudes en mi trabajo que necesitan de desarrolladores, mejorar mi situación laborar y buscar nuevos horizontes.
 
-3. ### Andres Lopez.
+3. ### Andres Lopez
 Actualmente trabajo como ingeniero Cloud/Devops, mi experiencia en general es en su mayoria del area de infraestructura. Mi objetivo con el curso es aprender las habilidades necesarias para complementar mi habilidades en mi puesto actual y en un futuro ser un profesional integral.
 
 ## Páginas de Ejemplo
