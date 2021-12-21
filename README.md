@@ -34,7 +34,7 @@ Mi objetivo de este curso es poder adquirir las herramientas para responder a so
 3. ### Andres Lopez
 Actualmente trabajo como ingeniero Cloud/Devops, mi experiencia en general es en su mayoria del area de infraestructura. Mi objetivo con el curso es aprender las habilidades necesarias para complementar mi habilidades en mi puesto actual y en un futuro ser un profesional integral.
 
-4.###Isabel Gonzalez
+4. ### Isabel Gonzalez
 Tengo 27 años y soy madre de un nene de 4. Actualmente estoy finalizando mis estudios terciarios en el profesorado de inglés. Mi interés en la programación comenzó cuando trabajaba redactando y traduciendo artículos de forma independiente para varias páginas web, y editando los artículos por medio de wordpress, usando HTML. Mi objetivo es sentar las bases en mis conocimientos sobre programación para poder avanzar profesionalmente e iniciar mi carrera en este mundo.
 
 ## Páginas de Ejemplo
