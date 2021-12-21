@@ -15,8 +15,6 @@ Porque los momentos de felicidad son los que recordaremos por siempre.
 HiBox "Buy Your Experiencie".
 
 ## Publico Objetivo
-El publico objetivo de nuestro sitio web puede variar en funcion de la experiencia solicitada.
-Desde opciones individuales o grupales para compartir con los nuestros.
 Nuestro público objetivo comprende una edad de entre 25 y 40 años, la oferta de productos está pensada para una generación que valora las experiencias por encima de los bienes materiales y cuya forma predilecta de comprar es por medio del e-commerce. Los paquetes de experiencias están especialmente dirigidos a ser regalos para compañeros de trabajo, empleados de una empresa, familiares y amigos.
 
 ## Una breve descripción de los integrantes del equipo.
