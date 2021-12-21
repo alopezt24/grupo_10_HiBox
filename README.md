@@ -17,6 +17,7 @@ HiBox "Buy Your Experiencie".
 ## Publico Objetivo
 El publico objetivo de nuestro sitio web puede variar en funcion de la experiencia solicitada.
 Desde opciones individuales o grupales para compartir con los nuestros.
+Nuestro público objetivo comprende una edad de entre 25 y 40 años, la oferta de productos está pensada para una generación que valora las experiencias por encima de los bienes materiales y cuya forma predilecta de comprar es por medio del e-commerce. Los paquetes de experiencias están especialmente dirigidos a ser regalos para compañeros de trabajo, empleados de una empresa, familiares y amigos.
 
 ## Una breve descripción de los integrantes del equipo.
 1. ### Nicolás Novikov
@@ -32,6 +33,9 @@ Mi objetivo de este curso es poder adquirir las herramientas para responder a so
 
 3. ### Andres Lopez
 Actualmente trabajo como ingeniero Cloud/Devops, mi experiencia en general es en su mayoria del area de infraestructura. Mi objetivo con el curso es aprender las habilidades necesarias para complementar mi habilidades en mi puesto actual y en un futuro ser un profesional integral.
+
+4.###Isabel Gonzalez
+Tengo 27 años y soy madre de un nene de 4. Actualmente estoy finalizando mis estudios terciarios en el profesorado de inglés. Mi interés en la programación comenzó cuando trabajaba redactando y traduciendo artículos de forma independiente para varias páginas web, y editando los artículos por medio de wordpress, usando HTML. Mi objetivo es sentar las bases en mis conocimientos sobre programación para poder avanzar profesionalmente e iniciar mi carrera en este mundo.
 
 ## Páginas de Ejemplo
 - [starbox](https://starbox.co/)
