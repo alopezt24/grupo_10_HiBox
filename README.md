@@ -2,7 +2,7 @@
 
 ## Quienes somos
 HiBox es una forma diferente de regalar experiencias.
-Contamos con xxx categorías temáticas: Gastronomía, Estar Bien, Estadías, Entretenimiento, Aventura.
+Contamos con 3 categorías temáticas: Gastronomía, Entretenimiento y Aventura.
 Cada HiBox incluye una opcion de experiencias. La persona elige la que más le gusta y reserva directamente con el lugar.
 
 En HiBox regalamos diferentes experiencias porque ver felices a los nuestros nos hace muy felices. Así de simple.
