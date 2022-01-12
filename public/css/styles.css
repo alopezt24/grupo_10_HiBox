@@ -138,6 +138,20 @@ body {
     left: 108px;
 }
 
+.buttom-ver-mas p a:hover {
+    margin: 20px 0;
+    text-decoration: none;
+    text-align: center;
+    color: white;
+    background-color: #F95F62;
+    width: 140px;
+    padding: 10px;
+    position: absolute;
+    border-radius: 30px;
+    font-size: 1em;
+    left: 108px;
+}
+
 .contenedor-destacados{
     display: flex;
     flex-direction: column;
@@ -303,6 +317,83 @@ main section .producto {
     padding: 10px;
     font-size: 18px;
     text-align: center;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+    padding: 20px;
+    color: white !important;
+    background-color: #1c1b1f;
+}
+
+footer .logo-footer{
+    margin-top: 10px;
+    
+}
+
+footer p{
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 14px;
+    
+}
+
+footer a{
+    color: white !important;
+    text-decoration: none !important;
+    
+}
+
+footer li{
+    font-size: 13px;
+    font-weight: 200;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
+    
+}
+footer li i{
+    margin-right: 10px;
+    
+}
+
+footer .suscripcion input{
+    margin: 10px;
+    font-size: 12px !important;
+    border-radius: 20px;
+    padding: 10px;
+    min-width: 210px;
+    font-size: 20px;
+    border: none !important;
+    border: solid 2px white;
+        
+}
+
+footer .footer-redes ul {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+footer .footer-redes li{
+    font-size: 20px;
+        
+}
+
+footer .copy p{
+    margin: 40px 0;
+    font-weight: 100;
+    font-size: 12px;
 }
 
 
