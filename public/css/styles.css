@@ -469,7 +469,6 @@ footer .copy p{
 
 
 @media (min-width: 1200px){
-  
     .main-header-top-bar, .main-navbar {
         max-width: 1200px;
         margin: auto;
@@ -477,7 +476,7 @@ footer .copy p{
     .main-header-top-bar {
         align-items: center;
     }
-    
+
     .copy-header{
         max-width: none;
         font-size: 18px;
@@ -496,7 +495,7 @@ footer .copy p{
 
 }
 
-/* Register and login CSS configurations */
+/* Register CSS configurations */
 /* Add padding to containers */
 .container {
     padding: 16px;
@@ -520,6 +519,7 @@ footer .copy p{
 
   input[type=text]:focus, input[type=password]:focus {
     background-color: #ddd;
+    border: 1px solid #ccc;
     outline: none;
   }
 
@@ -556,4 +556,36 @@ footer .copy p{
     text-align: center;
   }
 
- 
+  /* login CSS configurations */
+  /* Full-width inputs */
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+
+  /* Set a style for all buttons */
+  button {
+    background-color: rgb(7, 7, 75);
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+  }
+
+  /* Add a hover effect for buttons */
+  button:hover {
+    opacity: 0.8;
+  }
+
+  /* Extra style for the cancel button (red) */
+  .cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+  }
