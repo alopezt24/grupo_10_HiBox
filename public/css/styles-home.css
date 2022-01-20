@@ -109,8 +109,6 @@ body {
     text-align: center;
     color: white;
     position: absolute;
-    top: 19%;
-    left: 4%;
     font-size: 2em;
 }
 
@@ -122,8 +120,9 @@ body {
     width: 140px;
     padding: 10px;
     position: absolute;
-    top: 58%;
-    left: 31%;
+    top: 68%;
+    left: 50vw;
+    margin-left: -69px;
     border-radius: 30px;
     transition: all 450ms;
 }
@@ -133,6 +132,13 @@ body {
        
 }
 
+.slider-composition {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column  ;
+}
 .contenedor-destacados{
     display: flex;
     flex-direction: column;
@@ -147,6 +153,7 @@ body {
     justify-content: center;
     align-items: center;
     flex-grow: 1;
+    background-color: black;
 }
 .destacado-aventura img,
 .destacado-gastronomia img,
@@ -154,6 +161,12 @@ body {
     width: 100%;
     margin: auto;
     margin: 0px;
+}
+
+.destacado-aventura img:hover,
+.destacado-gastronomia img:hover ,
+.destacado-entretenimiento img:hover {
+    opacity: 85%;
    
 }
 
@@ -283,6 +296,12 @@ main section div.products article{
         border-radius: 100px;
         left: 46%;
         top: 60%;
+        transition: all 450ms;
+    }
+
+    .icono-plus-prtoducto:hover {
+        background-color: #F95F62;
+        transform: rotate(180deg) ;
     }
     .nombre-producto {
         margin-top: 10px;
@@ -312,6 +331,9 @@ main section div.products article{
         text-decoration: underline;
         color: #7d92a5;
         font-size: 1em;
+    }
+    .acceso-detalle:hover {
+        color: #F95F62;
     }
     .contenedor-intrucciones-compra {
         background-color: #1c1b1f;
@@ -430,7 +452,19 @@ main section div.products article{
 
 
 @media (min-width: 361px){
-
+    .destacado-aventura p a,
+    .destacado-gastronomia p a,
+    .destacado-entretenimiento p a {
+    left: 40vw;
+    margin-left: -10%;
+    /* transform: scale(120%); */
+} 
+    .slider h3 {
+        font-size: 2.5em;
+    }
+    .slider .boton-negro a {
+        transform: scale(110%);
+    }
     .elementos-instrucciones .imagen-item {
        max-width: 146px;
      }
@@ -456,6 +490,21 @@ main section div.products article{
 }
 
 @media (min-width: 768px){
+    .destacado-aventura h3, 
+    .destacado-gastronomia h3, 
+    .destacado-entretenimiento h3 {
+       font-size: 2em;
+    }
+    
+    .slider h3 {
+        font-size: 4em;
+    }
+
+    .slider .boton-negro a {
+        left: 50vw;
+        margin-left: -60px;
+        transform: scale(120%);
+    }
 
     footer {
         display: flex;
@@ -522,11 +571,14 @@ footer .suscripcion input
     .contenedor-destacados{
         display: flex;
         flex-direction: row;
+        align-items: center;
+        justify-content: center;
     }
     .destacado-aventura p a,
     .destacado-gastronomia p a,
     .destacado-entretenimiento p a {
-    left: 24%;
+    left: 10vw;
+    margin-left: -3%;
 } 
     main section div.products{
     display: flex;
