@@ -10,6 +10,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
         <link rel="stylesheet" href="/css/styles.css">
         <link rel="stylesheet" href="/css/styles-home.css">
+        <link rel="stylesheet" href="/css/styles-productDetail.css">
     </head>
 <body>
 
@@ -48,8 +49,9 @@
         <section class="main-productDetail-section-principal">
             <!-- Inicio bloque de detalle -->
             <div class="main-productDetail-actividad">
-                <h1>Cena romántica</h1>
-                <hr>
+                <div class="h1-productDetail">
+                    <h1>Cena romántica</h1>
+                </div>
                 <div class="main-productDetail-iconos">
                     <i class="fas fa-map-marker-alt"> Veremos</i>
                     <i class="fas fa-history"> 4 horas máximo </i>
@@ -57,27 +59,33 @@
                 </div>
                 <article class="main-productDetail-section-principal-article">
                     <img src="/images/cena+para+2.png", alt="Cena para romantica">
-                    <h3>Descripción del producto</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia mollitia molestias,
-                       officia delectus maxime ad ducimus fugiat, ipsa sed a suscipit labore, cupiditate 
-                       est voluptatum aspernatur explicabo ullam at facilis.</p>
+                    <!-- Inicio bloque Descripción de producto -->        
+                    <div class="main-productDetail-descriptionProduct">
+                        <h3>Cena romántica para dos personas</h3>
+                        <p>La cena incluye 3 platos (Entrada, Plato principal y Postre) mas una bebida y un Postre
+                           por persona.</p>
+                        <p>Se incluye vallet parking con estacionamiento gratuito.</p>
+                    </div>
+                    <!-- Fin bloque descripción de producto -->
                 </article>
             <!-- Fin bloque de detalle -->
             </div>
             <!-- Inicio bloque de compra o regalo -->
             <div class="main-productDetail-compra">
-                <h2>Categoría seleccionada</h2>
-                <img src="/images/gastronomia-mobile.png", alt="Categoria seleccionada">
+                <div class="productDetail-h2">
+                    <h2>Gastronomia</h2>
+                </div>
+                <img src="/images/gastronomia-mobile.jpg", alt="Categoria seleccionada">
                 <h3>Compra el producto por:</h3>
                 <form action="/productCar" method="GET">
                     <label>$ 1200</label>
-                    <button type="submit">COMPRAR <i class="fas fa-shopping-cart"></i></button>
+                    <button type="submit" class="productDetail-boton">COMPRAR <i class="fas fa-shopping-cart"></i></button>
                 </form>
-                <hr>
+                
                 <h3>Regala la experiencia por:</h3>
                 <form action="/productCar" method="GET">
                     <label>$ 1600</label>
-                    <button type="submit">REGALAR <i class="fas fa-gift"></i></button>
+                    <button type="submit" class="productDetail-boton">REGALAR <i class="fas fa-gift"></i></button>
                 </form>
             <!-- Fin bloque de compra o regalo -->
             </div>

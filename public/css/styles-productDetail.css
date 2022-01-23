@@ -1,0 +1,147 @@
+* {
+    box-sizing: border-box;
+}
+
+.main-productDetail-section-principal {
+    margin: 15px;
+}
+
+.h1-productDetail {
+    padding-bottom: 3px;
+    margin: 8px 0px;
+    border-bottom: solid 3px #666;
+    font-size: 13px;
+}
+
+.main-productDetail-section-principal-article {
+    margin: auto;
+    margin: 10px 0px;
+    padding: 0px;
+}
+
+.main-productDetail-descriptionProduct {
+    text-align: justify;
+    padding-bottom: 5px;
+    display: none;
+    margin: 2px 2px;
+}
+
+.main-productDetail-section-principal-article img {
+    width: 100%;
+    padding: 2px;
+    margin: auto;
+    background-color: #F95F62;
+}
+
+.main-productDetail-section-principal-article:hover .main-productDetail-descriptionProduct {
+    display: block;
+}
+
+main section div h3 {
+    text-align: center;
+    margin: 5px 0px;
+}
+
+.main-productDetail-iconos {
+    font-size: 10px;
+}
+
+.main-productDetail-iconos i {
+    margin: 5px;
+}
+
+.main-productDetail-compra {
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    text-align: center;
+    border: transparent;
+    padding: 10px 10px 5px;
+    box-shadow: 0px 0px 25px rgba(0,0,0,0.75);
+    box-shadow: transparent;
+}
+
+.productDetail-h2 {
+    margin-bottom: 10px;
+    font-size: 13px;
+}
+
+.main-productDetail-compra img {
+    display: none;
+}
+
+.main-productDetail-compra form label {
+    color: #F95F62;
+}
+
+.productDetail-boton {
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    margin: auto;
+    color: white;
+    background-color: #F95F62;
+    width: 140px;
+    padding: 10px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    border-radius: 30px;
+}
+
+
+.productDetail-boton:hover {
+    background-color: black;
+}
+
+@media (min-width: 361px) {
+    .main-productDetail-section-principal {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin: auto;
+        align-items: center;
+        margin-top: 25px;
+        width: 100%;
+    }
+
+    .main-productDetail-iconos {
+        font-size: 12px;
+    }
+
+    .main-productDetail-descriptionProduct {
+        display: block;
+    }
+
+    .main-productDetail-compra img {
+        display: block;
+    }
+
+    .main-productDetail-actividad {
+        width:60%;
+        margin:auto
+    }
+    .main-productDetail-compra {
+        width: 30%;
+        height: 400px;
+        margin: auto;
+    }
+
+    .main-productDetail-compra img {
+        width: 100%;
+    }
+}
+
+@media (min-width: 768px){
+    .main-productDetail-compra {
+        width: 20%;
+    }
+    
+    .main-productDetail-iconos {
+        font-size: 17px;
+    }
+
+    .h1-productDetail {
+        padding-bottom: 8px;
+        font-size: 16px;
+    }
+}

@@ -391,44 +391,6 @@ footer .copy p{
     font-size: 12px;
 }
 
-/*-----------------------------------------------------------------------*/
-/*------------PRODUCT DETAIL CSS-----------------------------------------*/
-
-.main-productDetail-section-principal {
-    margin: 15px;
-    max-width: 360;
-}
-
-.main-productDetail-actividad {
-    text-align: left;
-    max-width: 350;
-}
-
-.main-productDetail-section-principal-article img {
-    width: 100%;
-    margin-bottom: 5px;
-    max-width: 350px;
-}
-
-.main-productDetail-iconos {
-    font-size: 10px;
-    text-align: left;
-}
-
-.main-productDetail-iconos i {
-    margin: 5px;
-}
-
-.main-productDetail-compra {
-    margin-top: 10px;
-    text-align: center;
-    border: solid 1px #1c1b1f;
-    max-width: 350px;
-}
-
-.main-productDetail-compra
-
-
 @media (min-width: 768px) {
  
     .main-header-top-bar {
