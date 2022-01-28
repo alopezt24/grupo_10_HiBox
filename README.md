@@ -1,5 +1,5 @@
 # Grupo_10_HiBox "Proyecto Integrador"
-
+## Enlace al tablero de trabajo -> https://trello.com/b/pM0QFnEk/proyecto-integrador-marketplace
 ## Quienes somos
 HiBox es una forma diferente de regalar experiencias.
 Contamos con 3 categorías temáticas: Gastronomía, Entretenimiento y Aventura.
