@@ -8,11 +8,14 @@ const express = require ("express");
 const app = express();
 
 //definimos el puerto una vez, para usarlo las veces necesarias
-const port = 3030
+const port = 3030;
+
+//requiero las rutas
+const routes = require("./routes/mainRoutes");
 
 //definimos las constantes de path
-const pathPublic = path.resolve(__dirname, "../public")
-const pathEngineViews = path.resolve(__dirname, "./views")
+const pathPublic = path.resolve(__dirname, "../public");
+const pathEngineViews = path.resolve(__dirname, "./views");
 
 //mediante use le asigno la carpeta "public" al proyecto para alojar todos los elementos estaticos (imagenes / css)
 app.use(express.static(pathPublic)); 
@@ -26,26 +29,7 @@ app.listen (port, () =>{
     console.log ("Estoy escuchando en el puerto ", port)
 });
 
-app.get ("/", (req , res) => {
-    res.sendFile(path.resolve ("./views/index.html"));
-})
-
-app.get ("/login", (req , res) => {
-    res.sendFile(path.resolve ("./views/login.html"));
-})
-
-app.get ("/register", (req , res) => {
-    res.sendFile(path.resolve ("./views/register.html"));
-})
-
-app.get ("/productCart", (req , res) => {
-    res.sendFile(path.resolve ("./views/productCart.html"));
-})
-
-app.get ("/productDetail", (req , res) => {
-    res.sendFile(path.resolve ("./views/productDetail.html"));
-})
-
-app.get ("*", (req , res) => {
-    res.sendFile(path.resolve ("./views/not-found.html"));
-})
+app.use ('/', routes);
+app.use ('/users/', routes);
+app.use ('/products/', routes);
+app.use ('*', routes);

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>HiBox - Login</title>
+        <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/css/normalize.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+        <link rel="stylesheet" href="/css/styles.css">
+        <link rel="stylesheet" href="/css/styles-home.css">
+    </head>
+<body>
+       
+    <!-- Inclución de Header -->
+    <%- include ('../partials/header') %>    
+        <br>
+        <br>
+        <br>
+        <br>
+    <main>
+        <form>
+            <div class="container">
+            <h1>Inicia sesión</h1>
+            <hr>
+            <label for="uname"><b>Correo Electronico</b></label>
+            <input type="email" placeholder="" name="uname" required>
+
+            <label for="psw"><b>Contraseña</b></label>
+            <input type="password" placeholder="" name="psw" required>
+
+            <button type="submit">Ingresar</button>
+            <br>
+            <br>
+            <label>
+                <input type="checkbox" checked="checked" name="remember"> Recuerdame
+            </label>
+            </div>
+
+            <div class="container" style="background-color:#f1f1f1">
+            <button type="button" class="cancelbtn">Cancelar</button>
+            <br>
+            <br>
+            <span class="psw"><a href="#">¿Ha olvidado su contraseña?</a></span>
+            </div>
+        </form>
+    </main>
+    
+    <!-- Inclución de Header -->
+    <%- include ('../partials/footer') %>  
+
+</body>
+</html>
