@@ -7,10 +7,6 @@ const controllers = {
 
     notFound: (req , res) => {
         res.render('not-found');
-    },
-
-    cart: (req , res) => {
-        res.render('productCart');
     }
 }
 

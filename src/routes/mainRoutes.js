@@ -11,10 +11,10 @@ const routesUsers = require('../controllers/controllersUsers');
 
 //realizo las renderizaciones del main
 routes.get ("/", routesMain.index);
-routes.get ("/productCart", routesMain.cart);
 
 //realizo las renderizaciones de products
 routes.get ("/products/productDetail", routesProduct.detalle);
+routes.get ("/products/productCart", routesProduct.cart);
 
 //realizo las renderizaciones de users
 routes.get ("/users/register", routesUsers.register);
