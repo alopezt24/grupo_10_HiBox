@@ -18,7 +18,7 @@ const pathPublic = path.resolve(__dirname, "../public");
 const pathEngineViews = path.resolve(__dirname, "./views");
 
 //mediante use le asigno la carpeta "public" al proyecto para alojar todos los elementos estaticos (imagenes / css)
-app.use(express.static(pathPublic)); 
+app.use(express.static(pathPublic));
 
 //mediante set indico el Engine a utilizar y la carpeta de views
 app.set('view engine', 'ejs');
