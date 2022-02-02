@@ -20,7 +20,5 @@ routes.get ("/products/productCart", routesProduct.cart);
 routes.get ("/users/register", routesUsers.register);
 routes.get ("/users/login", routesUsers.login);
 
-//realizo las renderizacion al main para not found
-routes.get ('*', routesMain.notFound);
 
 module.exports = routes;
