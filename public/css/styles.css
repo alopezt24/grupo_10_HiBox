@@ -32,19 +32,6 @@ body {
     text-align: center;
 }
 
-.hamburguer-button {
-    background-color: #7d92a5;
-    color: white;
-    display: block;
-    max-width: 50px;
-    padding: 15px;
-    border-radius: 8px;
-    text-align: center; 
-    font-size: 18px;
-    margin: auto;
-   }
-
-
 .logo {
     padding: 5px;
     display: flex;
@@ -402,9 +389,6 @@ footer .copy p{
     .copy-header {
         max-width: 350px;
         text-align: right;
-    }
-    .hamburguer-button {
-        display: none;
     }
     .main-navbar {
         display: flex;

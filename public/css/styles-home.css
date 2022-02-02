@@ -47,6 +47,17 @@ body {
  position: relative;
 }
 
+.cart-icon,
+.hamburguer-button {
+    color: #666;
+    display: block;
+    padding: 15px 0;
+    border-radius: 8px;
+    text-align: center; 
+    font-size: 20px;
+    margin: auto;
+}
+
 .nav-bar-header {
     position: relative;
     display: flex;
@@ -457,7 +468,6 @@ main section div.products article{
     .destacado-entretenimiento p a {
     left: 40vw;
     margin-left: -10%;
-    /* transform: scale(120%); */
 } 
     .slider h3 {
         font-size: 2.5em;
@@ -490,6 +500,10 @@ main section div.products article{
 }
 
 @media (min-width: 768px){
+    .cart-icon,
+    .hamburguer-button {
+        display: none;
+    }
     .destacado-aventura h3, 
     .destacado-gastronomia h3, 
     .destacado-entretenimiento h3 {
