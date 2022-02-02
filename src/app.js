@@ -32,4 +32,7 @@ app.listen (port, () =>{
 app.use ('/', routes);
 app.use ('/users/', routes);
 app.use ('/products/', routes);
-app.use ('*', routes);
+
+app.use((req,res,next) => {
+    res.status(404).render('not-found')
+});
