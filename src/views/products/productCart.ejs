@@ -1,106 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>HiBox - Carrito de Compras</title>
-        <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="/css/normalize.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-        <link rel="stylesheet" href="/css/styles.css">
-        <link rel="stylesheet" href="/css/styles-home.css">
-    </head>
+	<%- include ('../partials/head', {title: "Carrito de Compras", style: "/css/styles-shop.css"}) %>
 
 	<body>
         <!-- Inclución de Header -->
         <%- include ('../partials/header') %>
 
         <main>
-                <header><h1>CARRITO DE COMPRAS</h1></header>
-                
-                <section></section>
-                <footer></footer>
-
-                <div class="container">
-
-                <div class="cart">
-
-	        <div class="products">
+			<section class="conteiner-shop">
+				<h3>Carrito de Compras</h3>
+				<div>
+					<article class="conteiner-productos-shop">
+						<div class="product-img-shop">
+						<img src="/images/img-producto-aventura.jpg", alt="Imagen Aventura">
+					    </div>
+						<div class="icono-trash-producto"><i class="far fa-trash-alt"></i>
+						</div>
+						<div class="contenedor-detalle-shop">
+							<div class="nombre-producto-shop">
+								<p>HiBox Aventura - Combo 1</p>
+							</div>
+							<div class="conteiner-valores">
+								<form action="/productCart" method="post">
+								<label for="cantidad">Cantidad</label>
+								<input type="number" id="cantidad" value="1" name="cantidad" min="1" max="100"> 
+							</form>
+								<p class="precio-shop">$6.770</p>
+							    <p class="discount-shop">$9.850</p>
+							</div>
+							<div class="acceso-detalle-shop">
+								<p>Ver detalle</p> 
+							</div>
+						   
+						</div>
+						
+					</article>
+					<article class="conteiner-productos-shop">
+						<div class="product-img-shop">
+						<img src="/images/img-producto-aventura.jpg", alt="Imagen Aventura">
+					    </div>
+						<div class="icono-trash-producto"><i class="far fa-trash-alt"></i>
+						</div>
+						<div class="contenedor-detalle-shop">
+							<div class="nombre-producto-shop">
+								<p>HiBox Aventura - Combo 1</p>
+							</div>
+							<div class="conteiner-valores">
+								<form action="/productCart" method="post">
+								<label for="cantidad">Cantidad</label>
+								<input type="number" id="cantidad" value="1" name="cantidad" min="1" max="100"> 
+							</form>
+								<p class="precio-shop">$6.770</p>
+							    <p class="discount-shop">$9.850</p>
+							</div>
+							<div class="acceso-detalle-shop">
+								<p>Ver detalle</p> 
+							</div>
+						   
+						</div>
+						
+					</article>
+					<div class="conteiner-totals-shop">
+						<div class="label-total">
+							<p>Total</p>
+						</div>
+						<div class="total">
+							<p>$24.000</p>
+						</div>
+						<div class="comprar">
+							<p ><a href="#">Comprar</a></p>
+						</div>
 		
-	        <div class="product">
-
-	        <img src="">
-
-	        <div class="product-info">
-
-	        <h3 class="product-name">Combo 1 Aventura</h3>
-
-	        <h4 class="product-price">$5540</h4>
-
-	        <h4 class="product-offer">50% de descuento</h4>
-
-	        <p class="product-quantity">Cantidad <input value="1" name="">
-
-	        <p class="product-remove">
-
-	        <i class="fa fa-trash" aria-hidden="true"></i>
-
-                <span class="remove">Eliminar</span>
-
-	</p>
-
-	</div>
-
-	</div>
-
-	<div class="product">
-
-	<img src="">
-
-	<div class="product-info">
-
-	<h3 class="product-name">Combo 2 Entretenimiento</h3>
-
-	<h4 class="product-price">$6780</h4>
-
-					<h4 class="product-offer">40% de descuento</h4>
-
-					<p class="product-quantity">Cantidad: <input value="1" name="">
-
-					<p class="product-remove">
-
-						<i class="fa fa-trash" aria-hidden="true"></i>
-
-						<span class="remove">Eliminar</span>
-
-					</p>
-
+					</div>
 				</div>
-
-			</div>
-
-		</div>
-
-		<div class="cart-total">
-
-			<p>
-
-				<span>TOTAL</span>
-
-				<span>$12320</span>
-
-			</p>
-
+				
+			</section>
 			
-
-			<a href="#">Comprar</a>
-
-		</div>
-
-	</div>
-
-</div>
+			<!-- Inicio sección de productos destacados -->
+			<section class="contenedor-novedades-productos">
+				<h3>DESTACADOS</h3>
+				<div class="products">
+					<article>
+						<div class="novedad-producto">
+							<p>10% OFF</p>
+						</div>
+						<img src="/images/img-producto-aventura.jpg", alt="Imagen Aventura" class="product_img">
+						<div class="icono-plus-prtoducto"><i class="fas fa-plus"></i></div>
+						<div class="nombre-producto">
+							<p>HiBox Aventura - Combo 1</p> 
+						</div>
+						<div class="contenedor-detalle">   
+						<p class="precios">$6.770</p>
+						<p class="discount">$9.850</p>
+						</div>
+						<div class="acceso-detalle">
+							<p>Ver detalle</p> 
+						</div>
+					</article>
+	
+					<article>
+						<div class="novedad-producto">
+							<p>10% OFF</p>
+						</div>
+						<img src="/images/img-producto-gastronimia.jpg", alt="Imagen Gastronomia">
+						<div class="icono-plus-prtoducto"><i class="fas fa-plus"></i></div>
+						<div class="nombre-producto">
+							<p>HiBox Gastronomia - Combo 1</p> 
+						</div>
+						<div class="contenedor-detalle">   
+						<p class="precios">$6.770</p>
+						<p class="discount">$9.850</p>
+						</div>
+						<div class="acceso-detalle">
+							<p>Ver detalle</p> 
+						</div>
+					</article>
+					<article>
+						<div class="novedad-producto">
+							<p>10% OFF</p>
+						</div>
+						<img src="/images/img-producto-entretenimiento.jpg", alt="Imagen Entretenimiento">
+						<div class="icono-plus-prtoducto"><i class="fas fa-plus"></i></div>
+						<div class="nombre-producto">
+							<p>HiBox Entretenimiento - Combo 1</p> 
+						</div>
+						<div class="contenedor-detalle">   
+						<p class="precios">$6.770</p>
+						<p class="discount">$9.850</p>
+						</div>
+						<div class="acceso-detalle">
+							<p>Ver detalle</p> 
+						</div>
+					</article>
+					<article>
+						<div class="novedad-producto">
+							<p>10% OFF</p>
+						</div>
+						<img src="/images/img-producto-aventura.jpg", alt="Imagen Aventura">
+						<div class="icono-plus-prtoducto"><i class="fas fa-plus"></i></div>
+						<div class="nombre-producto">
+							<p>HiBox Aventura - Combo 2</p> 
+						</div>
+						<div class="contenedor-detalle">   
+						<p class="precios">$6.770</p>
+						<p class="discount">$9.850</p>
+						</div>
+						<div class="acceso-detalle">
+							<p>Ver detalle</p> 
+						</div>
+					</article>
+	
+				</div>
+			</section>
 
 </main>
 
