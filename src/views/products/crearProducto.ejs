@@ -1,5 +1,12 @@
 <!DOCTYPE html>
 <html lang="es">
+<%- include ('../partials/head', {title: "Detalle Producto", style: "/css/styles-productDetail.css"}) %>
+<body>
+
+    <!-- Inclución de Header -->
+    <%- include ('../partials/header') %> 
+      <main>
+
 	<div>
 				<h2 class="products-title">Formulario de creación de productos</h2>
 			</div>
@@ -24,3 +31,10 @@
 		  <input type="reset" value="Borrar">
 		</p>
 	  </form>
+	  </main>
+
+    <!-- Inclución de Header -->
+    <%- include ('../partials/footer') %>  
+
+</body>
+</html>
