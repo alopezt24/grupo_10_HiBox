@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
-<%- include ('../partials/head', {title: "Detalle Producto", style: "/css/styles-productDetail.css"}) %>
+	<%- include ('../partials/head', {title: "Login", style: "/css/styles-users.css"}) %>
 <body>
 
     <!-- Inclución de Header -->
@@ -8,9 +8,9 @@
       <main>
 
 	<div>
-				<h2 class="products-title">Formulario de creación de productos</h2>
+				<h2 class="products-title">Formulario de edición de productos</h2>
 			</div>
-<form action="/products/create" method="POST">
+<form action="/products/create" method="PUT">
 		<p>Nombre del producto: <input type="text" name="nombre" size="40"></p>
 		<p>Precio del producto: <input type="number" name="precio" min="1"></p>
 		<p>Descuento: <input type="text" id="discount" name="discount" placeholder="Ej: 15" class="form-input"></p>

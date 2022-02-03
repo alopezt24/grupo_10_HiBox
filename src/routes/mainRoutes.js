@@ -15,6 +15,8 @@ routes.get ("/", routesMain.index);
 //realizo las renderizaciones de products
 routes.get ("/products/productDetail", routesProduct.detalle);
 routes.get ("/products/productCart", routesProduct.cart);
+routes.get ("/products/productCreate", routesProduct.create);
+routes.get ("/products/productEdit", routesProduct.edit);
 
 //realizo las renderizaciones de users
 routes.get ("/users/register", routesUsers.register);
