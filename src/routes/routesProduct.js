@@ -8,9 +8,9 @@ const routes = Router();
 const routesProduct = require('../controllers/controllersProduct');
 
 //realizo las renderizaciones de products
-routes.get ("/products/productDetail", routesProduct.detalle);
-routes.get ("/products/productCart", routesProduct.cart);
-routes.get ("/products/productCreate", routesProduct.create);
-routes.get ("/products/productEdit", routesProduct.edit);
+routes.get ("/productDetail", routesProduct.detalle);
+routes.get ("/productCart", routesProduct.cart);
+routes.get ("/productCreate", routesProduct.create);
+routes.get ("/productEdit", routesProduct.edit);
 
 module.exports = routes;

@@ -39,10 +39,6 @@ const listaProductos = [
 const controllers = {
     index: (req , res) => {
         res.render('index', { listaProductos: listaProductos });
-    },
-
-    notFound: (req , res) => {
-        res.render('not-found');
     }
 }
 

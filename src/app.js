@@ -11,9 +11,9 @@ const app = express();
 const port = 3030;
 
 //requiero las rutas
-const routesMain = require("./routes/mainRoutes");
-const routesProduct = require("./routes/productRoutes");
-const routesUsers = require("./routes/usersRoutes");
+const routesMain = require("./routes/routesMain");
+const routesProduct = require("./routes/routesProduct");
+const routesUsers = require("./routes/routesUsers");
 
 //definimos las constantes de path
 const pathPublic = path.resolve(__dirname, "../public");
@@ -32,8 +32,8 @@ app.listen (port, () =>{
 });
 
 app.use ('/', routesMain);
-app.use ('/users/', routesUsers);
-app.use ('/products/', routesProduct);
+app.use ('/users', routesUsers);
+app.use ('/products', routesProduct);
 
 app.use((req,res,next) => {
     res.status(404).render('not-found')
