@@ -17,13 +17,20 @@
     margin: auto;
     margin: 10px 0px;
     padding: 0px;
-}
+}f
 
 .main-productDetail-descriptionProduct {
     text-align: justify;
     padding-bottom: 5px;
     display: none;
     margin: 2px 2px;
+}
+
+.main-productDetail-descriptionProduct p {
+    text-align: left;
+    line-height: 20px;
+    padding: 10px 15px;
+ 
 }
 
 .main-productDetail-section-principal-article img {
