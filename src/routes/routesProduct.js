@@ -5,12 +5,12 @@ const {Router} = require ('express');
 const routes = Router();
 
 //requiero los controladores
-const routesProduct = require('../controllers/controllersProduct');
+const controllersProduct = require('../controllers/controllersProduct');
 
 //realizo las renderizaciones de products
-routes.get ("/productDetail", routesProduct.detalle);
-routes.get ("/productCart", routesProduct.cart);
-routes.get ("/productCreate", routesProduct.create);
-routes.get ("/productEdit", routesProduct.edit);
+routes.get ("/productDetail", controllersProduct.detalle);
+routes.get ("/productCart", controllersProduct.cart);
+routes.get ("/productCreate", controllersProduct.create);
+routes.get ("/productEdit", controllersProduct.edit);
 
 module.exports = routes;

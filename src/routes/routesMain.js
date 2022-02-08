@@ -5,9 +5,9 @@ const {Router} = require ('express');
 const routes = Router();
 
 //requiero los controladores
-const routesMain = require('../controllers/controllersMain');
+const controllersMain = require('../controllers/controllersMain');
 
 //realizo las renderizaciones del main
-routes.get ("/", routesMain.index);
+routes.get ("/", controllersMain.index);
 
 module.exports = routes;

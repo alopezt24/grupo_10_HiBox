@@ -38,7 +38,7 @@ const listaProductos = [
 
 const controllers = {
     index: (req , res) => {
-        res.render('index', { listaProductos: listaProductos });
+        res.render('index', { listaProductos });
     }
 }
 
