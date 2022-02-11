@@ -4,8 +4,11 @@ const path = require ("path");
 //requerimos el modulo de express (terceros);
 const express = require ("express");
 
+// Pasar poder usar los métodos PUT y DELETE
+const methodOverride =  require('method-override');
+
 //adentro de app --> aplicacion express
-const app = express();
+const app = express(); 
 
 //definimos el puerto una vez, para usarlo las veces necesarias
 const port = 3030;
@@ -21,6 +24,10 @@ const pathEngineViews = path.resolve(__dirname, "./views");
 
 //mediante use le asigno la carpeta "public" al proyecto para alojar todos los elementos estaticos (imagenes / css)
 app.use(express.static(pathPublic));
+//tomar los datos con querystring
+app.use(express.urlencoded({ extended: false }));
+// Pasar poder pisar el method="POST" en el formulario por PUT y DELETE
+app.use(methodOverride('_method'));
 
 //mediante set indico el Engine a utilizar y la carpeta de views
 app.set('view engine', 'ejs');

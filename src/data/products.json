@@ -3,33 +3,45 @@
         "id":1,
         "nombre": "Carpaccio fresco",
         "categoria": "Gastronomia",
+        "subCategoria": "individual",
         "precio": 65.50,
         "precioAnterior": 2000,
-        "img": "/images/img-producto-gastronimia.jpg"
+        "detalle": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos esse id odio nobis ipsum molestias fugit! Nemo dolore totam ratione nostrum aliquid veniam, illum, qui eligendi iure at et in!",
+        "img": "/images/img-producto-gastronimia.jpg",
+        "estado": "oferta"
     },
     {
         "id":2,
         "nombre": "Carpaccio fresco",
         "categoria": "Aventura",
+        "subCategoria": "individual",
         "precio": 65.50,
         "precioAnterior": 2000,
-        "img": "/images/img-producto-aventura.jpg"
+        "detalle": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos esse id odio nobis ipsum molestias fugit! Nemo dolore totam ratione nostrum aliquid veniam, illum, qui eligendi iure at et in!",
+        "img": "/images/img-producto-aventura.jpg",
+        "estado": "destacados"
     },
     {
         "id":3,
         "nombre": "Carpaccio fresco",
         "categoria": "Entretenimiento",
+        "subCategoria": "familiar",
         "precio": 65.50,
         "precioAnterior": 2000,
-        "img": "/images/img-producto-entretenimiento.jpg"
+        "detalle": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos esse id odio nobis ipsum molestias fugit! Nemo dolore totam ratione nostrum aliquid veniam, illum, qui eligendi iure at et in!",
+        "img": "/images/img-producto-entretenimiento.jpg",
+        "estado": "oferta"
     },
     {
         "id":4,
         "nombre": "Carpaccio fresco",
         "categoria": "Entretenimiento",
+        "subCategoria": "acompañado",
         "precio": 65.50,
         "precioAnterior": 2000,
-        "img": "/images/img-producto-entretenimiento.jpg"
+        "detalle": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos esse id odio nobis ipsum molestias fugit! Nemo dolore totam ratione nostrum aliquid veniam, illum, qui eligendi iure at et in!",
+        "img": "/images/img-producto-entretenimiento.jpg",
+        "estado": "oferta"
     }
 
 ]
