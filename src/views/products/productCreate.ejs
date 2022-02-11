@@ -10,17 +10,31 @@
 			<h3>Crear Productos</h3>
 			<form class="form-newProduct" action="/productCreate" method="post">
 				<input type="text" name="productName" placeholder="Nombre de Producto" required>
-				<div class="priceDiscount">
-				<input type="number" name="productPrice" placeholder="Precio de Producto" required>
-				<input type="number" name="productDiscount" placeholder="Descuento" required>
-			    </div>
+				<div class="items-select">
 				<select name="category" id="category" class="productCategory">
 					<option value="">Categoría del Producto</option>
 					<option value="Aventura">Aventura</option>
 					<option value="Entretenimiento">Entretenimiento</option>
 					<option value="Gastronomía">Gastronomía</option>
 				</select>
-				<div class="uploadFlie">
+				<select name="subcategory" id="subcategory" class="productSubCategory">
+					<option value="">Subcategorias</option>
+					<option value="Individual">Individual</option>
+					<option value="Acompañado">Acompañado</option>
+					<option value="Familiar">Familiar</option>
+				</select>
+			    </div>
+				<div class="priceDiscount">
+					<input type="number" name="productPrice" placeholder="Precio de Producto" required>
+					<input type="number" name="productDiscount" placeholder="Descuento" required>
+					<select name="estado" id="estado" class="productState">
+						<option value="">Estado de producto</option>
+						<option value="Nuevo">Nuevo</option>
+						<option value="Oferta">Oferta</option>
+						<option value="Destacado">Destacado</option>
+					</select>
+				</div>
+				<div class="uploadFile">
 				<label for="image" class="form-label">Imagen de producto:</label>
 				<input type="file" name="image" value="fotoProd" class="botonFile">
 			   </div>
