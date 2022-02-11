@@ -338,12 +338,12 @@ main section div.products article{
         color: #b6b1af;
     }
     
-    .acceso-detalle {
+    .acceso-detalle a{
         text-decoration: underline;
         color: #7d92a5;
         font-size: 1em;
     }
-    .acceso-detalle:hover {
+    .acceso-detalle:hover a{
         color: #F95F62;
     }
     .contenedor-intrucciones-compra {

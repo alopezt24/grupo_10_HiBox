@@ -1,6 +1,10 @@
 const express = require('express');
 
 const controllers = {
+    index: (req , res) => {
+        res.render('../views/products/products');
+    },
+
     detalle: (req , res) => {
         res.render('../views/products/productDetail');
     },
