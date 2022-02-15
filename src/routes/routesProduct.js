@@ -24,7 +24,7 @@ var upload = multer({storage: storage})
 
 //realizo las renderizaciones de products
 routes.get ("/", controllersProduct.index);
-routes.get ("/productDetail", controllersProduct.detalle);
+routes.get ("/productDetail", controllersProduct.detail);
 routes.get ("/productCart", controllersProduct.cart);
 routes.get ("/productCreate", controllersProduct.create);
 routes.get ("/productEdit", controllersProduct.edit);

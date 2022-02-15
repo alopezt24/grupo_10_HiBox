@@ -17,6 +17,7 @@ const port = 3030;
 const routesMain = require("./routes/routesMain");
 const routesProduct = require("./routes/routesProduct");
 const routesUsers = require("./routes/routesUsers");
+const routesAdmin = require("./routes/routesAdmin");
 
 //definimos las constantes de path
 const pathPublic = path.resolve(__dirname, "../public");
@@ -41,6 +42,7 @@ app.listen (port, () =>{
 app.use ('/', routesMain);
 app.use ('/users', routesUsers);
 app.use ('/products', routesProduct);
+app.use ('/admin', routesAdmin);
 
 app.use((req,res,next) => {
     res.status(404).render('not-found')

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include ('../partials/head', {title: "Admin", style: "/css/styles-adminProduct.css"}) %>
+    
+    <body>
+
+        <!-- Inclución de Header -->
+        <%- include ('../partials/header') %>
+        
+        <main>
+            <section class="conteiner-adminProduct">
+                <h3>Administrar Productos</h3>
+                <ul class="list-adminProduct">
+                    <li>
+                        <p>Producto X</p>
+                        <form class="form-adminProduct" action="../products/productDetail/:id" method="">
+                            <button type="submit" class="see">Ver</button>
+                        </form>
+                        <form class="form-adminProduct" action="../products/:id/productEdit?_method=PUT" method="POST">
+                            <button type="reset" class="edit">Editar</button>
+                        </form>
+                        <form class="form-adminProduct" action="/products/:id?_method=DELETE" method="POST">
+                            <button type="submit" class="delete">Eliminar</button>
+                        </form>
+                    </li>
+                </ul>
+            </section>
+        </main>
+        
+        <!-- Inclución de Footer -->
+        <%- include ('../partials/footer') %>  
+
+    </body>
+
+</html>

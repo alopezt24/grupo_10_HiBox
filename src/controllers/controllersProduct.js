@@ -5,7 +5,7 @@ const controllers = {
         res.render('../views/products/products');
     },
 
-    detalle: (req , res) => {
+    detail: (req , res) => {
         res.render('../views/products/productDetail');
     },
 
