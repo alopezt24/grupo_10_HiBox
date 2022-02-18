@@ -85,11 +85,13 @@ body {
     padding: 0;
 }
 
+
 .nav-bar-header-left li,
 .nav-bar-header-right li{
     margin-left: 15px;
     display: inline-block;
 }
+
 
 .nav-bar-header-left a,
 .nav-bar-header-right a {
@@ -174,13 +176,6 @@ body {
     margin: 0px;
 }
 
-.destacado-aventura img:hover,
-.destacado-gastronomia img:hover ,
-.destacado-entretenimiento img:hover {
-    opacity: 85%;
-   
-}
-
 .destacado-aventura h3,
 .destacado-gastronomia h3,
 .destacado-entretenimiento h3 {
@@ -195,7 +190,6 @@ body {
 .destacado-gastronomia p a,
 .destacado-entretenimiento p a {
     text-decoration: none;
-    margin: auto;
     text-align: center;
     color: white;
     width: 140px;
@@ -218,16 +212,18 @@ body {
     }
 
 .contenedor-novedades-productos {
-        display: flex;
-        flex-wrap: wrap;
+        margin: auto;
+        /* display: flex; */
+        /* flex-wrap: wrap; */
+        /* justify-content: flex-start; */
     }
 
 .contenedor-novedades-productos h3 {
-    display: flex;
-        text-align: center;
-        color: #222;
-        font-size: 2em;
-        margin: 15px auto;
+    /* display: flex; */
+    text-align: center;
+    color: #222;
+    font-size: 2em;
+    margin: 50px auto;
     }
 
     .contenedor-detalle {
@@ -556,7 +552,7 @@ footer .suscripcion input
 
     .nav-bar-header-center .logo {
     position: relative;
-    left: 26%;
+    left: 57%;
     margin: auto;
 }
     
@@ -597,8 +593,9 @@ footer .suscripcion input
 } 
     main section div.products{
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
     flex-wrap: wrap;
+    margin-left: 5%;
     }
     main section div.products article{
       width: 22%;

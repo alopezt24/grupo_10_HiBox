@@ -10,7 +10,7 @@
         <section class="slider">
             <div class="slider-composition">
                 <h3>SAY HI TO YOUR NEXT EXPERIENCE</h3>
-                <p class="boton-negro"><a href="/products/productDetail">Ver más</a></p>
+                <p class="boton-negro"><a href="/products">Ver más</a></p>
                 <img src="/images/bg-home.jpg", alt="Imagen slider", width="100%">
                 </div>  
         </section>
@@ -36,12 +36,13 @@
         </section>
 
         <section class="contenedor-novedades-productos">
-            <h3>Novedades</h3>
+            <h3>NOVEDADES</h3>
             <div class="products">
-                <% for(let producto of listaProductos) { %>
+                <% for(let producto of products) { %>
+                    <% if (producto.estado == "nuevo" && producto.id < 12) { %>
                 <article>
                     <div class="novedad-producto">
-                        <p>10% OFF</p>
+                        <p><%= producto.estado.toUpperCase()%></p>
                     </div>
                     <img src="<%= producto.img%>", alt="Imagen Aventura" class="product_img">
                     <div class="icono-plus-prtoducto"><i class="fas fa-plus"></i></div>
@@ -49,13 +50,14 @@
                         <p><%= producto.nombre%></p>
                     </div>
                     <div class="contenedor-detalle">
-                    <p class="precios"><%= producto.precio%></p>
-                    <p class="discount"><%= producto.precioAnterior%></p>
+                    <p class="precios">$<%= producto.precio%></p>
+                    <p class="discount">$<%= producto.precioAnterior%></p>
                     </div>
                     <div class="acceso-detalle">
                         <a href="/products/productDetail"> <p>Ver detalle</p> </a>
                     </div>
                 </article>
+                  <% } %>
                 <% } %>
 
             </div>
@@ -79,148 +81,31 @@
         <section class="contenedor-novedades-productos">
             <h3>DESCUBRÍ TODAS LAS EXPERIENCIAS QUE PODÉS VIVIR</h3>
             <div class="products">
+                <% for(let producto of products) { %>
+                    <% if (producto.id < 9) { %>
                 <article>
                     <div class="novedad-producto">
-                        <p>10% OFF</p>
+                        <p><%= producto.estado.toUpperCase()%></p>
                     </div>
-                    <img src="/images/img-producto-aventura.jpg", alt="Imagen Aventura" class="product_img">
+                    <img src="<%= producto.img%>", alt="Imagen Aventura" class="product_img">
                     <div class="icono-plus-prtoducto"><i class="fas fa-plus"></i></div>
                     <div class="nombre-producto">
-                        <p>HiBox Aventura - Combo 1</p> 
+                        <p><%= producto.nombre%></p>
                     </div>
-                    <div class="contenedor-detalle">   
-                    <p class="precios">$6.770</p>
-                    <p class="discount">$9.850</p>
-                    </div>
-                    <div class="acceso-detalle">
-                        <a href="/products/productDetail"> <p>Ver detalle</p> </a> 
-                    </div>
-                </article>
-
-                <article>
-                    <div class="novedad-producto">
-                        <p>10% OFF</p>
-                    </div>
-                    <img src="/images/img-producto-gastronimia.jpg", alt="Imagen Gastronomia">
-                    <div class="icono-plus-prtoducto"><i class="fas fa-plus"></i></div>
-                    <div class="nombre-producto">
-                        <p>HiBox Gastronomia - Combo 1</p> 
-                    </div>
-                    <div class="contenedor-detalle">   
-                    <p class="precios">$6.770</p>
-                    <p class="discount">$9.850</p>
+                    <div class="contenedor-detalle">
+                    <p class="precios">$<%= producto.precio%></p>
+                    <p class="discount">$<%= producto.precioAnterior%></p>
                     </div>
                     <div class="acceso-detalle">
-                        <a href="/products/productDetail"> <p>Ver detalle</p> </a> 
+                        <a href="/products/productDetail"> <p>Ver detalle</p> </a>
                     </div>
                 </article>
-                <article>
-                    <div class="novedad-producto">
-                        <p>10% OFF</p>
-                    </div>
-                    <img src="/images/img-producto-entretenimiento.jpg", alt="Imagen Entretenimiento">
-                    <div class="icono-plus-prtoducto"><i class="fas fa-plus"></i></div>
-                    <div class="nombre-producto">
-                        <p>HiBox Entretenimiento - Combo 1</p> 
-                    </div>
-                    <div class="contenedor-detalle">   
-                    <p class="precios">$6.770</p>
-                    <p class="discount">$9.850</p>
-                    </div>
-                    <div class="acceso-detalle">
-                        <a href="/products/productDetail"> <p>Ver detalle</p> </a> 
-                    </div>
-                </article>
-                <article>
-                    <div class="novedad-producto">
-                        <p>10% OFF</p>
-                    </div>
-                    <img src="/images/img-producto-aventura.jpg", alt="Imagen Aventura">
-                    <div class="icono-plus-prtoducto"><i class="fas fa-plus"></i></div>
-                    <div class="nombre-producto">
-                        <p>HiBox Aventura - Combo 2</p> 
-                    </div>
-                    <div class="contenedor-detalle">   
-                    <p class="precios">$6.770</p>
-                    <p class="discount">$9.850</p>
-                    </div>
-                    <div class="acceso-detalle">
-                        <a href="/products/productDetail"> <p>Ver detalle</p> </a> 
-                    </div>
-                </article>
-                <article>
-                    <div class="novedad-producto">
-                        <p>10% OFF</p>
-                    </div>
-                    <img src="/images/img-producto-aventura.jpg", alt="Imagen Aventura" class="product_img">
-                    <div class="icono-plus-prtoducto"><i class="fas fa-plus"></i></div>
-                    <div class="nombre-producto">
-                        <p>HiBox Aventura - Combo 1</p> 
-                    </div>
-                    <div class="contenedor-detalle">   
-                    <p class="precios">$6.770</p>
-                    <p class="discount">$9.850</p>
-                    </div>
-                    <div class="acceso-detalle">
-                        <a href="/products/productDetail"> <p>Ver detalle</p> </a> 
-                    </div>
-                </article>
-
-                <article>
-                    <div class="novedad-producto">
-                        <p>10% OFF</p>
-                    </div>
-                    <img src="/images/img-producto-gastronimia.jpg", alt="Imagen Gastronomia">
-                    <div class="icono-plus-prtoducto"><i class="fas fa-plus"></i></div>
-                    <div class="nombre-producto">
-                        <p>HiBox Gastronomia - Combo 1</p> 
-                    </div>
-                    <div class="contenedor-detalle">   
-                    <p class="precios">$6.770</p>
-                    <p class="discount">$9.850</p>
-                    </div>
-                    <div class="acceso-detalle">
-                        <a href="/products/productDetail"> <p>Ver detalle</p> </a> 
-                    </div>
-                </article>
-                <article>
-                    <div class="novedad-producto">
-                        <p>10% OFF</p>
-                    </div>
-                    <img src="/images/img-producto-entretenimiento.jpg", alt="Imagen Entretenimiento">
-                    <div class="icono-plus-prtoducto"><i class="fas fa-plus"></i></div>
-                    <div class="nombre-producto">
-                        <p>HiBox Entretenimiento - Combo 1</p> 
-                    </div>
-                    <div class="contenedor-detalle">   
-                    <p class="precios">$6.770</p>
-                    <p class="discount">$9.850</p>
-                    </div>
-                    <div class="acceso-detalle">
-                        <a href="/products/productDetail"> <p>Ver detalle</p> </a> 
-                    </div>
-                </article>
-                <article>
-                    <div class="novedad-producto">
-                        <p>10% OFF</p>
-                    </div>
-                    <img src="/images/img-producto-aventura.jpg", alt="Imagen Aventura">
-                    <div class="icono-plus-prtoducto"><i class="fas fa-plus"></i></div>
-                    <div class="nombre-producto">
-                        <p>HiBox Aventura - Combo 2</p> 
-                    </div>
-                    <div class="contenedor-detalle">   
-                    <p class="precios">$6.770</p>
-                    <p class="discount">$9.850</p>
-                    </div>
-                    <div class="acceso-detalle">
-                        <a href="/products/productDetail"> <p>Ver detalle</p> </a> 
-                    </div>
-                </article>
+                  <% } %>
+                <% } %>
 
 
             </div>
-        </section>
+        </section> 
     </main>
     
     <!-- Inclución de Footer -->

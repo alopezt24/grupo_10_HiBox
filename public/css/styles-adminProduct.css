@@ -1,6 +1,6 @@
 .conteiner-adminProduct {
     background-color: white;
-    max-width: 600px;
+    max-width: 650px;
     margin: auto;
     padding: 30px;
     margin-top: 50px;
@@ -8,13 +8,53 @@
 }
 
 .conteiner-adminProduct h3 {
-        text-align: center;
+        text-align: left;
         color: #222;
         font-size: 2em;
-        margin: 15px auto;
     }
 
-    
+
+    .titulo-seccion {
+        margin-top: 15px;
+        margin-bottom: 80px;
+    }
+.listado-productos {
+    /* border: solid 1px red; */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+.list-buttons {
+    display: flex;
+    justify-content: end;
+    flex-direction: row;
+}
+.nombre-listado {
+        color: #9c8c84;
+        font-size: 16px;
+}
+.titulo-seccion {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}  
+
+.crear {
+    background-color: #7d92a5;
+    border-radius: 30px;
+    padding: 10px;
+    color: #FFF;
+    font-size: 15px;
+    font-weight: bold;
+    width: 220px;
+    border: none !important;
+    transition: all 450ms;
+}
+.crear:hover {
+    background-color: #1c1b20;
+}
 .form-adminProduct input {
         width: 100%;
         padding: 8px;
@@ -24,52 +64,39 @@
         border: solid 1px #666;
     }
 
-
-.items-select{
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-}
-
-.list-adminProduct{
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-}
-
-    .see:hover {
-        background-color: #7d92a5;
+.see:hover,
+.edit:hover {
+    color: #FFF;
+        background-color: #1c1b20;
     }
-    .edit:hover {
-        background-color: #9d8c84;
-    }
+ 
     .delete:hover {
-        background-color: #9d8c84;
+        background-color: #1c1b20;
+        border: solid 1px #1c1b20;
     }
 
     .see,
     .edit {
-        background-color: #F95F62;
+        background-color: white;
         border-radius: 30px;
         padding: 8px;
-        color: #FFF;
-        font-size: 20px;
-        margin: 20px 0;
-        width: 100%;
-        border: none !important;
-        transition: background-color 450ms;
+        color: #1c1b20;
+        border: solid 1px #1c1b20;
+        font-size: 15;
+        margin-left: 5px;
+        width: 80px;
+        transition: all 450ms;
     }
 
 
     .delete {
-        background-color: #1c1b20;
+        background-color: #F95F62;
+        border: solid 1px #F95F62;
         border-radius: 30px;
         padding: 8px;
         color: #FFF;
-        font-size: 20px;
-        margin: 20px 0;
-        width: 100%;
-        border: none !important;
+        margin-left: 5px;
+        width: 80px;
         transition: background-color 450ms;
     }
 
@@ -87,3 +114,5 @@
     .form-adminProduct p:hover a{
         color: #fa5f63;
     }
+
+    

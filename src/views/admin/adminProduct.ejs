@@ -10,21 +10,35 @@
         
         <main>
             <section class="conteiner-adminProduct">
+                <div class="titulo-seccion">
                 <h3>Administrar Productos</h3>
-                <ul class="list-adminProduct">
-                    <li>
-                        <p>Producto X</p>
-                        <form class="form-adminProduct" action="../products/productDetail/:id" method="">
-                            <button type="submit" class="see">Ver</button>
-                        </form>
-                        <form class="form-adminProduct" action="../products/:id/productEdit?_method=PUT" method="POST">
-                            <button type="reset" class="edit">Editar</button>
-                        </form>
-                        <form class="form-adminProduct" action="/products/:id?_method=DELETE" method="POST">
-                            <button type="submit" class="delete">Eliminar</button>
-                        </form>
-                    </li>
-                </ul>
+                <form class="form-adminProduct" action="../products/productCreate" method="POST">
+                    <button type="submit" class="crear">Crear un nuevo producto</button>
+                </form>
+                </div>
+                <div class="products-list">
+                    <% for(let producto of products) { %>
+                     <div class="listado-productos">   
+                        <div class="nombre-listado">
+                            <p><%= producto.id%>.- <%= producto.nombre%></p>
+                        </div>
+                        <div class="list-buttons">
+                            <form class="form-adminProduct" action="../products/productDetail/:id" method="">
+                                <button type="submit" class="see">Ver</button>
+                            </form>
+                            <form class="form-adminProduct" action="../products/:id/productEdit?_method=PUT" method="POST">
+                                <button type="reset" class="edit">Editar</button>
+                            </form>
+                            <form class="form-adminProduct" action="/products/:id?_method=DELETE" method="POST">
+                                <button type="submit" class="delete">Eliminar</button>
+                            </form>
+                        </div>
+                        
+                    </div>
+                    <hr>
+                        <% } %>
+                </div>
+                
             </section>
         </main>
         
