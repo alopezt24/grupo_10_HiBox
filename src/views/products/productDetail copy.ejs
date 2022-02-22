@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include ('../partials/head', {title: "Detalle Producto", style: "/css/styles-productDetail.css"}) %>
+<body>
+
+    <!-- Inclución de Header -->
+    <%- include ('../partials/header') %>    
+
+    <main>
+        <!-- Inicio contenedor detalle de producto -->
+        <section class="main-productDetail-section-principal">
+            <!-- Inicio bloque de detalle -->
+            <div class="main-productDetail-actividad">
+                <div class="h1-productDetail">
+                    <h1><%= miProducto.nombre%></h1>
+                </div>
+                <div class="main-productDetail-iconos">
+                    <i class="fas fa-map-marker-alt"> Veremos</i>
+                    <i class="fas fa-history"> 4 horas máximo </i>
+                    <i class="fas fa-users"> VÁLIDO PARA: 2 Personas</i>
+                </div>
+                <article class="main-productDetail-section-principal-article">
+                    <img src="<%= miProducto.img%>", alt="Cena para romantica">
+                    <!-- Inicio bloque Descripción de producto -->        
+                    <div class="main-productDetail-descriptionProduct">
+                        <!-- <h3>Cena romántica para dos personas</h3>-->
+                        <p><%= miProducto.detalle%></p>
+                    </div>
+                    <!-- Fin bloque descripción de producto -->
+                </article>
+            <!-- Fin bloque de detalle -->
+            </div>
+            <!-- Inicio bloque de compra o regalo -->
+            <div class="main-productDetail-compra">
+                <div class="productDetail-h2">
+                    <h2><%= miProducto.categoria.toUpperCase(1)%></h2>
+                </div>
+                <img src="/images/cena+para+2.png", alt="Categoria seleccionada">
+                <h3>Compra el producto por:</h3>
+                <form action="/productCar" method="GET">
+                    <label>$ 1200</label>
+                    <button type="submit" class="productDetail-boton">COMPRAR <i class="fas fa-shopping-cart"></i></button>
+                </form>
+                
+                <h3>Regala la experiencia por:</h3>
+                <form action="/productCar" method="GET">
+                    <label>$ 1600</label>
+                    <button type="submit" class="productDetail-boton">REGALAR <i class="fas fa-gift"></i></button>
+                </form>
+            <!-- Fin bloque de compra o regalo -->
+            </div>
+        </section>
+        <!-- Inicio sección de productos destacados -->
+        <section class="contenedor-novedades-productos">
+            <h3>DESTACADOS</h3>
+            <div class="products">
+                <% for(let producto of products) { %>
+                    <% if (producto.estado == "destacado" && producto.id < 15) { %>
+                <article>
+                    <div class="novedad-producto">
+                        <p><%= producto.estado.toUpperCase()%></p>
+                    </div>
+                    <img src="<%= producto.img%>", alt="Imagen Aventura" class="product_img">
+                    <div class="icono-plus-prtoducto"><i class="fas fa-plus"></i></div>
+                    <div class="nombre-producto">
+                        <p><%= producto.nombre%></p>
+                    </div>
+                    <div class="contenedor-detalle">
+                    <p class="precios">$<%= producto.precio%></p>
+                    <p class="discount">$<%= producto.precioAnterior%></p>
+                    </div>
+                    <div class="acceso-detalle">
+                        <a href="/products/productDetail/<%= producto.id%>"> <p>Ver detalle</p> </a>
+                    </div>
+                </article>
+                  <% } %>
+                <% } %>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Inclución de Header -->
+    <%- include ('../partials/footer') %>  
+
+</body>
+</html>

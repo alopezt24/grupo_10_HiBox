@@ -8,48 +8,50 @@
 
     <main>
         <!-- Inicio contenedor detalle de producto -->
-        <section class="main-productDetail-section-principal">
-            <!-- Inicio bloque de detalle -->
-            <div class="main-productDetail-actividad">
-                <div class="h1-productDetail">
-                    <h1><%= miProducto.nombre%></h1>
-                </div>
-                <div class="main-productDetail-iconos">
-                    <i class="fas fa-map-marker-alt"> Veremos</i>
-                    <i class="fas fa-history"> 4 horas máximo </i>
-                    <i class="fas fa-users"> VÁLIDO PARA: 2 Personas</i>
-                </div>
-                <article class="main-productDetail-section-principal-article">
-                    <img src="<%= miProducto.img%>", alt="Cena para romantica">
-                    <!-- Inicio bloque Descripción de producto -->        
-                    <div class="main-productDetail-descriptionProduct">
-                        <!-- <h3>Cena romántica para dos personas</h3>-->
-                        <p><%= miProducto.detalle%></p>
-                    </div>
-                    <!-- Fin bloque descripción de producto -->
-                </article>
-            <!-- Fin bloque de detalle -->
+        <section class="conteiner-titulo">
+            <h3>Inicio > Productos > <%= miProducto.nombre%></h3>
+        </section>
+        <section class="main-product-detail-seccion">
+            <div class="detalle-producto">
+               <img src="<%= miProducto.img%>", alt="Cena para romantica">     
             </div>
-            <!-- Inicio bloque de compra o regalo -->
-            <div class="main-productDetail-compra">
-                <div class="productDetail-h2">
-                    <h2><%= miProducto.categoria.toUpperCase(1)%></h2>
+            <div class="detalle-compra">
+                <div>
+                <h3><%= miProducto.nombre%></h3>
                 </div>
-                <img src="/images/cena+para+2.png", alt="Categoria seleccionada">
-                <h3>Compra el producto por:</h3>
-                <form action="/productCar" method="GET">
-                    <label>$ 1200</label>
-                    <button type="submit" class="productDetail-boton">COMPRAR <i class="fas fa-shopping-cart"></i></button>
-                </form>
-                
-                <h3>Regala la experiencia por:</h3>
-                <form action="/productCar" method="GET">
-                    <label>$ 1600</label>
-                    <button type="submit" class="productDetail-boton">REGALAR <i class="fas fa-gift"></i></button>
-                </form>
-            <!-- Fin bloque de compra o regalo -->
+                <div class="categoriaSubcategoria">
+                    <div class="categoria">
+                        <p>Categoría:</p>
+                        <h2><%= miProducto.categoria%></h2>
+                    </div>
+                    <div class="subCategoria">
+                        <p>Sub Categoría:</p>
+                        <h2><%= miProducto.subCategoria%></h2>
+                    </div>
+                    <div class="cantidad-input">
+                        <p>Cantidad:</p>
+                        <input type="number" name="cantidad" placeholder="1" required>
+                    </div>
+                </div>
+                <div class="precioDescuento">
+                    <div class="descuento">
+                        <p>Precio Anterior:</p>
+                        <h2>$<%= miProducto.precioAnterior%></h2>
+                    </div>
+                    <div class="precio">
+                        <p>Precio:</p>
+                        <h2>$<%= miProducto.precio%></h2>
+                    </div>
+                    </div>
+                <div class="detalle-producto">
+                <p><%= miProducto.detalle%></p>
+                </div>
+                <div class="comprar">
+                    <p ><a href="#"><i class="fas fa-shopping-cart"></i> Comprar</a></p>
+                </div>
             </div>
         </section>
+        
         <!-- Inicio sección de productos destacados -->
         <section class="contenedor-novedades-productos">
             <h3>DESTACADOS</h3>
