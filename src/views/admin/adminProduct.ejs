@@ -12,9 +12,12 @@
             <section class="conteiner-adminProduct">
                 <div class="titulo-seccion">
                 <h3>Administrar Productos</h3>
-                <form class="form-adminProduct" action="../products/productCreate" method="POST">
+                <div class="crear">
+                    <a href="/admin/productCreate">Agregar un nuevo producto</a>
+                </div>
+                <!--<form class="form-adminProduct" action="../admin/createProduct" method="POST">
                     <button type="submit" class="crear">Crear un nuevo producto</button>
-                </form>
+                </form>-->
                 </div>
                 <div class="products-list">
                     <% for(let producto of products) { %>
@@ -23,12 +26,13 @@
                             <p><%= producto.id%>.- <%= producto.nombre%></p>
                         </div>
                         <div class="list-buttons">
-                            <form class="form-adminProduct" action="../products/productDetail/:id" method="">
-                                <button type="submit" class="see">Ver</button>
-                            </form>
-                            <form class="form-adminProduct" action="../products/:id/productEdit?_method=PUT" method="POST">
-                                <button type="reset" class="edit">Editar</button>
-                            </form>
+
+                            <div class="see">
+                                <a href="/admin/productDetail/<%= producto.id%>">Ver</a>
+                            </div>
+                            <div class="edit">
+                                <a href="/admin/productEdit/<%= producto.id%>">Editar</a>
+                            </div>
                             <form class="form-adminProduct" action="/products/:id?_method=DELETE" method="POST">
                                 <button type="submit" class="delete">Eliminar</button>
                             </form>

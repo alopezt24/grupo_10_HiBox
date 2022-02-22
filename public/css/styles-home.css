@@ -552,7 +552,7 @@ footer .suscripcion input
 
     .nav-bar-header-center .logo {
     position: relative;
-    left: 57%;
+    /* left: 57%; */
     margin: auto;
 }
     

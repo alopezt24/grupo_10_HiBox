@@ -10,21 +10,19 @@ const controllers = {
         res.render('../views/products/products', { products });
     },
 
-    detail: (req , res) => {
-        res.render('../views/products/productDetail', { products });
+    show: (req,res) =>{
+        let miProducto;
+        products.forEach(producto => {
+            if(producto.id == req.params.id){
+                miProducto = producto;
+            }
+        });
+        res.render(path.resolve(__dirname, '../views/products/productDetail'), { products , miProducto })
     },
 
     cart: (req , res) => {
         res.render('../views/products/productCart', { products });
     },
-
-    create: (req , res) => {
-        res.render('../views/products/productCreate');
-    },
-
-    edit: (req , res) => {
-        res.render('../views/products/productEdit');
-    }
 }
 
 module.exports = controllers;

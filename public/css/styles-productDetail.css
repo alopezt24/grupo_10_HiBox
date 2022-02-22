@@ -29,15 +29,14 @@
 .main-productDetail-descriptionProduct p {
     text-align: left;
     line-height: 20px;
-    padding: 10px 15px;
- 
+    /* padding: 10px 15px; */
 }
 
 .main-productDetail-section-principal-article img {
-    width: 100%;
+    width: 50%;
     padding: 2px;
     margin: auto;
-    background-color: #F95F62;
+    /* background-color: #F95F62; */
 }
 
 .main-productDetail-section-principal-article:hover .main-productDetail-descriptionProduct {
@@ -45,7 +44,7 @@
 }
 
 main section div h3 {
-    text-align: center;
+    text-align: left;
     margin: 5px 0px;
 }
 
@@ -117,6 +116,7 @@ main section div h3 {
 
     .main-productDetail-descriptionProduct {
         display: block;
+        padding: 20px;
     }
 
     .main-productDetail-compra img {

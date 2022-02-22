@@ -12,7 +12,7 @@
             <!-- Inicio bloque de detalle -->
             <div class="main-productDetail-actividad">
                 <div class="h1-productDetail">
-                    <h1>Cena romántica</h1>
+                    <h1><%= miProducto.nombre%></h1>
                 </div>
                 <div class="main-productDetail-iconos">
                     <i class="fas fa-map-marker-alt"> Veremos</i>
@@ -20,14 +20,11 @@
                     <i class="fas fa-users"> VÁLIDO PARA: 2 Personas</i>
                 </div>
                 <article class="main-productDetail-section-principal-article">
-                    <img src="/images/cena+para+2.png", alt="Cena para romantica">
+                    <img src="<%= miProducto.img%>", alt="Cena para romantica">
                     <!-- Inicio bloque Descripción de producto -->        
                     <div class="main-productDetail-descriptionProduct">
-                        <h3>Cena romántica para dos personas</h3>
-                        <p>La cena incluye 3 platos (Entrada, Plato principal y Postre) mas una bebida y un Postre
-                           por persona.
-                           Se incluye vallet parking con estacionamiento gratuito.
-                        </p>
+                        <!-- <h3>Cena romántica para dos personas</h3>-->
+                        <p><%= miProducto.detalle%></p>
                     </div>
                     <!-- Fin bloque descripción de producto -->
                 </article>
@@ -36,9 +33,9 @@
             <!-- Inicio bloque de compra o regalo -->
             <div class="main-productDetail-compra">
                 <div class="productDetail-h2">
-                    <h2>Gastronomia</h2>
+                    <h2><%= miProducto.categoria.toUpperCase(1)%></h2>
                 </div>
-                <img src="/images/gastronomia-mobile.jpg", alt="Categoria seleccionada">
+                <img src="/images/cena+para+2.png", alt="Categoria seleccionada">
                 <h3>Compra el producto por:</h3>
                 <form action="/productCar" method="GET">
                     <label>$ 1200</label>
@@ -73,7 +70,7 @@
                     <p class="discount">$<%= producto.precioAnterior%></p>
                     </div>
                     <div class="acceso-detalle">
-                        <a href="/products/productDetail"> <p>Ver detalle</p> </a>
+                        <a href="/products/productDetail/<%= producto.id%>"> <p>Ver detalle</p> </a>
                     </div>
                 </article>
                   <% } %>
