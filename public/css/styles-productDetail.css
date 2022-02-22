@@ -8,6 +8,8 @@
 
 .main-product-detail-seccion {
     display: flex;
+    justify-content: center;
+    width: 90%;
     flex-wrap: wrap;
     background-color: white;
     margin: auto;
@@ -18,16 +20,14 @@
 
 .detalle-compra {
     max-width: 500px;
-}
-.detalle-producto {
-    width: 100%;
+    /* text-align: center; */
 }
 
 .categoriaSubcategoria h2,
 .precioDescuento h2 {
         text-align: left;
         color: #222;
-        font-size: 1.5em;
+        font-size: 1.2em;
         margin-bottom: 20px;
 }
         
@@ -38,13 +38,12 @@
         font-size: 14   px;
         margin-top: 20px;
         margin-bottom: 20px;
-        
     }
         
 .subCategoria,
 .cantidad-input,
 .precio{
-    margin-left: 46px;
+    margin-left: 12px;
 }
 
 .precio h2{
@@ -76,7 +75,7 @@
 
 .cantidad-input input{
         margin-top: -10px;
-        width: 60%;
+        width: 56px;
         padding: 8px;
         border-radius: 30px;
         color: #666;
@@ -85,8 +84,9 @@
 .categoriaSubcategoria,
 .precioDescuento {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
-    justify-content: start;
+    /* justify-content: space-between; */
 }
 
 .detalle-compra h3 {
@@ -140,6 +140,14 @@ main section div h3 {
 }
 
 @media (min-width: 361px) {
+    .categoriaSubcategoria,
+.precioDescuento {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
     .main-productDetail-section-principal {
         display: flex;
         flex-direction: row;
@@ -174,9 +182,24 @@ main section div h3 {
 }
 
 @media (min-width: 768px){
+    .categoriaSubcategoria h2,
+    .precioDescuento h2 {
+        font-size: 1.5em;
+}
+        
+    .categoriaSubcategoria p,
+    .precioDescuento p {
+        font-size: 14px;
+    }
     .detalle-producto img {
         max-width: 400px;
     }
+
+    .subCategoria,
+    .cantidad-input,
+    .precio{
+    margin-left: 50px;
+}
 
     .main-product-detail-seccion {
         width: 80%;
@@ -184,7 +207,7 @@ main section div h3 {
         flex-wrap: nowrap;
         align-content: center;
         align-items: center;
-        max-width: 900px;
+        max-width: 980px;
     }
     
     .main-productDetail-compra {
