@@ -27,12 +27,12 @@ const controllers = {
         products.push (ultimoProducto);
         let nuevoProducto = {
             id: ultimoProducto.id +1,
-            nombre: req.body.productName,
-            categoria: req.body.category,
-            subcategoria: req.body.subcategory,
-            precio: req.body.productPrice,
-            precioAnterior: req.body.productDiscount,
-            detalle: req.body.description,
+            nombre: req.body.nombre,
+            categoria: req.body.categoria,
+            subcategoria: req.body.subcategoria,
+            precio: req.body.precio,
+            precioAnterior: req.body.precioAnterior,
+            detalle: req.body.detalle,
             img: "/images/products/" + req.file.filename,
             estado: req.body.estado   
         }
