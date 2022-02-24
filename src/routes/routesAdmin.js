@@ -17,5 +17,5 @@ routes.get ("/productCreate", controllersAdmin.create);
 routes.post('/productCreate', upload.single('image'), controllersAdmin.save);
 routes.get('/productDetail/:id', controllersAdmin.show);
 routes.get ("/productEdit", controllersAdmin.edit);
-
+routes.delete('/:id', controllersAdmin.erase);
 module.exports = routes;

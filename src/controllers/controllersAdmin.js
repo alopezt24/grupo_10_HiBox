@@ -43,7 +43,20 @@ const controllers = {
     },
     edit: (req , res) => {
         res.render('../views/admin/productEdit', { products });
+    },
+    erase: (req,res) => {
+        let cont = 1;
+        let borrarProducto = products.filter(item => {
+            return item.id!=req.params.id
+            });
+        borrarProducto.map(item => {
+                return item.id=cont++;
+            });
+        let nuevoProductoGuardar = JSON.stringify( borrarProducto, null , 2);
+        fs.writeFileSync(path.resolve(__dirname, "../data/products.json"), nuevoProductoGuardar);
+        res.redirect('../admin/adminProduct');
     }
+
 };
 
 module.exports = controllers;
