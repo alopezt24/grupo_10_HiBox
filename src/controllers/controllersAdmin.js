@@ -32,9 +32,9 @@ const controllers = {
             subcategoria: req.body.subcategory,
             precio: req.body.productPrice,
             precioAnterior: req.body.productDiscount,
-            description: req.body.description,
-            estado: req.body.estado,
-            imagen: req.file.filename   
+            detalle: req.body.description,
+            img: "/images/products/" + req.file.filename,
+            estado: req.body.estado   
         }
         products.push(nuevoProducto);
         let nuevoProductoGuardar = JSON.stringify( products, null , 2);
