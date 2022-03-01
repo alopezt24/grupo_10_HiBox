@@ -8,6 +8,25 @@
     display: flex;
 
 }
+.crear {
+    background-color: #7d92a5;
+    text-align: center;
+    border-radius: 30px;
+    padding: 10px;
+    width: 220px;
+    border: none !important;
+    transition: all 450ms;
+}
+
+.crear a {
+    color: #FFF;
+    font-size: 15px;
+    font-weight: bold;
+    text-decoration: none !important;
+}
+.crear:hover {
+    background-color: #1c1b20;
+}
 
 .botonera{
     background-color: white;

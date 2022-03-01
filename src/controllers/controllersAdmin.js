@@ -23,6 +23,13 @@ const controllers = {
         res.render(path.resolve(__dirname, '../views/admin/productDetail'), {miProducto})
     },
     save: (req,res) =>{
+        let img
+			if(req.file != undefined){
+				img = "/images/products/" + req.file.filename
+			} else {
+				img = '/images/products/default-image.jpg'
+			}
+
         let ultimoProducto = products.pop();
         products.push (ultimoProducto);
         let nuevoProducto = {
@@ -41,8 +48,23 @@ const controllers = {
         fs.writeFileSync(path.resolve(__dirname, "../data/products.json"), nuevoProductoGuardar);
         res.redirect('../admin/adminProduct');
     },
-    edit: (req , res) => {
-        res.render('../views/admin/productEdit', { products });
+    edit: (req,res)=>{
+        const modoId = req.params.id;
+        let productoEditar = products.find( producto => producto.id == modoId);
+        res.render (path.resolve(__dirname,'../views/admin/productEdit'), {productoEditar});
+    },
+    update: (req,res) =>{
+        req.body.id = req.params.id;
+        req.body.img = req.file ? "/images/products/" + req.file.filename : req.body.oldImagen;
+        let productosUpdate = products.map(producto =>{
+            if(producto.id == req.body.id){
+                return producto = req.body;
+            }
+            return producto;
+        })
+        let productoActualizar = JSON.stringify( productosUpdate , null , 2);
+        fs.writeFileSync(path.resolve(__dirname,"../data/products.json" ), productoActualizar)
+        res.redirect('/admin/adminProduct');
     },
     erase: (req,res) => {
         let cont = 1;

@@ -31,6 +31,7 @@
 
 .priceDiscount input,
 .productState input{
+    color: #666;
     width: 34%;
 }
 
