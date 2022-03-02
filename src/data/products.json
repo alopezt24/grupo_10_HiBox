@@ -295,5 +295,16 @@
     "detalle": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos esse id odio nobis ipsum molestias fugit! Nemo dolore totam ratione nostrum aliquid veniam, illum, qui eligendi iure at et in!",
     "img": "/images/products/img-producto-gastronomia-familiar-03.jpg",
     "estado": "destacado"
+  },
+  {
+    "id": 28,
+    "nombre": "Prueba",
+    "categoria": "aventura",
+    "subCategoria": "individual",
+    "precio": 53.23,
+    "precioAnterior": 65.12,
+    "estado": "oferta",
+    "detalle": "lllll",
+    "img": "/images/products/img-1646242618540.png"
   }
 ]

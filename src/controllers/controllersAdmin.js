@@ -46,6 +46,8 @@ const controllers = {
             ...req.body,
             img
         }
+        nuevoProducto.precio = parseFloat(nuevoProducto.precio);
+        nuevoProducto.precioAnterior = parseFloat(nuevoProducto.precioAnterior);
         products.push(nuevoProducto);
         let nuevoProductoGuardar = JSON.stringify( products, null , 2);
         fs.writeFileSync(path.resolve(__dirname, "../data/products.json"), nuevoProductoGuardar);
@@ -72,14 +74,14 @@ const controllers = {
             ...req.body,
             img
         };
-
+        productToEdit.precio = parseFloat(productToEdit.precio);
+        productToEdit.precioAnterior = parseFloat(productToEdit.precioAnterior);
         let newProducts = products.map (product => {
-if (product.id == productToEdit.id){
-return product = {...productToEdit};
-}
-return product;
-        })
-
+        if (product.id == productToEdit.id){
+            return product = {...productToEdit};
+            }
+        return product;
+        });
         fs.writeFileSync (productsFilePath, JSON.stringify (newProducts, null, ' '));
         res.redirect('/admin/adminProduct');
         /* req.body.id = req.params.id;

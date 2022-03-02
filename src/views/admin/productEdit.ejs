@@ -31,8 +31,8 @@
 					</select>
 				</div>
 				<div class="priceDiscount">
-					<input type="number" name="precio" placeholder="$6.770" required value="<%= productoEditar.precio%>">
-					<input type="number" name="precioAnterior" placeholder="$9.850" required value="<%= productoEditar.precioAnterior%>">
+					<input type="number" step="any" name="precio" placeholder="$6.770" required value="<%= productoEditar.precio%>">
+					<input type="number" step="any" name="precioAnterior" placeholder="$9.850" required value="<%= productoEditar.precioAnterior%>">
 
 					<select name="estado" id="estado" class="productState">
 						<option disabled value="<%= productoEditar.estado%>">Estado de producto</option>
