@@ -9,6 +9,9 @@ const routes = Router();
 //requiero los controladores
 const controllersUsers = require('../controllers/controllersUsers');
 
+//requiero el middleware para validaciones
+const validations = require('../middleware/middlewareUserRegValidation');
+
 //*** Configura el storage (destination, filename) ***/
 var storage = multer.diskStorage({
     destination:function(req,file,cb){
@@ -18,10 +21,14 @@ var storage = multer.diskStorage({
         cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname));
     }
 });
+//variable upload con multer
 var upload = multer ({storage});
 
 //realizo las renderizaciones de users
 routes.get ("/register", controllersUsers.register);
+//tomo los datos de registro para uno nuevo con las validaciones
+routes.post ("/register", upload.single('img'), validations, controllersUsers.processRegister);
+
 routes.get ("/login", controllersUsers.login);
 
 module.exports = routes;

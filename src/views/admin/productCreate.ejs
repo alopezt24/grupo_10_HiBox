@@ -9,9 +9,12 @@
 		<section class="conteiner-newProduct">
 			<h3>Crear Productos</h3>
 			<form class="form-newProduct" action="../admin/productCreate" method="post" enctype="multipart/form-data">
-				<input type="text" name="nombre" placeholder="Nombre de Producto" required>
+				<input type="text" name="nombre" placeholder="Nombre de Producto" value="<%= locals.oldData ? oldData.nombre : null %>">
+				<% if (locals.errors && errors.nombre) { %>
+					<p style="color: blue;" style="font-size: 8px;"><%= errors.nombre.msg %> </p>
+				<% } %>
 				<div class="items-select">
-				<select name="categoria" id="categoria" class="productCategory">
+				<select name="categoria" id="categoria" class="productCategory" >
 					<option disabled value="Categoría del Producto">Categoría del Producto</option>
 					<option value="aventura">Aventura</option>
 					<option value="entretenimiento">Entretenimiento</option>
@@ -25,20 +28,35 @@
 				</select>
 			    </div>
 				<div class="priceDiscount">
-					<input type="number" step="any" name="precio" placeholder="Precio de Producto" required>
-					<input type="number" step="any" name="precioAnterior" placeholder="Descuento" required>
+					<input type="number" step="any" name="precio" placeholder="Precio de Producto" value="<%= locals.oldData ? oldData.precio : null %>">
+					<% if (locals.errors && errors.precio) { %>
+						<p style="color: blue;" style="font-size: 8px;"><%= errors.precio.msg %> </p>
+					<% } %>
+					<input type="number" step="any" name="precioAnterior" placeholder="Descuento" value="<%= locals.oldData ? oldData.precioAnterior : null %>">
+					<% if (locals.errors && errors.precioAnterior) { %>
+						<p style="color: blue;" style="font-size: 8px;"><%= errors.precioAnterior.msg %> </p>
+					<% } %>
 					<select name="estado" id="estado" class="productState">
-						<option disabled value="Estado de producto">Estado de producto</option>
-						<option value="nuevo">Nuevo</option>
-						<option value="oferta">Oferta</option>
-						<option value="destacado">Destacado</option>
+						<option value="Estado de producto">Estado de producto</option>
+						
+						<% let opciones = ['nuevo','oferta','destacado'] %>
+						
+						<% for (const unaOpcion of opciones) { %>
+						<option value="<%= unaOpcion %>" <%= locals.oldData && (unaOpcion === oldData.estado)? 'selected' : null %>><%= unaOpcion %></option>
+						<% } %>
+					
 					</select>
 				</div>
 				<div class="uploadFile">
 				<label for="img" class="form-label">Imagen de producto:</label>
 				<input type="file" name="img" value="fotoProd" class="botonFile">
 			   </div>
-			   <textarea name="detalle" id="detalle" placeholder="Detalle de Producto" class="textArea"></textarea>
+			   <textarea name="detalle" id="detalle" placeholder="Detalle de Producto" class="textArea" value="<%= locals.oldData ? oldData.detalle : null %>"></textarea>
+			   	<% if (locals.errors && errors.detalle) { %>
+					<div style="color: blue;" style="font-size: 8px;">
+						<p><%= errors.detalle.msg %> </p>
+					</div>
+				<% } %>
 			   <button type="submit" class="enviar">Enviar</button>
 			   <button type="reset" class="borrar">Borrar</button>
 			</form>

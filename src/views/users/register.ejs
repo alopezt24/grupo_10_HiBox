@@ -9,16 +9,51 @@
     <main class="register">
         <section class="conteiner-users">
             <h3>Registrate</h3>
-            <form class="form-login" action="/register" method="post">
+            <form class="form-login" action="/users/register" method="POST" enctype="multipart/form-data">
                 
                
-                <input type="text" name="first_name" placeholder="Nombre" required>
-                <input type="text" name="last_name" placeholder="Apellido" required>
-                <input type="email" name="email" placeholder="Correo electrónico" required>
-                <input type="password" name="psw" placeholder="Contraseña" required>
-                <input type="password" name="confirm-psw" placeholder="Confirmar contraseña" required>
-                <input type="date" name="birth_date" id="birth_date">
+                <input type="text" name="firstName" placeholder="Nombre" value="<%= locals.oldData ? oldData.firstName : null %>">
+                <% if (locals.errors && errors.firstName) { %>
+                   <div style="color: blue;" style="font-size: 8px;">
+                       <p><%= errors.firstName.msg %> </p>
+                   </div>
+                <% } %>
+                <input type="text" name="lastName" placeholder="Apellido" value="<%= locals.oldData ? oldData.lastName : null %>">
+                <% if (locals.errors && errors.lastName) { %>
+                    <div style="color: blue;" style="font-size: 8px;">
+                        <p><%= errors.lastName.msg %> </p>
+                    </div>
+                 <% } %>
+                <input type="text" name="email" placeholder="Correo electrónico" value="<%= locals.oldData ? oldData.email : null %>">
+                <% if (locals.errors && errors.email) { %>
+                    <div style="color: blue;" style="font-size: 8px;">
+                        <p><%= errors.email.msg %> </p>
+                    </div>
+                 <% } %>
+                <input type="password" name="psw" placeholder="Contraseña">
+                <% if (locals.errors && errors.psw) { %>
+                    <div style="color: blue;" style="font-size: 8px;">
+                        <p><%= errors.psw.msg %> </p>
+                    </div>
+                 <% } %>
+                <input type="password" name="confirmPsw" placeholder="Confirmar contraseña">
+                <% if (locals.errors && errors.confirmPsw) { %>
+                    <div style="color: blue;" style="font-size: 8px;">
+                        <p><%= errors.confirmPsw.msg %> </p>
+                    </div>
+                 <% } %>
+                <input type="date" name="birthDate" id="birthDate" value="<%= locals.oldData ? oldData.birthDate : null %>">
+                <% if (locals.errors && errors.birthDate) { %>
+                    <div style="color: blue;" style="font-size: 8px;">
+                        <p><%= errors.birthDate.msg %> </p>
+                    </div>
+                 <% } %>
                 <input type="file" name="img">
+                <% if (locals.errors && errors.img) { %>
+                    <div style="color: blue;" style="font-size: 8px;">
+                        <p><%= errors.img.msg %> </p>
+                    </div>
+                 <% } %>
 
 
                 <button type="submit" class="enviar">Registrarme</button>

@@ -2,6 +2,7 @@ const { create } = require('domain');
 const express = require('express');
 const fs = require('fs');
 const path = require ("path");
+const { validationResult } = require('express-validator');
 
 const productsFilePath = path.join(__dirname, "../data/products.json");
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
@@ -23,35 +24,43 @@ const controllers = {
         res.render(path.resolve(__dirname, '../views/admin/productDetail'), {miProducto})
     },
     save: (req,res) =>{
-        let ultimoProducto = products.pop();
-        products.push (ultimoProducto);
-
-        let img
-			if(req.file != undefined){
-				img = "/images/products/" + req.file.filename
-			} else {
-				img = '/images/products/default-image.jpg'
-			}
-
-        let nuevoProducto = {
-            id: ultimoProducto.id +1,
-            /*nombre: req.body.nombre,
-            categoria: req.body.categoria,
-            subcategoria: req.body.subcategoria,
-            precio: req.body.precio,
-            precioAnterior: req.body.precioAnterior,
-            detalle: req.body.detalle,
-            img: "/images/products/" + req.file.filename,
-            estado: req.body.estado   */
-            ...req.body,
-            img
+        const resultValidation = validationResult(req);
+        if(resultValidation.errors.length > 0) {
+            res.render('../views/admin/productCreate', {
+                errors: resultValidation.mapped(),
+                oldData: req.body
+            });
+        } else {
+            let ultimoProducto = products.pop();
+            products.push (ultimoProducto);
+            //pregunto si adjunta imagen, sino adjunto la default
+            let img
+            if(req.file != undefined){
+                img = "/images/products/" + req.file.filename
+            } else {
+                img = '/images/products/default-image.jpg'
+            }
+            
+            let nuevoProducto = {
+                id: ultimoProducto.id +1,
+                /*nombre: req.body.nombre,
+                categoria: req.body.categoria,
+                subcategoria: req.body.subcategoria,
+                precio: req.body.precio,
+                precioAnterior: req.body.precioAnterior,
+                detalle: req.body.detalle,
+                img: "/images/products/" + req.file.filename,
+                estado: req.body.estado   */
+                ...req.body,
+                img
+            }
+            nuevoProducto.precio = parseFloat(nuevoProducto.precio);
+            nuevoProducto.precioAnterior = parseFloat(nuevoProducto.precioAnterior);
+            products.push(nuevoProducto);
+            let nuevoProductoGuardar = JSON.stringify( products, null , 2);
+            fs.writeFileSync(path.resolve(__dirname, "../data/products.json"), nuevoProductoGuardar);
+            res.redirect('../admin/adminProduct');
         }
-        nuevoProducto.precio = parseFloat(nuevoProducto.precio);
-        nuevoProducto.precioAnterior = parseFloat(nuevoProducto.precioAnterior);
-        products.push(nuevoProducto);
-        let nuevoProductoGuardar = JSON.stringify( products, null , 2);
-        fs.writeFileSync(path.resolve(__dirname, "../data/products.json"), nuevoProductoGuardar);
-        res.redirect('../admin/adminProduct');
     },
     edit: (req,res)=>{
         const modoId = req.params.id;
