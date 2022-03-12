@@ -28,7 +28,7 @@ routes.get ("/productCreate", controllersAdmin.create);
 routes.post('/productCreate', upload.single('img'), validations, controllersAdmin.save);
 routes.get('/productDetail/:id', controllersAdmin.show);
 routes.get('/productEdit/:id', controllersAdmin.edit);
-routes.put('/productEdit/:id', upload.single('img'), controllersAdmin.update);
+routes.put('/productEdit/:id', upload.single('img'), validations, controllersAdmin.update);
 routes.delete('/:id', controllersAdmin.erase);
 
 

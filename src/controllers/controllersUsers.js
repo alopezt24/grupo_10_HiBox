@@ -11,7 +11,7 @@ const controllers = {
         res.render('../views/users/register');
     },
     processRegister: (req , res) => {
-        const resultValidation = validationResult(req);
+        let resultValidation = validationResult(req);
         if(resultValidation.errors.length > 0) {
             res.render('../views/users/register', {
                 errors: resultValidation.mapped(),

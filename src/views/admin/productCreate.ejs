@@ -11,41 +11,60 @@
 			<form class="form-newProduct" action="../admin/productCreate" method="post" enctype="multipart/form-data">
 				<input type="text" name="nombre" placeholder="Nombre de Producto" value="<%= locals.oldData ? oldData.nombre : null %>">
 				<% if (locals.errors && errors.nombre) { %>
-					<p style="color: blue;" style="font-size: 8px;"><%= errors.nombre.msg %> </p>
+					<p class="invalid"><%= errors.nombre.msg %> </p>
 				<% } %>
 				<div class="items-select">
 				<select name="categoria" id="categoria" class="productCategory" >
-					<option disabled value="Categoría del Producto">Categoría del Producto</option>
-					<option value="aventura">Aventura</option>
-					<option value="entretenimiento">Entretenimiento</option>
-					<option value="gastronomia">Gastronomía</option>
+					<option disabled value="Categoría del Producto" selected>Categoría del Producto</option>
+					
+					<% let opcionesCat = ['Aventura','Entretenimiento','Gastronomia'] %>
+						
+					<% for (const unaOpcion of opcionesCat) { %>
+						<option value="<%= unaOpcion %>" <%= locals.oldData && (unaOpcion === oldData.categoria)? 'selected' : null %>><%= unaOpcion %></option>
+					<% } %>
+
 				</select>
+				<% if (locals.errors && errors.categoria) { %>
+					<p class="invalid"><%= errors.categoria.msg %> </p>
+				<% } %>
 				<select name="subCategoria" id="subCategoria" class="productSubCategory">
-					<option disabled value="Subcategorias">Subcategorias</option>
-					<option value="individual">Individual</option>
-					<option value="acompaniado">Acompañado</option>
-					<option value="familiar">Familiar</option>
+					<option disabled value="Subcategorias" selected>Subcategorias</option>
+					
+					<% let opcionesSubCat = ['Individual','Acompañado','Familiar'] %>
+						
+					<% for (const unaOpcion of opcionesSubCat) { %>
+						<option value="<%= unaOpcion %>" <%= locals.oldData && (unaOpcion === oldData.subCategoria)? 'selected' : null %>><%= unaOpcion %></option>
+					<% } %>
+
 				</select>
+				<% if (locals.errors && errors.subCategoria) { %>
+					<p class="invalid"><%= errors.subCategoria.msg %> </p>
+				<% } %>
 			    </div>
 				<div class="priceDiscount">
 					<input type="number" step="any" name="precio" placeholder="Precio de Producto" value="<%= locals.oldData ? oldData.precio : null %>">
 					<% if (locals.errors && errors.precio) { %>
-						<p style="color: blue;" style="font-size: 8px;"><%= errors.precio.msg %> </p>
+						<p class="invalid"><%= errors.precio.msg %> </p>
 					<% } %>
 					<input type="number" step="any" name="precioAnterior" placeholder="Descuento" value="<%= locals.oldData ? oldData.precioAnterior : null %>">
 					<% if (locals.errors && errors.precioAnterior) { %>
-						<p style="color: blue;" style="font-size: 8px;"><%= errors.precioAnterior.msg %> </p>
+						<p class="invalid"><%= errors.precioAnterior.msg %> </p>
 					<% } %>
-					<select name="estado" id="estado" class="productState">
-						<option value="Estado de producto">Estado de producto</option>
+					<div>
+						<select name="estado" id="estado" class="productState">
+							<option disabled value="Estado de producto" selected>Estado de producto</option>
+							
+							<% let opcionesEstado = ['Nuevo','Oferta','Destacado'] %>
+							
+							<% for (const unaOpcion of opcionesEstado) { %>
+							<option value="<%= unaOpcion %>" <%= locals.oldData && (unaOpcion === oldData.estado)? 'selected' : null %>><%= unaOpcion %></option>
+							<% } %>
 						
-						<% let opciones = ['nuevo','oferta','destacado'] %>
-						
-						<% for (const unaOpcion of opciones) { %>
-						<option value="<%= unaOpcion %>" <%= locals.oldData && (unaOpcion === oldData.estado)? 'selected' : null %>><%= unaOpcion %></option>
+						</select>
+						<% if (locals.errors && errors.estado) { %>
+							<p class="invalid"><%= errors.estado.msg %> </p>
 						<% } %>
-					
-					</select>
+					</div>
 				</div>
 				<div class="uploadFile">
 				<label for="img" class="form-label">Imagen de producto:</label>
@@ -53,9 +72,7 @@
 			   </div>
 			   <textarea name="detalle" id="detalle" placeholder="Detalle de Producto" class="textArea" value="<%= locals.oldData ? oldData.detalle : null %>"></textarea>
 			   	<% if (locals.errors && errors.detalle) { %>
-					<div style="color: blue;" style="font-size: 8px;">
-						<p><%= errors.detalle.msg %> </p>
-					</div>
+					<p class="invalid"><%= errors.detalle.msg %> </p>
 				<% } %>
 			   <button type="submit" class="enviar">Enviar</button>
 			   <button type="reset" class="borrar">Borrar</button>

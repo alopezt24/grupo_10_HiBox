@@ -4,11 +4,11 @@ const {body} = require('express-validator');
 
 //validaciones para registro nuevo de usuario
 const validations = [
-    body('name').notEmpty().withMessage('Se debe completar el campo Nombre'),
+    body('nombre').notEmpty().withMessage('Se debe completar el campo Nombre'),
     body('categoria').notEmpty().withMessage('Seleccionar'),
     body('subCategoria').notEmpty().withMessage('Seleccionar'),
-    body('precio').notEmpty().withMessage('Completar el campo Precio'),
-    body('precioAnterior').notEmpty().withMessage('Completar el campo Descuento'),
+    body('precio').notEmpty().withMessage('Completar'),
+    body('precioAnterior').notEmpty().withMessage('Completar'),
     body('estado').notEmpty().withMessage('Seleccionar'),
     /*body('img').custom((value, {req}) => {
         let file = req.file;

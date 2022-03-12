@@ -24,7 +24,7 @@ const controllers = {
         res.render(path.resolve(__dirname, '../views/admin/productDetail'), {miProducto})
     },
     save: (req,res) =>{
-        const resultValidation = validationResult(req);
+        let resultValidation = validationResult(req);
         if(resultValidation.errors.length > 0) {
             res.render('../views/admin/productCreate', {
                 errors: resultValidation.mapped(),
@@ -69,41 +69,49 @@ const controllers = {
     },
     update: (req,res) =>{
         let id = req.params.id;
-        let productToEdit = products.find (product => product.id == id)
-
-        let img
-        if (req.file != undefined){
-            img = "/images/products/" + req.file.filename
+        let productToEdit = products.find (product => product.id == id);
+        let resultValidation = validationResult(req);
+        if(resultValidation.errors.length > 0) {
+            res.render('../views/admin/productEdit', {
+                errors: resultValidation.mapped(),
+                oldData: req.body,
+                productoEditar: productToEdit
+            });
         } else {
-            img = "/images/products/default-image.jpg"
-        }
+            let img
+            if (req.file != undefined){
+                img = "/images/products/" + req.file.filename
+            } else {
+                img = "/images/products/default-image.jpg"
+            }
 
-        productToEdit = {
-            id: productToEdit.id,
-            ...req.body,
-            img
-        };
-        productToEdit.precio = parseFloat(productToEdit.precio);
-        productToEdit.precioAnterior = parseFloat(productToEdit.precioAnterior);
-        let newProducts = products.map (product => {
-        if (product.id == productToEdit.id){
-            return product = {...productToEdit};
-            }
-        return product;
-        });
-        fs.writeFileSync (productsFilePath, JSON.stringify (newProducts, null, ' '));
-        res.redirect('/admin/adminProduct');
-        /* req.body.id = req.params.id;
-        req.body.img = req.file ? "/images/products/" + req.file.filename : req.body.oldImagen;
-        let productosUpdate = products.map(producto =>{
-            if(producto.id == req.body.id){
-                return producto = req.body;
-            }
-            return producto;
-        })
-        let productoActualizar = JSON.stringify( productosUpdate , null , 2);
-        fs.writeFileSync(path.resolve(__dirname,"../data/products.json" ), productoActualizar)
-        res.redirect('/admin/adminProduct');*/
+            productToEdit = {
+                id: productToEdit.id,
+                ...req.body,
+                img
+            };
+            productToEdit.precio = parseFloat(productToEdit.precio);
+            productToEdit.precioAnterior = parseFloat(productToEdit.precioAnterior);
+            let newProducts = products.map (product => {
+            if (product.id == productToEdit.id){
+                return product = {...productToEdit};
+                }
+            return product;
+            });
+            fs.writeFileSync (productsFilePath, JSON.stringify (newProducts, null, ' '));
+            res.redirect('/admin/adminProduct');
+            /* req.body.id = req.params.id;
+            req.body.img = req.file ? "/images/products/" + req.file.filename : req.body.oldImagen;
+            let productosUpdate = products.map(producto =>{
+                if(producto.id == req.body.id){
+                    return producto = req.body;
+                }
+                return producto;
+            })
+            let productoActualizar = JSON.stringify( productosUpdate , null , 2);
+            fs.writeFileSync(path.resolve(__dirname,"../data/products.json" ), productoActualizar)
+            res.redirect('/admin/adminProduct');*/
+        }
     },
     erase: (req,res) => {
         let cont = 1;

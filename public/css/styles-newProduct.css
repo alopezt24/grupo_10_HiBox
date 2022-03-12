@@ -136,3 +136,9 @@
     .form-newProduct p:hover a{
         color: #fa5f63;
     }
+
+    .invalid {
+        display: block;
+        background-color: lightsalmon;
+        color: black;
+    }
