@@ -7,6 +7,9 @@ const express = require ("express");
 // Pasar poder usar los métodos PUT y DELETE
 const methodOverride =  require('method-override');
 
+//requerimos express session
+const session = require('express-session');
+
 //adentro de app --> aplicacion express
 const app = express(); 
 
@@ -29,6 +32,8 @@ app.use(express.static(pathPublic));
 app.use(express.urlencoded({ extended: false }));
 // Pasar poder pisar el method="POST" en el formulario por PUT y DELETE
 app.use(methodOverride('_method'));
+//aplico el middleware de session
+app.use(session({secret: 'secret', resave: false, saveUninitialized: false}));
 
 //mediante set indico el Engine a utilizar y la carpeta de views
 app.set('view engine', 'ejs');

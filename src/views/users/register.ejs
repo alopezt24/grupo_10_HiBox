@@ -30,10 +30,10 @@
                         <p><%= errors.email.msg %> </p>
                     </div>
                  <% } %>
-                <input type="password" name="psw" placeholder="Contraseña">
-                <% if (locals.errors && errors.psw) { %>
+                <input type="password" name="password" placeholder="Contraseña">
+                <% if (locals.errors && errors.password) { %>
                     <div class="invalid">
-                        <p><%= errors.psw.msg %> </p>
+                        <p><%= errors.password.msg %> </p>
                     </div>
                  <% } %>
                 <input type="password" name="confirmPsw" placeholder="Confirmar contraseña">
@@ -59,7 +59,7 @@
                 <button type="submit" class="enviar">Registrarme</button>
                 
                 <div class="recuerdame">
-                <input type="checkbox" checked="checked" name="terminos-y-condiciones" id="terminos-y-condiciones" value="terminos-y-condiciones">
+                <input type="checkbox" checked="checked" name="terminosYCondiciones" id="terminos-y-condiciones" value="terminos-y-condiciones">
                 <label for="terminos-y-condiciones">Al crear una cuenta, acepta nuestros <a href="#">Terminos & Condiciones</a></label>
                 </div>
                 

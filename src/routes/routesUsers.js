@@ -6,6 +6,12 @@ const path = require('path');
 //guardo la función Router en la constante routes
 const routes = Router();
 
+//requiero el middleware para usuarios logueados
+const guestMiddleware = require('../middleware/guestMiddleware');
+
+//requiero el middleware para cuando no estou logueado y quiero ver el perfil de usuario
+//const authMiddleware = require('../middleware/authMiddleware');
+
 //requiero los controladores
 const controllersUsers = require('../controllers/controllersUsers');
 
@@ -25,10 +31,13 @@ var storage = multer.diskStorage({
 var upload = multer ({storage});
 
 //realizo las renderizaciones de users
-routes.get ("/register", controllersUsers.register);
+routes.get ("/register", guestMiddleware, controllersUsers.register);
 //tomo los datos de registro para uno nuevo con las validaciones
 routes.post ("/register", upload.single('img'), validations, controllersUsers.processRegister);
 
-routes.get ("/login", controllersUsers.login);
+//render al login
+routes.get ("/login", guestMiddleware, controllersUsers.login);
+//tomo los datos para un nuevo pedido de login
+routes.post ("/login", controllersUsers.processLogin);
 
 module.exports = routes;
