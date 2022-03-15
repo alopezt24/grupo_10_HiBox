@@ -91,7 +91,8 @@
         color: black;
     }
 
-    .imageUser {
-        width: 70%;
+    .imageUser img {
+        width: 60%;
+        margin: center;
         border-radius: 50%;
     }

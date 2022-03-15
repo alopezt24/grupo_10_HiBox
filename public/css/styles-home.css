@@ -85,6 +85,12 @@ body {
     padding: 0;
 }
 
+.imgViewMobil img {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
 
 .nav-bar-header-left li,
 .nav-bar-header-right li{
@@ -497,7 +503,9 @@ main section div.products article{
 
 @media (min-width: 768px){
     .cart-icon,
-    .hamburguer-button {
+    .hamburguer-button,
+    .imgViewMobil img
+     {
         display: none;
     }
     .destacado-aventura h3, 
@@ -506,6 +514,16 @@ main section div.products article{
        font-size: 2em;
     }
     
+    .imgView img {
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+    }
+
+    .imgView a  {
+        text-align: center;
+    }
+
     .slider h3 {
         font-size: 4em;
     }
