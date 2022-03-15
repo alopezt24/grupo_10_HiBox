@@ -28,12 +28,22 @@
     
     <div class="nav-bar-header-right">
         <ul>
-            <li><a href="/admin/adminProduct">Administrar</i></a></li>
+            <% if (locals.isLogged) { %>
+                <li><img src="/images/users/<%= locals.userLogged.img %>"><a href="/users/profile">User <%= locals.userLogged.firstName %></i></a></li>
+                <li><a href="/admin/adminProduct">Administrar></i></a></li>
+                <li><a href="/users/logout">Logout</i></a></li>
+            <% } %>
             <!--<li><a href="/admin/productCreate">Crear producto</i></a></li>
             <li><a href="/products/productEdit">Editar producto</i></a></li>-->
-            <li><a href="/users/register">Registrate</i></a></li>
-            <li><a href="/users/login">Login</a></li>
-            <li><a href="/products/productCart"><i class="fas fa-shopping-cart"></i></a></li>
+            <% if (!(locals.isLogged)) { %>
+                <li><a href="/users/register">Registrate</i></a></li>
+                <li><a href="/users/login">Login</a></li>
+            <% } %>
+            <li><a <% if (locals.isLogged) { %> 
+                        href="/products/productCart" 
+                        <% } else { %>
+                            href="/users/login"
+                        <% } %>><i class="fas fa-shopping-cart"></i></a></li>
         </ul>
     </div>
     <div class="nav-header-mobile-right">

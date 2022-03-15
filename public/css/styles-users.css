@@ -90,3 +90,8 @@
         background-color: lightsalmon;
         color: black;
     }
+
+    .imageUser {
+        width: 70%;
+        border-radius: 50%;
+    }

@@ -56,7 +56,7 @@ const controllers = {
             if(bcryptjs.compareSync(req.body.password, userToLogin.password)) {
                 delete userToLogin.password;
                 req.session.userLogged = userToLogin;
-                return res.render('index', {products})
+                return res.render('../views/users/profile', {user: userToLogin})
             }
             return res.render('../views/users/login', {
                 errors: {
@@ -76,6 +76,52 @@ const controllers = {
             }
         });
     
+    },
+
+    profile: (req,res) => {
+        res.render('../views/users/profile', { user: req.session.userLogged});
+    },
+
+    profileEdit: (req,res) => {
+        res.render('../views/users/profileEdit', { user: req.session.userLogged});
+    },
+
+    profileSave: (req,res) => {        
+        //validacion de los campos del formulario
+        let resultValidation = validationResult(req);
+        if(resultValidation.errors.length > 0) {
+            return res.render('../views/users/profileEdit', {
+                errors: resultValidation.mapped(),
+                oldData: req.body,
+                user: userInDb
+            });
+        }
+        let userInDb = User.findByField('id',req.params.id);
+        if(userInDb) {
+            return res.render('../views/users/profileEdit', {
+                errors: {
+                    email: {
+                        msg: 'El correo ya se encuentra registrado'
+                    }
+                },
+                oldData: req.body,
+                user: userInDb
+            });
+        };
+        if (req.file != undefined){
+            User.edit (req.body, userInDb.img);
+        } else {
+            User.edit (req.body, req.file.filename);
+        }
+       
+        //redirecciona al profile editado
+        res.render('users/profile');
+    },
+
+
+    logout: (req,res) => {
+        req.session.destroy();
+        res.render('index', {products});
     }
 }
 

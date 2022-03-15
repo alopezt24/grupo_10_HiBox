@@ -6,6 +6,15 @@
   "email": "hgs.linux@gmail.com",
   "password": "$2a$10$yFd3/TKdyrcZKcAFhYHdtu3auNusBAs5V8wSaEj7gbiylyYxFrxAO",
   "birthDate": "2022-03-14",
-  "img": "/images/users/img-1647149962317.png"
- }
+  "img": "/images/users/default-user.png"
+ },
+ {
+  "id": 2,
+  "firstName": "Horacio",
+  "lastName": "Seren",
+  "email": "hgs.linux@gmail.com",
+  "password": "$2a$10$yFd3/TKdyrcZKcAFhYHdtu3auNusBAs5V8wSaEj7gbiylyYxFrxAO",
+  "birthDate": "2022-03-14",
+  "img": "/images/users/default-user.png"
+   }
 ]

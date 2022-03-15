@@ -1,5 +1,6 @@
 const fs = require ('fs');
 const bcryptjs = require('bcryptjs');
+const { all } = require('../routes/routesUsers');
 
 const User = {
     fileName: './data/users.json',
@@ -24,7 +25,7 @@ const User = {
 
     findByPk: function (id) {
         let allUsers = this.findAll();
-        let userRequire = allUsers.find(oneUser => oneUser.id === id);
+        let userRequire = allUsers.find(oneUser => oneUser.id == id);
         return userRequire;
     },
 
@@ -52,9 +53,13 @@ const User = {
         fs.writeFileSync (this.fileName, JSON.stringify (allUsers, null, ' '));
     },
 
+    edit: function(userData, ImgName) {
+        resizeBy.send('Hola, falta editar');
+    },
+
     delete: function (id) {
         let allUsers = this.findAll();
-        let finalUsers = allUsers.find(oneUser => oneUser.id !== id);
+        let finalUsers = allUsers.find(oneUser => oneUser.id != id);
         fs.writeFileSync (this.fileName, JSON.stringify (finalUsers, null, ' '));
     }
 }

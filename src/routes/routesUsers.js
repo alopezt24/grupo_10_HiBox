@@ -10,13 +10,14 @@ const routes = Router();
 const guestMiddleware = require('../middleware/guestMiddleware');
 
 //requiero el middleware para cuando no estou logueado y quiero ver el perfil de usuario
-//const authMiddleware = require('../middleware/authMiddleware');
+const authMiddleware = require('../middleware/authMiddleware');
 
 //requiero los controladores
 const controllersUsers = require('../controllers/controllersUsers');
 
 //requiero el middleware para validaciones
 const validations = require('../middleware/middlewareUserRegValidation');
+const validationsProfile = require('../middleware/middlewareUserEditProfileValidation');
 
 //*** Configura el storage (destination, filename) ***/
 var storage = multer.diskStorage({
@@ -39,5 +40,15 @@ routes.post ("/register", upload.single('img'), validations, controllersUsers.pr
 routes.get ("/login", guestMiddleware, controllersUsers.login);
 //tomo los datos para un nuevo pedido de login
 routes.post ("/login", controllersUsers.processLogin);
+
+//render al profile
+routes.get ("/profile", authMiddleware, controllersUsers.profile);
+//get a la edición de usuario
+routes.get ("/profile/edit/:id", authMiddleware, controllersUsers.profileEdit);
+//tomo los datos para editarlo
+routes.put ("/profile/edit/:id", upload.single('img'), validationsProfile, controllersUsers.profileSave);
+
+//situaciones de login
+routes.get ("/logout",controllersUsers.logout);
 
 module.exports = routes;

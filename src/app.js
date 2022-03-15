@@ -13,6 +13,9 @@ const session = require('express-session');
 //adentro de app --> aplicacion express
 const app = express(); 
 
+//defino la ruta del middleware de usuario logueado
+const middlewareUserLogged = require('./middleware/middlewareUserLogged');
+
 //definimos el puerto una vez, para usarlo las veces necesarias
 const port = 3030;
 
@@ -34,6 +37,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride('_method'));
 //aplico el middleware de session
 app.use(session({secret: 'secret', resave: false, saveUninitialized: false}));
+//llamo al middleware de usuario logueado
+app.use(middlewareUserLogged);
 
 //mediante set indico el Engine a utilizar y la carpeta de views
 app.set('view engine', 'ejs');

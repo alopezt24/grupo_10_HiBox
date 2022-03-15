@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include ('../partials/head', {title: "User Profile", style: "/css/styles-users.css"}) %>
+    
+<body>
+       
+    <!-- Inclución de Header -->
+    <%- include ('../partials/header') %>    
+
+    <main class="register">
+        <section class="conteiner-users">
+            <div class="imageUser">
+                <img src="<%= user.img %>", alt="Imagen de usuario" />
+                <h1> <%= user.firstName + " " + user.lastName %> </h1>
+            </div>
+            <article class="datosDeUsuario">
+                <h5> Nombre de suario:  <%= user.email %> </h3>
+                <h5> Fecha de Nacimiento: <%= user.birthDate %> </h3>
+                <h5> Email <%= user.email %> </h3>
+            </article>
+            <form class="form-login" action="/users/profile/edit/<%= user.id %>" method="GET">
+                <button type="submit" class="enviar">Editar</button>
+            </form>
+        </section>
+    </main>
+
+        <!-- Inclución de Header -->
+    <%- include ('../partials/footer') %>  
+</body>
+</html>

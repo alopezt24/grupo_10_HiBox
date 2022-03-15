@@ -1,6 +1,6 @@
 function guestMiddleware (req, res, next) {
     if(req.session.userLogged) {
-        return res.send('ya estas logueado');
+        return res.render('../views/users/profile', {user: req.session.userLogged});
     }
     next();
 }
