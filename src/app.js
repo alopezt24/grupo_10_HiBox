@@ -16,6 +16,9 @@ const app = express();
 //defino la ruta del middleware de usuario logueado
 const middlewareUserLogged = require('./middleware/middlewareUserLogged');
 
+//requerimos el middleware cokies
+const cookies = require('cookie-parser');
+
 //definimos el puerto una vez, para usarlo las veces necesarias
 const port = 3030;
 
@@ -35,6 +38,8 @@ app.use(express.static(pathPublic));
 app.use(express.urlencoded({ extended: false }));
 // Pasar poder pisar el method="POST" en el formulario por PUT y DELETE
 app.use(methodOverride('_method'));
+//llamo al middleware de cookies
+app.use(cookies());
 //aplico el middleware de session
 app.use(session({secret: 'secret', resave: false, saveUninitialized: false}));
 //llamo al middleware de usuario logueado

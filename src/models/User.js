@@ -45,7 +45,7 @@ const User = {
             ...userData,
             password: bcryptjs.hashSync(userData.password, 10),
             //birthDate: userData.birthDate,
-            img: "/images/users/" + imgName
+            img: imgName
         }
         delete newUser.confirmPsw; 
         delete newUser.terminosYCondiciones;
@@ -53,13 +53,23 @@ const User = {
         fs.writeFileSync (this.fileName, JSON.stringify (allUsers, null, ' '));
     },
 
-    edit: function(userData, ImgName) {
-        resizeBy.send('Hola, falta editar');
+    edit: function(userData, imgName) {
+        let allUsers = this.findAll();
+        let userRequire = allUsers.find(oneUser => oneUser.emal === userData.emal);
+        let newUser = {
+            ...userData,
+            password: userRequire.password,
+            confirmPsw: userRequire.confirmPsw,
+            img: imgName
+        };
+        let finalUsers = allUsers.filter(oneUser => oneUser.id != userRequire.id);
+        finalUsers.push(newUser);
+        fs.writeFileSync (this.fileName, JSON.stringify (finalUsers, null, ' '));
     },
 
     delete: function (id) {
         let allUsers = this.findAll();
-        let finalUsers = allUsers.find(oneUser => oneUser.id != id);
+        let finalUsers = allUsers.filter(oneUser => oneUser.id != id);
         fs.writeFileSync (this.fileName, JSON.stringify (finalUsers, null, ' '));
     }
 }

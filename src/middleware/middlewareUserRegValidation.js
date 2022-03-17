@@ -15,20 +15,7 @@ const validations = [
         }
         return true;
     }),
-    body('birthDate').notEmpty().withMessage('Se debe completar el campo con la fecha de nacimiento'),
-    body('img').custom((value, {req}) => {
-        let file = req.file;
-        let acceptedExtensions = ['.jpg','.png','.gif'];
-        if(!file) {
-            throw new Error ('Debe seleccionar una imagen a subir');
-        } else {
-            let fileExtension = path.extname(file.originalname);
-            if(!acceptedExtensions.includes(fileExtension)) {
-                throw new Error(`Las extensiones permitidas son ${acceptedExtensions.join(', ')}`);
-            }
-        }
-        return true;
-    })
+    body('birthDate').notEmpty().withMessage('Se debe completar el campo con la fecha de nacimiento')
 ]
 
 module.exports = validations;

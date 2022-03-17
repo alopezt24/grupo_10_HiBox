@@ -41,7 +41,11 @@ const controllers = {
         };
 
         //creacion de un nuevo user en la base de datos
-        User.create(req.body, req.file.filename);
+        if (req.file != undefined){
+            User.create (req.body, userInDb.img);
+        } else {
+            User.create(req.body, "default-user.png");
+        }
         //redirecciona al login
         res.render('users/login');
     },
@@ -56,6 +60,10 @@ const controllers = {
             if(bcryptjs.compareSync(req.body.password, userToLogin.password)) {
                 delete userToLogin.password;
                 req.session.userLogged = userToLogin;
+
+                if (req.body.recuerdame) {
+                    res.cookie('userEmail', req.body.email, {maxAge: ((1000)*60)*60});
+                }
                 return res.render('../views/users/profile', {user: userToLogin})
             }
             return res.render('../views/users/login', {
@@ -109,9 +117,9 @@ const controllers = {
             });
         };
         if (req.file != undefined){
-            User.edit (req.body, userInDb.img);
+            User.edit (req.body, "/images/users/"+req.file.filename, userInDb);
         } else {
-            User.edit (req.body, req.file.filename);
+            User.edit (req.body, userInDb.img);
         }
        
         //redirecciona al profile editado
@@ -120,6 +128,7 @@ const controllers = {
 
 
     logout: (req,res) => {
+        res.clearCookie('userEmail');
         req.session.destroy();
         res.render('index', {products});
     }

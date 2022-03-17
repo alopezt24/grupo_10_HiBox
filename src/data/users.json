@@ -16,5 +16,14 @@
   "password": "$2a$10$yFd3/TKdyrcZKcAFhYHdtu3auNusBAs5V8wSaEj7gbiylyYxFrxAO",
   "birthDate": "2022-03-14",
   "img": "/images/users/default-user.png"
-   }
+ },
+ {
+  "id": 3,
+  "firstName": "Soy",
+  "lastName": "Prueba",
+  "email": "alopezt24@gmail.com",
+  "password": "$2a$10$qV8kwkAWFwKKNZVSNawuNeScdhA4sP/gFVJmaGmNxuhc0nWHKbUYa",
+  "birthDate": "2022-03-18",
+  "img": "/images/users/default-user.png"
+ }
 ]
