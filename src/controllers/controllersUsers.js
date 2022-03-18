@@ -64,6 +64,8 @@ const controllers = {
                 if (req.body.recuerdame) {
                     res.cookie('userEmail', req.body.email, {maxAge: ((1000)*60)*60});
                 }
+                
+                //login de user administrador o user comun
                 return res.render('../views/users/profile', {user: userToLogin})
             }
             return res.render('../views/users/login', {

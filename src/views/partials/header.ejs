@@ -50,7 +50,12 @@
         <div class="imgViewMobil">
               <a href="/users/profile"> <img src="<%= locals.userLogged.img %>"> </a>
         </div>
-    <% } %> 
+    <% } else { %>
+        <div class="imgViewMobil">
+            <a href="/users/login"> <img src="/images/users/default-user.png"> </a>
+      </div>
+    <% } %>
+    
     <div class="nav-header-mobile-right">
         <a href="/products/productCart" class="cart-icon">
             <i class="fas fa-shopping-cart"></i>
