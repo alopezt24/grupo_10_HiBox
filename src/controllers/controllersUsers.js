@@ -44,7 +44,7 @@ const controllers = {
         if (req.file != undefined){
             User.create (req.body, userInDb.img);
         } else {
-            User.create(req.body, "default-user.png");
+            User.create(req.body, "/images/users/default-user.png");
         }
         //redirecciona al login
         res.render('users/login');
@@ -117,9 +117,9 @@ const controllers = {
             });
         };
         if (req.file != undefined){
-            User.edit (req.body, "/images/users/"+req.file.filename, userInDb);
-        } else {
             User.edit (req.body, userInDb.img);
+        } else {
+            User.edit (req.body, "/images/users/" + req.file.filename, userInDb);
         }
        
         //redirecciona al profile editado

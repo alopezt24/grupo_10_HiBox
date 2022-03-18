@@ -25,5 +25,14 @@
   "password": "$2a$10$qV8kwkAWFwKKNZVSNawuNeScdhA4sP/gFVJmaGmNxuhc0nWHKbUYa",
   "birthDate": "2022-03-18",
   "img": "/images/users/default-user.png"
+ },
+ {
+  "id": 4,
+  "firstName": "admin",
+  "lastName": "admin",
+  "email": "admin@adminuser.com",
+  "password": "$2a$10$suUPdyd7q5wOrVDA5rhXAehp74BmmKcuXRfys1Spwq6UA135tcNui",
+  "birthDate": "2022-03-23",
+  "img": "/images/users/default-user.png"
  }
 ]

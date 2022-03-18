@@ -30,7 +30,9 @@
         <ul>
             <% if (locals.isLogged) { %>
                 <li class="imgView"><img src="<%= locals.userLogged.img %>"> <a href="/users/profile"><%= locals.userLogged.firstName %></a></li>
-                <li><a href="/admin/adminProduct">Administrar</a></li>
+                <% if(locals.userLogged.email === "admin@adminuser.com") { %>
+                    <li><a href="/admin/adminProduct">Administrar</a></li>
+                <% } %>
                 <li><a href="/users/logout">Logout</a></li>
             <% } %>
             <% if (!(locals.isLogged)) { %>
