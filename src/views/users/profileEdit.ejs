@@ -30,13 +30,13 @@
                         <p><%= errors.email.msg %> </p>
                     </div>
                  <% } %>
-                <input type="password" name="password">
+                <input type="password" name="password" placeholder="Nueva contraseña">
                 <% if (locals.errors && errors.password) { %>
                     <div class="invalid">
                         <p><%= errors.password.msg %> </p>
                     </div>
                  <% } %>
-                <input type="password" name="confirmPsw">
+                <input type="password" name="confirmPsw" placeholder="Confirmar contraseña">
                 <% if (locals.errors && errors.confirmPsw) { %>
                     <div class="invalid">
                         <p><%= errors.confirmPsw.msg %> </p>

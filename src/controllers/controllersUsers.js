@@ -42,7 +42,7 @@ const controllers = {
 
         //creacion de un nuevo user en la base de datos
         if (req.file != undefined){
-            User.create (req.body, userInDb.img);
+            User.create (req.body, req.file.filename);
         } else {
             User.create(req.body, "/images/users/default-user.png");
         }
@@ -117,9 +117,9 @@ const controllers = {
             });
         };
         if (req.file != undefined){
-            User.edit (req.body, userInDb.img);
-        } else {
             User.edit (req.body, "/images/users/" + req.file.filename, userInDb);
+        } else {
+            User.edit (req.body, userInDb.img);
         }
        
         //redirecciona al profile editado

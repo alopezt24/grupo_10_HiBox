@@ -34,5 +34,23 @@
   "password": "$2a$10$suUPdyd7q5wOrVDA5rhXAehp74BmmKcuXRfys1Spwq6UA135tcNui",
   "birthDate": "2022-03-23",
   "img": "/images/users/default-user.png"
+ },
+ {
+  "id": 5,
+  "firstName": "prueba",
+  "lastName": "prueba",
+  "email": "prueba@hola.com",
+  "password": "$2a$10$siNnS64wT4oaLHdx21kIwuJNH/3cUSQMem0fUPvye5edME3290mfO",
+  "birthDate": "2022-03-24",
+  "img": "/images/users/default-user.png"
+ },
+ {
+  "id": 6,
+  "firstName": "h",
+  "lastName": "h",
+  "email": "hgs@gmail.com",
+  "password": "$2a$10$W2ZKkgDRC7PPamAAIpxxyODC9tco8RPNIzCpeRFQ9M7IgQbyHG4GG",
+  "birthDate": "2022-03-22",
+  "img": "/images/users/default-user.png"
  }
 ]
