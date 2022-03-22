@@ -28,6 +28,13 @@
     .borrar:hover {
         background-color: #7d92a5;
     }
+
+    .registro:hover {
+        background-color: #fa5f63;
+        color: white;
+        border: solid 1px #fa5f63;
+    }
+
     .enviar:hover {
         background-color: #9d8c84;
     }
@@ -44,6 +51,18 @@
         transition: background-color 450ms;
     }
 
+    .registro {
+        font-weight: 600;
+        border-radius: 30px;
+        padding: 8px;
+        color: #1c1b20;
+        font-size: 20px;
+        margin: 20px 0;
+        width: 100%;
+        border: solid 1px #1c1b20;
+        background-color: white;
+        transition: all 450ms;
+    }
 
     .borrar {
         background-color: #1c1b20;
@@ -81,40 +100,74 @@
         transition: color 450ms;
     }
 
+    .form-login img {
+        /* margin: auto; */
+        width: 40%;
+        align-self: center;
+        border-radius: 50%;
+        /* margin-top: 10px; */
+        position: relative;
+        left: 129px;
+    }
+
     .form-login p:hover a{
         color: #fa5f63;
     }
 
     .invalid {
         display: block;
-        background-color: lightsalmon;
-        color: black;
+        color: #fa5f63;
     }
 
 /*--------USER PROFILE-----------------------------*/
-    .conteinerUserProfile {
-        display: block;
-        background-color: #666;
-        text-align: center;
+
+    .editProfile i{
+        position: relative;
+        font-size: 23px;
+        background-color: #FFF;
+        border-radius: 50%;
+        padding: 10px;
+        margin: 10p;
+        top: 132px;
+        left: 50px;
+        color: #fa5f63;
+        border: solid 2px #fa5f63;
+        transition: all 450ms
     }
 
+    .editProfile i:hover{
+        color: #666;
+        border: solid 2px #666;
+        transform: scale(90%) ;
+    }
+
+    .conteinerUserProfile {
+        display: block;
+        text-align: center;
+    }
+    .conteiner-accion{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
     .imageUserProfile img {
-        width: 60%;
+        width: 30%;
         align-self: center;
         border-radius: 50%;
-        margin-top: 10px;
+        /* margin-top: 10px; */
     }
 
     .imageUserProfile h1 {
-        color: white;
+        color: #666;
         margin: 10px 0px;
     }
 
     .datosDeUsuarioProfile {
-        background-color: #96a4b1;
+        /*background-color: #96a4b1;*/
         color: #222;
         margin: auto;
         width: 90%;
+        padding: 10px;
     }
     .datosDeUsuarioProfile p{
         font-size: 17px;

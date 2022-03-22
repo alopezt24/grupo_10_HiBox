@@ -44,7 +44,7 @@ const controllers = {
         if (req.file != undefined){
             User.create (req.body, req.file.filename);
         } else {
-            User.create(req.body, "/images/users/default-user.png");
+            User.create(req.body, "/images/users/default-user.jpg");
         }
         //redirecciona al login
         res.render('users/login');

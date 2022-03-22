@@ -10,18 +10,28 @@
 
     <main class="conteiner-users ">
         <section class="conteinerUserProfile">
+            <div class="editProfile">
+                <a href="/users/profile/edit/<%= user.id %>"><i class="fas fa-pencil-alt"></i></a>
+            </div>
             <div class="imageUserProfile">
                 <img src="<%= user.img %>", alt="Imagen de usuario" />
-                <h1> <%= user.firstName%>  <%= user.lastName %> </h1>
+                <h1>Hola, <%= user.firstName%>. ¡Empecemos!<br>¿Qué quieres hacer hoy?</h1>
             </div>
-            <article class="datosDeUsuarioProfile">
-                <p> Nombre de suario:  <a href="#"><%= user.email %></a> </p>
-                <p> Fecha de Nacimiento: <a href="#"><%= user.birthDate %></a> </p>
-                <p> Correo: <a href="#"><%= user.email %></a> </p>
-            </article>
-            <form class="form-login" action="/users/profile/edit/<%= user.id %>" method="GET">
-                <button type="submit" class="enviar">Editar</button>
-            </form>
+            <div class="conteiner-accion">
+            <div class="datosDeUsuarioProfile">
+                <h1> Administrar Productos</h1>
+                <form class="form-login" action="/admin/adminProduct" method="GET">
+                    <button type="submit" class="enviar">Comenzar</button>
+                </form>
+            </div>
+            <div class="datosDeUsuarioProfile">
+                <h1> Administrar Usuarios</h1>
+                <form class="form-login" action="/users/profile/edit/<%= user.id %>" method="GET">
+                    <button type="submit" class="enviar">Comenzar</button>
+                </form>
+            </div>
+            </div>
+            
         </section>
     </main>
 

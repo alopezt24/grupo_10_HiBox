@@ -30,9 +30,9 @@
         <ul>
             <% if (locals.isLogged) { %>
                 <li class="imgView"><img src="<%= locals.userLogged.img %>"> <a href="/users/profile"><%= locals.userLogged.firstName %></a></li>
-                <% if(locals.userLogged.email === "admin@adminuser.com") { %>
+               <!-- <% if(locals.userLogged.email === "admin@adminuser.com") { %>
                     <li><a href="/admin/adminProduct">Administrar</a></li>
-                <% } %>
+                <% } %>-->
                 <li><a href="/users/logout">Logout</a></li>
             <% } %>
             <% if (!(locals.isLogged)) { %>
@@ -51,15 +51,20 @@
               <a href="/users/profile"> <img src="<%= locals.userLogged.img %>"> </a>
         </div>
     <% } else { %>
-        <div class="imgViewMobil">
-            <a href="/users/login"> <img src="/images/users/default-user.png"> </a>
-      </div>
+        <div class="loginMobile">
+            <a href="/users/login"> <i class="fas fa-sign-in-alt"></i></a>
+        </div>
     <% } %>
     
     <div class="nav-header-mobile-right">
-        <a href="/products/productCart" class="cart-icon">
+        <a class="cart-icon" <% if (locals.isLogged) { %> 
+            href="/products/productCart" 
+            <% } else { %>
+                href="/users/login"
+            <% } %>><i class="fas fa-shopping-cart"></i></a>
+        <!--<a href="/products/productCart" class="cart-icon">
             <i class="fas fa-shopping-cart"></i>
-          </a>
+        </a>-->
     </div>
     </div>
 </header>
