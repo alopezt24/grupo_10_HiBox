@@ -5,9 +5,9 @@
     
     <div class="nav-bar-header">
         <div class="nav-header-mobile-left">
-            <a href="#" class="hamburguer-button">
+            <a href="#" class="hamburguer-button" id="btn">
                 <i class="fas fa-bars"></i>
-              </a>
+            </a>
         </div> 
         
       <div class="nav-bar-header-left">
@@ -67,4 +67,20 @@
         </a>-->
     </div>
     </div>
+    <div class="nav-header-mobile-sub" id="caja">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/products">Products</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">Contact us</a></li>
+        </ul>
+    </div>
+    
+<script>
+    const btn = document.getElementsById("btn");
+    btn.onclick = function(){
+    btn.classList.caja("visible")
+}
+</script>
 </header>

@@ -71,6 +71,11 @@ body {
     margin: auto;
 }
 
+.hamburguer-button:hover .nav-header-mobile-sub{
+      display: block;
+} 
+
+
 .nav-bar-header {
     position: relative;
     display: flex;
@@ -232,13 +237,10 @@ body {
 
 .contenedor-novedades-productos {
         margin: auto;
-        /* display: flex; */
-        /* flex-wrap: wrap; */
-        /* justify-content: flex-start; */
+       
     }
 
 .contenedor-novedades-productos h3 {
-    /* display: flex; */
     text-align: center;
     color: #222;
     font-size: 2em;
@@ -485,6 +487,34 @@ main section div.products article{
          width: 77%; 
     } 
 
+/* Menu Desplegado Mobile */
+
+.nav-header-mobile-sub {
+    display: none;
+    background-color: white;
+    transition: all 450ms;
+}
+
+.nav-header-mobile-sub.visible {
+    display: block;
+}
+
+.nav-header-mobile-sub li a{
+    text-decoration: none;
+    display: block;
+    color: #222;
+    font-size: 16px;
+    padding: 26px;
+    transition: all 450ms;
+}
+
+.nav-header-mobile-sub li:hover a{
+    background-color: #F95F62;
+    font-weight: 600;
+    color: white;
+}
+
+
 @media (min-width: 361px){
     .destacado-aventura p a,
     .destacado-gastronomia p a,
@@ -523,6 +553,9 @@ main section div.products article{
 }
 
 @media (min-width: 768px){
+    .nav-header-mobile-sub {
+       display: none;
+    }
     .nav-bar-header-center .logo img {
         width: 100%; 
    }
