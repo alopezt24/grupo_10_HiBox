@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <%- include ('../partials/head', {title: "Listado de Productos", style: "/css/styles-adminProduct.css"}) %>
+    <%- include ('../partials/head', {title: "Listado de Usuarios", style: "/css/styles-adminProduct.css"}) %>
     
     <body>
 
@@ -11,30 +11,27 @@
         <main>
             <section class="conteiner-adminProduct">
                 <div class="titulo-seccion">
-                <h3>Administrar Productos</h3>
+                <h3>Administrar Usuarios</h3>
                 <div class="crear">
-                    <a href="/admin/productCreate">Agregar un nuevo producto</a>
+                    <a href="/users/usersCreate">Agregar un nuevo usuario</a>
                 </div>
-                <!--<form class="form-adminProduct" action="../admin/createProduct" method="POST">
-                    <button type="submit" class="crear">Crear un nuevo producto</button>
-                </form>-->
                 </div>
                 <div class="products-list">
-                    <% for(let producto of products) { %>
+                    <% for(let user of users) { %>
                      <div class="listado-productos">   
                         <div class="nombre-listado">
-                            <p><%= producto.id%>.- <%= producto.nombre%></p>
+                            <p><%= user.id%>.- <%= user.firstName%> <%= user.lastName%></p>
                         </div>
                         <div class="list-buttons">
 
                             <div class="see">
-                                <a href="/admin/productDetail/<%= producto.id%>">Ver</a>
+                                <a href="/users/userDetail/<%= user.id%>">Ver</a>
                             </div>
 
                             <div class="edit">
-                                <a href="/admin/productEdit/<%= producto.id%>">Editar</a>
+                                <a href="/users/profileEdit/<%= user.id%>">Editar</a>
                             </div>
-                            <form class="form-adminProduct" action="/admin/<%= producto.id%>?_method=DELETE" method="POST">
+                            <form class="form-adminProduct" action="/admin/<%= user.id%>?_method=DELETE" method="POST">
                                 <button type="submit" class="delete">Eliminar</button>
                             </form>
                         </div>

@@ -395,6 +395,7 @@ main section div.products article{
      }
 
     footer {
+        
         display: flex;
         flex-direction: column;
         justify-content: center;

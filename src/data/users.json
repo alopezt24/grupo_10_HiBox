@@ -52,5 +52,14 @@
   "password": "$2a$10$W2ZKkgDRC7PPamAAIpxxyODC9tco8RPNIzCpeRFQ9M7IgQbyHG4GG",
   "birthDate": "2022-03-22",
   "img": "/images/users/default-user.png"
+ },
+ {
+  "id": 7,
+  "firstName": "Nicolas",
+  "lastName": "Novikov",
+  "email": "lalalalala@lalala.alal",
+  "password": "$2a$10$a8SScNrqrSY0OGf.jAmRfOPIrei7YGlgw6.t/zWB4sRF079i8oKee",
+  "birthDate": "1984-05-06",
+  "img": "/images/users/default-user.jpg"
  }
 ]

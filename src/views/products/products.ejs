@@ -9,20 +9,25 @@
           <section class="conteiner-titulo">
             <h3>Inicio > Productos</h3>
             <div class="items-select">
-				<select name="category" id="category" class="productCategory">
-					<option value="">Categoría del Producto</option>
-					<option value="aventura">Aventura</option>
-					<option value="entretenimiento">Entretenimiento</option>
-					<option value="gastronomia">Gastronomía</option>
+				<select name="categoria" id="categoria" class="productCategory" >
+					<option disabled value="Categoría del Producto" selected>Categoría del Producto</option>
+					<% let opcionesCat = ['Aventura','Entretenimiento','Gastronomia'] %>
+					<% for (const unaOpcion of opcionesCat) { %>
+						<option value="<%= unaOpcion %>" <%= locals.oldData && (unaOpcion === oldData.categoria)? 'selected' : null %>><%= unaOpcion %></option>
+					<% } %>
 				</select>
-				<select name="subcategory" id="subcategory" class="productSubCategory">
-					<option value="">Subcategorias</option>
-					<option value="individual">Individual</option>
-					<option value="acompaniado">Acompañado</option>
-					<option value="familiar">Familiar</option>
+				<select name="subCategoria" id="subCategoria" class="productSubCategory">
+					<option disabled value="Subcategorias" selected>Subcategorias</option>
+					<% let opcionesSubCat = ['Individual','Acompañado','Familiar'] %>
+					<% for (const unaOpcion of opcionesSubCat) { %>
+						<option value="<%= unaOpcion %>" <%= locals.oldData && (unaOpcion === oldData.subCategoria)? 'selected' : null %>><%= unaOpcion %></option>
+					<% } %>
 				</select>
+                <form class="form-filtro" action="/products" method="get">
+                    <button type="submit" class="go">Go!</button>
+                </form>
 			    </div>
-          </section>
+               </section>
           <section class="contenedor-novedades-productos">
             <div class="products">
                 <% for(let producto of products) { %>

@@ -12,6 +12,9 @@ const productsFilePath = path.join(__dirname, '../data/products.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 const controllers = {
+    users: (req , res) => {
+        res.render('../views/users/adminUsers', { users });
+    }, 
     register: (req , res) => {
         res.render('../views/users/register');
     },

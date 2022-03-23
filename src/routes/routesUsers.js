@@ -31,6 +31,9 @@ var storage = multer.diskStorage({
 //variable upload con multer
 var upload = multer ({storage});
 
+//genero el listado de usuarios
+routes.get ("/adminUsers", authMiddleware, controllersUsers.users);
+
 //realizo las renderizaciones de users
 routes.get ("/register", guestMiddleware, controllersUsers.register);
 //tomo los datos de registro para uno nuevo con las validaciones

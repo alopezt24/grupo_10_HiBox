@@ -8,7 +8,7 @@
   "precioAnterior": 30000,
   "estado": "nuevo",
   "detalle": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos esse id odio nobis ipsum molestias fugit! Nemo dolore totam ratione nostrum aliquid veniam, illum, qui eligendi iure at et in!",
-  "img": "/images/products/default-image.jpg"
+  "img": "/images/products/img-producto-aventura-individual-01.jpg"
  },
  {
   "id": 2,
@@ -19,7 +19,7 @@
   "precioAnterior": null,
   "estado": "nuevo",
   "detalle": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos esse id odio nobis ipsum molestias fugit! Nemo dolore totam ratione nostrum aliquid veniam, illum, qui eligendi iure at et in!",
-  "img": "/images/products/default-image.jpg"
+  "img": "/images/products/img-producto-aventura-individual-02.jpg"
  },
  {
   "id": 3,

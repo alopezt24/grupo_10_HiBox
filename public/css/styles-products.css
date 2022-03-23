@@ -21,3 +21,19 @@
         color: #666;
         border: solid 1px #666;
 }
+
+.go {
+    background-color: #1c1b20;
+    border: solid 1px #1c1b20;
+    border-radius: 30px;
+    padding: 8px;
+    color: #FFF;
+    margin-left: 5px;
+    width: 80px;
+    transition: background-color 350ms;
+}
+
+.go:hover {
+    background-color: #F95F62;
+    border: solid 1px #F95F62;
+}

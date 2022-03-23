@@ -168,6 +168,7 @@
         margin: auto;
         width: 90%;
         padding: 10px;
+        margin-top: 30px;
     }
     .datosDeUsuarioProfile p{
         font-size: 17px;
@@ -176,4 +177,10 @@
     }
     .datosDeUsuarioProfile p:hover a{
         color: #fa5f63;
+    }
+
+    .datosDeUsuarioProfile i {
+        color: #666;
+        font-size: 50px;
+        margin-bottom: 20px;
     }
