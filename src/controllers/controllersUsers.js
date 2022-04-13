@@ -69,7 +69,11 @@ const controllers = {
                 }
                 
                 //login de user administrador o user comun
-                return res.render('../views/users/profile', {user: userToLogin})
+                if(userToLogin.email == 'admin@adminuser.com') { 
+                    return res.render('../views/users/profile', {user: userToLogin})
+                } else {
+                    return res.render('index', { products });
+                }
             }
             return res.render('../views/users/login', {
                 errors: {
