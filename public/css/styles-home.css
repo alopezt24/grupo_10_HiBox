@@ -61,7 +61,8 @@ body {
 
 .loginMobile,
 .cart-icon,
-.hamburguer-button {
+.hamburguer-button,
+.close-button {
     color: #666;
     display: block;
     padding: 15px 0;
@@ -71,10 +72,13 @@ body {
     margin: auto;
 }
 
-.hamburguer-button:hover .nav-header-mobile-sub{
+.nav-header-mobile-sub{
       display: block;
 } 
 
+.close-button {
+    display: none;
+}
 
 .nav-bar-header {
     position: relative;
@@ -492,7 +496,6 @@ main section div.products article{
 .nav-header-mobile-sub {
     display: none;
     background-color: white;
-    transition: all 450ms;
 }
 
 .nav-header-mobile-sub li a{
@@ -557,6 +560,7 @@ main section div.products article{
    }
     .cart-icon,
     .hamburguer-button,
+    .close-button,
     .imgViewMobil img,
     .loginMobile
      {
