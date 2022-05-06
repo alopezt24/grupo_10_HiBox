@@ -55,6 +55,7 @@ app.listen (port, () =>{
 });
 
 app.use ('/', routesMain);
+app.use ('/pages', routesPages);
 app.use ('/users', routesUsers);
 app.use ('/products', routesProduct);
 app.use ('/admin', routesAdmin);
