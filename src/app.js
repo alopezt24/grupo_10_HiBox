@@ -27,6 +27,7 @@ const routesMain = require("./routes/routesMain");
 const routesProduct = require("./routes/routesProduct");
 const routesUsers = require("./routes/routesUsers");
 const routesAdmin = require("./routes/routesAdmin");
+//const routesPages = require("./routes/routesPages");
 
 //definimos las constantes de path
 const pathPublic = path.resolve(__dirname, "../public");
@@ -55,7 +56,9 @@ app.listen (port, () =>{
 });
 
 app.use ('/', routesMain);
-app.use ('/pages', routesPages);
+app.use ('/about', routesMain);
+app.use ('/contact-us', routesMain);
+app.use ('/faqs', routesMain);
 app.use ('/users', routesUsers);
 app.use ('/products', routesProduct);
 app.use ('/admin', routesAdmin);

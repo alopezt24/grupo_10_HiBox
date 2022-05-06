@@ -9,6 +9,15 @@ const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 const controllers = {
     index: (req , res) => {
         res.render('index', { products });
+    },
+    about: (req , res) => {
+        res.render('about');
+    },
+    faqs: (req , res) => {
+        res.render('faqs');
+    },
+    contactUs: (req , res) => {
+        res.render('contact-us');
     }
 }
 
