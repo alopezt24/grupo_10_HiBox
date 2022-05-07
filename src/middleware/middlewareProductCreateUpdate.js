@@ -1,4 +1,3 @@
-const path = require('path');
 //llamo a express-validator en la variable body
 const {body} = require('express-validator');
 

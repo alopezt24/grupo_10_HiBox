@@ -1,11 +1,19 @@
-function middlewareUserLogged (req,res,next) {
-    const User = require('../models/User');    
-    let userNameLogin = req.cookies.userEmail;
-    let userFromCookie = User.findByField('email', userNameLogin);
+const db = require("../database/models");
 
-    if (userNameLogin) {
-        req.session.userLogged = userFromCookie;
-    }
+function middlewareUserLogged (req,res,next) {
+    //const User = require('../models/User');    
+    let userNameLogin = req.cookies.userEmail;
+    //let userFromCookie = User.findByField('email', userNameLogin);
+
+    /*if (userNameLogin) {
+        db.User.findOne({
+            where: {
+                email: userNameLogin
+            }
+        }).then((userFromCookie) => {
+            req.session.userLogged = userFromCookie;
+        })
+    }*/
 
     res.locals.isLogged = false;
     if(req.session && req.session.userLogged) {

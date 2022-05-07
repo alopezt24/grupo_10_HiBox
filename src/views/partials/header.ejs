@@ -32,8 +32,8 @@
     <div class="nav-bar-header-right">
         <ul>
             <% if (locals.isLogged) { %>
-                <li class="imgView"><img src="<%= locals.userLogged.img %>"> 
-                    <% if(locals.userLogged.email === "admin@adminuser.com") { %>
+                <li class="imgView"><img src="<%= locals.userLogged.userImage %>"> 
+                    <% if(locals.userLogged.userPrivilege) { %>
                         <a href="/users/profile"><%= locals.userLogged.firstName %></a>
                     <% } else { %>
                         <a href="/users/profile/edit/<%= locals.userLogged.id %>"><%= locals.userLogged.firstName %></a>
@@ -55,7 +55,7 @@
     </div>
     <% if (locals.isLogged) { %>
         <div class="imgViewMobil">
-              <a href="/users/profile"> <img src="<%= locals.userLogged.img %>"> </a>
+              <a href="/users/profile"> <img src="<%= locals.userLogged.userImage %>"> </a>
         </div>
     <% } else { %>
         <div class="loginMobile">

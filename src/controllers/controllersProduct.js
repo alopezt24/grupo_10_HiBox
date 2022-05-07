@@ -1,26 +1,26 @@
-const express = require('express');
-const fs = require('fs');
 const path = require("path");
-
-const productsFilePath = path.join(__dirname, '../data/products.json');
-const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+const db = require("../database/models");
 
 const controllers = {
-    index: (req , res) => {
+    index: async (req , res) => {
+        let products = await db.Product.findAll({
+            include: [{association: "states"}]
+        });
         res.render('../views/products/products', { products });
     },
 
-    show: (req,res) =>{
-        let miProducto;
-        products.forEach(producto => {
-            if(producto.id == req.params.id){
-                miProducto = producto;
-            }
+    show: async (req,res) =>{
+        let products = await db.Product.findAll({
+            include: [{association: "states"}]
+        });
+        let miProducto = await db.Product.findByPk(req.params.id, {
+            include: [{association: "states"}, {association: "categorys"}, {association: "subCategorys"}]
         });
         res.render(path.resolve(__dirname, '../views/products/productDetail'), { products , miProducto })
     },
 
-    cart: (req , res) => {
+    cart: async (req , res) => {
+        let products = await db.Product.findAll();
         res.render('../views/products/productCart', { products });
     },
 }

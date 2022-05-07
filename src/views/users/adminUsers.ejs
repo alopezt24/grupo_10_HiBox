@@ -13,7 +13,7 @@
                 <div class="titulo-seccion">
                 <h3>Administrar Usuarios</h3>
                 <div class="crear">
-                    <a href="/users/usersCreate">Agregar un nuevo usuario</a>
+                    <a href="/users/create">Agregar un nuevo usuario</a>
                 </div>
                 </div>
                 <div class="products-list">
@@ -29,9 +29,9 @@
                             </div>
 
                             <div class="edit">
-                                <a href="/users/profileEdit/<%= user.id%>">Editar</a>
+                                <a href="/users/profile/edit/<%= user.id%>">Editar</a>
                             </div>
-                            <form class="form-adminProduct" action="/admin/<%= user.id%>?_method=DELETE" method="POST">
+                            <form class="form-adminProduct" action="/users/<%= user.id%>?_method=DELETE" method="POST">
                                 <button type="submit" class="delete">Eliminar</button>
                             </form>
                         </div>

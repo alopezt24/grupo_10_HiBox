@@ -39,19 +39,19 @@
             <h3>NOVEDADES</h3>
             <div class="products">
                 <% for(let producto of products) { %>
-                    <% if (producto.estado == "nuevo" && producto.id < 12) { %>
+                    <% if (producto.states.state == "Nuevo" && producto.id < 12) { %>
                 <article>
                     <div class="novedad-producto">
-                        <p><%= producto.estado.toUpperCase()%></p>
+                        <p><%= producto.states.state%></p>
                     </div>
-                    <img src="<%= producto.img%>", alt="Imagen Aventura" class="product_img">
+                    <img src="<%= producto.productImage%>", alt="Imagen Aventura" class="product_img">
                     <div class="icono-plus-prtoducto"><i class="fas fa-plus"></i></div>
                     <div class="nombre-producto">
-                        <p><%= producto.nombre%></p>
+                        <p><%= producto.name%></p>
                     </div>
                     <div class="contenedor-detalle">
-                    <p class="precios">$<%= producto.precio%></p>
-                    <p class="discount">$<%= producto.precioAnterior%></p>
+                    <p class="precios">$<%= producto.price%></p>
+                    <p class="discount">$<%= producto.priceBefore%></p>
                     </div>
                     <div class="acceso-detalle">
                         <a href="/products/productDetail/<%= producto.id%>"> <p>Ver detalle</p> </a>
@@ -85,16 +85,16 @@
                     <% if (producto.id < 9) { %>
                 <article>
                     <div class="novedad-producto">
-                        <p><%= producto.estado.toUpperCase()%></p>
+                        <p><%= producto.states.state%></p>
                     </div>
-                    <img src="<%= producto.img%>", alt="Imagen Aventura" class="product_img">
+                    <img src="<%= producto.productImage%>", alt="Imagen Aventura" class="product_img">
                     <div class="icono-plus-prtoducto"><i class="fas fa-plus"></i></div>
                     <div class="nombre-producto">
-                        <p><%= producto.nombre%></p>
+                        <p><%= producto.name%></p>
                     </div>
                     <div class="contenedor-detalle">
-                    <p class="precios">$<%= producto.precio%></p>
-                    <p class="discount">$<%= producto.precioAnterior%></p>
+                    <p class="precios">$<%= producto.price%></p>
+                    <p class="discount">$<%= producto.priceBefore%></p>
                     </div>
                     <div class="acceso-detalle">
                         <a href="/products/productDetail/<%= producto.id%>"> <p>Ver detalle</p> </a>

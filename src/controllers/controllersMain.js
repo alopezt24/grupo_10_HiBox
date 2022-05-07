@@ -1,13 +1,11 @@
-const express = require ('express');
-const fs = require('fs');
 const path = require ("path");
-
-
-const productsFilePath = path.join(__dirname, "../data/products.json");
-const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+const db = require("../database/models");
 
 const controllers = {
-    index: (req , res) => {
+    index: async (req , res) => {
+        let products = await db.Product.findAll({
+            include: [{association: "states"}]
+        });
         res.render('index', { products });
     },
     about: (req , res) => {

@@ -11,43 +11,43 @@
             <div class="left-column">
             
             <div class="novedad-producto-detalle">
-                <p><%= miProducto.estado.toUpperCase()%></p>
+                <p><%= miProducto.states.state%></p>
             </div>
             <div class="productImage">
-                <img src="<%= miProducto.img%>">
+                <img src="<%= miProducto.productImage%>">
             </div>
             </div>
             <div class="contenidoProducto">
                 <div class="nombreDetalle">
                     <p>Nombre Producto:</p>
-                    <h2><%= miProducto.nombre%></h2>
+                    <h2><%= miProducto.name%></h2>
                 </div>
                 <hr>
                 <div class="categoriaSubcategoria">
                 <div class="categoria">
                     <p>Categoría:</p>
-                    <h2><%= miProducto.categoria%></h2>
+                    <h2><%= miProducto.categorys.category%></h2>
                 </div>
                 <div class="subCategoria">
                     <p>Sub Categoría:</p>
-                    <h2><%= miProducto.subCategoria%></h2>
+                    <h2><%= miProducto.subCategorys.subCategory%></h2>
                 </div>
                 </div>
                 <hr>
                 <div class="categoriaSubcategoria">
                     <div class="categoria">
                         <p>Precio:</p>
-                        <h2>$<%= miProducto.precio%></h2>
+                        <h2>$<%= miProducto.price%></h2>
                     </div>
                     <div class="subCategoria">
                         <p>Precio Anterior:</p>
-                        <h2>$<%= miProducto.precioAnterior%></h2>
+                        <h2>$<%= miProducto.priceBefore%></h2>
                     </div>
                     </div>
                     <hr>
                 <div class="nombreDetalle">
                     <p>Descripción:</p>
-                    <h1><%= miProducto.detalle%></h1>
+                    <h1><%= miProducto.detail%></h1>
                 </div>
             </div>
         </section>
