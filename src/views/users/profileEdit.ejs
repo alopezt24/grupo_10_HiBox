@@ -9,7 +9,7 @@
     <main class="register">
         <section class="conteiner-users">
             <h3>Editar Perfil de Usuario</h3>
-            <form class="form-login" action="/users/profile/edit/<%= user.id %>" method="POST" enctype="multipart/form-data">
+            <form class="form-login" action="/users/profile/edit/<%= user.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
                 
                 <img src="<%= user.userImage %>", alt="Imagen de usuario" />
                 <input type="text" name="firstName" value="<%= locals.oldData ? oldData.firstName : user.firstName %>">
@@ -42,12 +42,7 @@
                         <p><%= errors.confirmPsw.msg %> </p>
                     </div>
                  <% } %>
-                <!--<input type="date" name="birthDate" id="birthDate" value="<%= locals.oldData ? oldData.birthDate : user.birthDate %>">
-                <% if (locals.errors && errors.birthDate) { %>
-                    <div class="invalid">
-                        <p><%= errors.birthDate.msg %> </p>
-                    </div>
-                 <% } %>-->
+              
                 <input type="file" name="img">
                 <% if (locals.errors && errors.img) { %>
                     <div class="invalid">

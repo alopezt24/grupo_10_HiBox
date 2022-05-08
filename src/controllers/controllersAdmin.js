@@ -11,7 +11,7 @@ const controllers = {
         let sta = await db.State.findAll();
         let cat = await db.Category.findAll();
         let subCat = await db.SubCategory.findAll();
-        res.render("../views/admin/productCreate", {sta, cat, subCat});
+        res.render(path.resolve(__dirname,'../views/admin/productCreate'), {cat:cat, subCat:subCat, sta:sta});
     },
     show: async (req,res) =>{
         let miProducto = await db.Product.findByPk(req.params.id, {
@@ -20,11 +20,18 @@ const controllers = {
         res.render(path.resolve(__dirname, '../views/admin/productDetail'), {miProducto})
     },
     save: async (req,res) =>{
+        let sta = await db.State.findAll();
+        let cat = await db.Category.findAll();
+        let subCat = await db.SubCategory.findAll();
+
         let resultValidation = validationResult(req);
         if(resultValidation.errors.length > 0) {
             res.render('../views/admin/productCreate', {
                 errors: resultValidation.mapped(),
-                oldData: req.body
+                oldData: req.body,
+                cat: cat,
+                subCat: subCat,
+                sta: sta
             });
         } else {
             let img="";
@@ -49,10 +56,7 @@ const controllers = {
         }
     },
     edit: async (req,res)=>{
-        /*
-        const modoId = req.params.id;
-        let productoEditar = products.find( producto => producto.id == modoId);
-        */
+      
         let sta = await db.State.findAll();
         let cat = await db.Category.findAll();
         let subCat = await db.SubCategory.findAll();
@@ -63,15 +67,27 @@ const controllers = {
         res.render (path.resolve(__dirname,'../views/admin/productEdit'), {productoEditar, sta, cat, subCat});
     },
     update: async (req,res) =>{
+        
+        let productoEditar = await db.Product.findByPk(req.params.id, {
+            include: [{association: "categorys"}, {association: "subCategorys"}, {association: "states"}]
+        });
+        let sta = await db.State.findAll();
+        let cat = await db.Category.findAll();
+        let subCat = await db.SubCategory.findAll();
+
         let resultValidation = validationResult(req);
         if(resultValidation.errors.length > 0) {
+            console.log(resultValidation.errors)
             res.render('../views/admin/productEdit', {
                 errors: resultValidation.mapped(),
                 oldData: req.body,
-                productoEditar: productToEdit
+                productoEditar: productoEditar,
+                cat: cat,
+                subCat: subCat,
+                sta: sta
             });
         } else {
-            let productoEditar = await db.Product.findByPk(req.params.id);
+            
             let img="";
             if (req.file != undefined){
                 img = "/images/products/" + req.file.filename

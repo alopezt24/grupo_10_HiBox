@@ -126,6 +126,7 @@ const controllers = {
 
     profileSave: async (req,res) => {        
         //validacion de los campos del formulario
+        let userInDb = await db.User.findByPk(req.params.id);
         let resultValidation = validationResult(req);
         if(resultValidation.errors.length > 0) {
             return res.render('../views/users/profileEdit', {
@@ -150,10 +151,13 @@ const controllers = {
                             //birthDate: userData.birthDate,
                             userImage: img,
                             userPrivilege: 0
+                        }, {
+                            where: {
+                                id: req.params.id
+                            }
                         })
-
                         let user = await db.User.findByPk(req.params.id);
-                        res.render('../views/users/profileEdit', { user });
+                        res.render(path.resolve(__dirname,'../views/users/profileEdit'), { user });
         
     },
 

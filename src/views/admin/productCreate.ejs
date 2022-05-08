@@ -8,7 +8,7 @@
       <main>
 		<section class="conteiner-newProduct">
 			<h3>Crear Productos</h3>
-			<form class="form-newProduct" action="../admin/productCreate" method="post" enctype="multipart/form-data">
+			<form class="form-newProduct" action="/admin/productCreate" method="POST" enctype="multipart/form-data">
 				<input type="text" name="nombre" placeholder="Nombre de Producto" value="<%= locals.oldData ? oldData.nombre : null %>">
 				<% if (locals.errors && errors.nombre) { %>
 					<p class="invalid"><%= errors.nombre.msg %> </p>
@@ -16,22 +16,18 @@
 				<div class="items-select">
 				<select name="categorias" id="categorias" class="productCategory" >
 					<option disabled value="Categoría del Producto" selected>Categoría del Producto</option>
-										
-					<% for (let unaOpcion of cat) { %>
-						<option value="<%= unaOpcion.id %>" <%= locals.oldData && (unaOpcion.category === oldData.categorias)? 'selected' : null %>><%= unaOpcion.category %></option>
-					<% } %>
-
+					<% for (let i =0; i < cat.length; i++) { %>
+						<option value="<%= cat[i].id %>" <%= locals.oldData && (cat[i].category === oldData.estado)? 'selected' : null %>><%= cat[i].category %></option>
+					<% } %>			
 				</select>
 				<% if (locals.errors && errors.categoria) { %>
 					<p class="invalid"><%= errors.categoria.msg %> </p>
 				<% } %>
 				<select name="subCategoria" id="subCategoria" class="productSubCategory">
 					<option disabled value="Subcategorias" selected>Subcategorias</option>
-						
-					<% for (let unaOpcion2 of subCat) { %>
-						<option value="<%= unaOpcion2.id %>" <%= locals.oldData && (unaOpcion2.subCategory === oldData.subCategoria)? 'selected' : null %>><%= unaOpcion2.subCategory %></option>
-					<% } %>
-
+					<% for (let i =0; i < subCat.length; i++) { %>
+						<option value="<%= subCat[i].id %>" <%= locals.oldData && (subCat[i].subCategory === oldData.estado)? 'selected' : null %>><%= subCat[i].subCategory %></option>
+					<% } %>	
 				</select>
 				<% if (locals.errors && errors.subCategoria) { %>
 					<p class="invalid"><%= errors.subCategoria.msg %> </p>
@@ -49,11 +45,9 @@
 					<div>
 						<select name="estado" id="estado" class="productState">
 							<option disabled value="Estado de producto" selected>Estado de producto</option>
-							
-							<% for (let unaOpcion3 of sta) { %>
-							<option value="<%= unaOpcion3.id %>" <%= locals.oldData && (unaOpcion3.state === oldData.estado)? 'selected' : null %>><%= unaOpcion3.state %></option>
-							<% } %>
-						
+							<% for (let i =0; i < sta.length; i++) { %>
+								<option value="<%= sta[i].id %>" <%= locals.oldData && (sta[i].state === oldData.estado)? 'selected' : null %>><%= sta[i].state %></option>
+							<% } %>	
 						</select>
 						<% if (locals.errors && errors.estado) { %>
 							<p class="invalid"><%= errors.estado.msg %> </p>

@@ -4,7 +4,7 @@ const {body} = require('express-validator');
 //validaciones para registro nuevo de usuario
 const validations = [
     body('nombre').notEmpty().withMessage('Se debe completar el campo Nombre'),
-    body('categoria').notEmpty().withMessage('Seleccionar'),
+    body('categorias').notEmpty().withMessage('Seleccionar'),
     body('subCategoria').notEmpty().withMessage('Seleccionar'),
     body('precio').notEmpty().withMessage('Completar'),
     body('precioAnterior').notEmpty().withMessage('Completar'),
