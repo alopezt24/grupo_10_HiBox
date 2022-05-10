@@ -46,7 +46,7 @@ window.onload = function() {
             password.classList.add('is-valid');
             password.classList.remove('is-invalid');
         };
-        if (confirmPsw.value == '' || !confirmPsw.value.trim() || !password.value) {
+        if ((confirmPsw.value !== password.value) || (confirmPsw.value == '')) {
             errors.push('Por favor verificar el campo Repetir Contraseña');
             confirmPsw.classList.add('is-invalid');
         } else {
