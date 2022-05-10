@@ -9,14 +9,16 @@
     <main class="register">
         <section class="conteiner-page">
             <h3>Contact Us</h3>
-            <form class="form-contact" action="/contact-us" method="POST">
+            <form class="form-contact" action="https://formsubmit.co/niconovikov@gmail.com" method="POST">
                 
-                <input type="text" id="firstName" name="firstName" placeholder="Nombre">
-                <input type="text" id="lastName" name="lastName" placeholder="Apellido">
-                <input type="email" id="email" name="email" placeholder="Correo electrónico">
-                <textarea id="message" name="message" cols="30" rows="10"></textarea>        
+                <input type="text" id="firstName" name="Nombre" placeholder="Nombre">
+                <input type="text" id="lastName" name="Apellido" placeholder="Apellido">
+                <input type="email" id="email" name="Email" placeholder="Correo electrónico">
+                <textarea id="message" name="Comentario" cols="30" rows="10"></textarea>        
                 <ul class="errores"></ul>
                 <button type="submit" class="enviar">Enviar</button>
+                <input type="hidden" name="_next" value="http://localhost:3030/products">
+                <input type="hidden" name="_captcha" value="false">
                 
             </form>
         </section>
