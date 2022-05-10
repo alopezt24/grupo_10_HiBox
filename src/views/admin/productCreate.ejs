@@ -9,59 +9,42 @@
 		<section class="conteiner-newProduct">
 			<h3>Crear Productos</h3>
 			<form class="form-newProduct" action="/admin/productCreate" method="POST" enctype="multipart/form-data">
-				<input type="text" name="nombre" placeholder="Nombre de Producto" value="<%= locals.oldData ? oldData.nombre : null %>">
-				<% if (locals.errors && errors.nombre) { %>
-					<p class="invalid"><%= errors.nombre.msg %> </p>
-				<% } %>
+				<input type="text" id="nombre" name="nombre" placeholder="Nombre de Producto" value="<%= locals.oldData ? oldData.nombre : null %>">
+				
 				<div class="items-select">
-				<select name="categorias" id="categorias" class="productCategory" >
-					<option disabled value="Categoría del Producto" selected>Categoría del Producto</option>
-					<% for (let i =0; i < cat.length; i++) { %>
+				<select name="categorias" id="categorias" class="productCategory">
+					<option disabled value="" selected>Categoría del Producto</option>
+					<% for (let i = 0; i < cat.length; i++) { %>
 						<option value="<%= cat[i].id %>" <%= locals.oldData && (cat[i].category === oldData.estado)? 'selected' : null %>><%= cat[i].category %></option>
 					<% } %>			
 				</select>
-				<% if (locals.errors && errors.categoria) { %>
-					<p class="invalid"><%= errors.categoria.msg %> </p>
-				<% } %>
 				<select name="subCategoria" id="subCategoria" class="productSubCategory">
-					<option disabled value="Subcategorias" selected>Subcategorias</option>
+					<option disabled value="" selected>Subcategorias</option>
 					<% for (let i =0; i < subCat.length; i++) { %>
 						<option value="<%= subCat[i].id %>" <%= locals.oldData && (subCat[i].subCategory === oldData.estado)? 'selected' : null %>><%= subCat[i].subCategory %></option>
 					<% } %>	
 				</select>
-				<% if (locals.errors && errors.subCategoria) { %>
-					<p class="invalid"><%= errors.subCategoria.msg %> </p>
-				<% } %>
 			    </div>
+
 				<div class="priceDiscount">
-					<input type="number" step="any" name="precio" placeholder="Precio de Producto" value="<%= locals.oldData ? oldData.precio : null %>">
-					<% if (locals.errors && errors.precio) { %>
-						<p class="invalid"><%= errors.precio.msg %> </p>
-					<% } %>
-					<input type="number" step="any" name="precioAnterior" placeholder="Descuento" value="<%= locals.oldData ? oldData.precioAnterior : null %>">
-					<% if (locals.errors && errors.precioAnterior) { %>
-						<p class="invalid"><%= errors.precioAnterior.msg %> </p>
-					<% } %>
+					<input type="number" step="any" id="precio" name="precio" placeholder="Precio de Producto" value="<%= locals.oldData ? oldData.precio : null %>">
+					<input type="number" step="any" id="precioAnterior" name="precioAnterior" placeholder="Descuento" value="<%= locals.oldData ? oldData.precioAnterior : null %>">
 					<div>
 						<select name="estado" id="estado" class="productState">
-							<option disabled value="Estado de producto" selected>Estado de producto</option>
+							<option disabled value="" selected>Estado de producto</option>
 							<% for (let i =0; i < sta.length; i++) { %>
-								<option value="<%= sta[i].id %>" <%= locals.oldData && (sta[i].state === oldData.estado)? 'selected' : null %>><%= sta[i].state %></option>
+							<option value="<%= sta[i].id %>" <%= locals.oldData && (sta[i].state === oldData.estado)? 'selected' : null %>><%= sta[i].state %></option>
 							<% } %>	
 						</select>
-						<% if (locals.errors && errors.estado) { %>
-							<p class="invalid"><%= errors.estado.msg %> </p>
-						<% } %>
 					</div>
 				</div>
 				<div class="uploadFile">
 				<label for="img" class="form-label">Imagen de producto:</label>
-				<input type="file" name="img" value="fotoProd" class="botonFile">
+				<input type="file" id="img" name="img" value="fotoProd" class="botonFile">
 			   </div>
 			   <textarea name="detalle" id="detalle" placeholder="Detalle de Producto" class="textArea" value="<%= locals.oldData ? oldData.detalle : null %>"></textarea>
-			   	<% if (locals.errors && errors.detalle) { %>
-					<p class="invalid"><%= errors.detalle.msg %> </p>
-				<% } %>
+			   <ul class="errores"></ul>
+
 			   <button type="submit" class="enviar">Enviar</button>
 			   <button type="reset" class="borrar">Borrar</button>
 			</form>
@@ -69,7 +52,8 @@
 	  </main>
 
     <!-- Inclución de Header -->
-    <%- include ('../partials/footer') %>  
+    <%- include ('../partials/footer') %>
+	<script src="/js/productCreate.js"></script> 
 
 </body>
 </html>

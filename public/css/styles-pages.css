@@ -95,3 +95,20 @@
         display: block;
         color: #fa5f63;
     }
+
+    .is-valid {
+        border: solid 1px #198754 !important;
+      }
+      
+    .is-invalid {
+        border: solid 1px #fa5f63 !important;
+      }
+    .alert-warning {
+        color: #fa5f63;
+        text-align: left;
+        background-color: #fcddde;
+        border-radius: 8px;
+        border: solid 1px #fa5f63;
+        padding: 10px;
+        line-height: 20px;
+    }

@@ -1,10 +1,11 @@
 
 window.onload = function() {
-    let form = document.querySelector('.form-login');
+    let form = document.querySelector('.form-contact');
     
     let regFirstName = /^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$/;
     let regLastName = /^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$/;
     let regUserEmail = /^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$/;
+    let regMessage = /^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$/;
 
     form.addEventListener('submit', (e) => {
         
@@ -13,9 +14,7 @@ window.onload = function() {
         let firstName = document.querySelector('#firstName');
         let lastName = document.querySelector('#lastName');
         let email = document.querySelector('#email');
-        let password = document.querySelector('#password');
-        let confirmPsw = document.querySelector('#confirmPsw');
-        let img = document.querySelector('#img');
+        let message = document.querySelector('#message');
     
 
         if (!regFirstName.test(firstName.value) || !firstName.value.trim() || firstName.value == "") {
@@ -39,20 +38,14 @@ window.onload = function() {
             email.classList.add('is-valid');
             email.classList.remove('is-invalid');
         };
-        if (!password.value.trim() || password.value == '' || password.value.length < 6) {
-            errors.push('Por favor verificar el campo Contraseña');
-            password.classList.add('is-invalid');
+        if (!regMessage.test(message.value) || message.value == "") {
+            errors.push('Por favor verificar el campo Detalle');
+            message.classList.add('is-invalid');
         } else {
-            password.classList.add('is-valid');
-            password.classList.remove('is-invalid');
+            message.classList.add('is-valid');
+            message.classList.remove('is-invalid');
         };
-        if (confirmPsw.value == '' || confirmPsw.value != password.value) {
-            errors.push('Por favor verificar el campo Repetir Contraseña');
-            confirmPsw.classList.add('is-invalid');
-        } else {
-            confirmPsw.classList.add('is-valid');
-            confirmPsw.classList.remove('is-invalid');
-        };
+        
         //Aquí controlo que es lo que debo hacer si hay o no errores en el formulario
 
         if (errors.length > 0) {
