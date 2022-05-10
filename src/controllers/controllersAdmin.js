@@ -20,21 +20,7 @@ const controllers = {
         res.render(path.resolve(__dirname, '../views/admin/productDetail'), {miProducto})
     },
     save: async (req,res) =>{
-        let sta = await db.State.findAll();
-        let cat = await db.Category.findAll();
-        let subCat = await db.SubCategory.findAll();
-
-        let resultValidation = validationResult(req);
-        if(resultValidation.errors.length > 0) {
-            res.render('../views/admin/productCreate', {
-                errors: resultValidation.mapped(),
-                oldData: req.body,
-                cat: cat,
-                subCat: subCat,
-                sta: sta
-            });
-        } else {
-            let img="";
+           let img="";
             if(req.file != undefined){
                 img = "/images/products/" + req.file.filename
             } else {
@@ -53,7 +39,6 @@ const controllers = {
             });
             let products = await db.Product.findAll();
             res.render (path.resolve(__dirname,'../views/admin/adminProduct'), { products });
-        }
     },
     edit: async (req,res)=>{
       
@@ -71,23 +56,7 @@ const controllers = {
         let productoEditar = await db.Product.findByPk(req.params.id, {
             include: [{association: "categorys"}, {association: "subCategorys"}, {association: "states"}]
         });
-        let sta = await db.State.findAll();
-        let cat = await db.Category.findAll();
-        let subCat = await db.SubCategory.findAll();
-
-        let resultValidation = validationResult(req);
-        if(resultValidation.errors.length > 0) {
-            console.log(resultValidation.errors)
-            res.render('../views/admin/productEdit', {
-                errors: resultValidation.mapped(),
-                oldData: req.body,
-                productoEditar: productoEditar,
-                cat: cat,
-                subCat: subCat,
-                sta: sta
-            });
-        } else {
-            
+        
             let img="";
             if (req.file != undefined){
                 img = "/images/products/" + req.file.filename
@@ -112,7 +81,6 @@ const controllers = {
 
             let products = await db.Product.findAll();
             res.render (path.resolve(__dirname,'../views/admin/adminProduct'), { products });
-        }
     },
     erase: async (req,res) => {
         await db.Product.destroy({

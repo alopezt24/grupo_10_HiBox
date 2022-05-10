@@ -39,15 +39,21 @@ window.onload = function() {
             email.classList.add('is-valid');
             email.classList.remove('is-invalid');
         };
-        if (!password.value.trim() || password.value == '' || password.value.length < 6) {
+        if (!password.value.trim() || password.value == '') {
             errors.push('Por favor verificar el campo Contraseña');
             password.classList.add('is-invalid');
+        } else if (password.value.length < 6) {
+            errors.push('La contraseña debe tener una longitud mínima de 6 caracteres');
+            confirmPsw.classList.add('is-invalid');
         } else {
             password.classList.add('is-valid');
             password.classList.remove('is-invalid');
         };
-        if (confirmPsw.value == '' || confirmPsw.value != password.value) {
+        if (confirmPsw.value == '') {
             errors.push('Por favor verificar el campo Repetir Contraseña');
+            confirmPsw.classList.add('is-invalid');
+        } else if (confirmPsw.value != password.value) {
+            errors.push('Las contraseñas deben ser iguales');
             confirmPsw.classList.add('is-invalid');
         } else {
             confirmPsw.classList.add('is-valid');
