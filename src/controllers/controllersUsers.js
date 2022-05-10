@@ -1,6 +1,7 @@
 const path = require ('path');
 const { validationResult } = require('express-validator');
 const bcryptjs = require ('bcryptjs');
+const crypto = require('crypto');
 const db = require ("../database/models");
 
 const controllers = {
@@ -81,8 +82,13 @@ const controllers = {
                 req.session.userLogged = userToLogin;
 
                 if (req.body.recuerdame) {
-                    res.cookie('userEmail', req.body.email, {maxAge: ((1000)*60)*60});
-                    //aquí debe ir el token
+                    const token = crypto.randomBytes(64).toString('base64');
+                    res.cookie('userToken', token, {maxAge: ((1000)*60)*60});
+                    await db.TokenUser.create({
+                        email: userToLogin.email,
+                        token: token
+                    });
+                    
                 }
                 
                 //login de user administrador o user comun
@@ -142,6 +148,12 @@ const controllers = {
                         } else {
                             img = req.session.userLogged.userImage
                         }
+                        
+                        if(req.body.privilege){
+                            privilege = 1
+                        } else {
+                            privilege = 0
+                        }
 
                         await db.User.update({
                             firstName: req.body.firstName,
@@ -150,7 +162,7 @@ const controllers = {
                             password: bcryptjs.hashSync(req.body.password, 10),
                             //birthDate: userData.birthDate,
                             userImage: img,
-                            userPrivilege: 0
+                            userPrivilege: privilege
                         }, {
                             where: {
                                 id: req.params.id
@@ -162,8 +174,13 @@ const controllers = {
     },
 
     logout: async (req,res) => {
+        await db.TokenUser.destroy({
+            where: {
+                email:  req.session.userLogged.email
+            }
+        });
         req.session.destroy();
-        res.clearCookie('userEmail');
+        res.clearCookie('userToken');
         res.render('../views/users/login');
     },
 
