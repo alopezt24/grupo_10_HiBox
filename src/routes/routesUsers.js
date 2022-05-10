@@ -44,6 +44,11 @@ routes.get ("/login", guestMiddleware, controllersUsers.login);
 //tomo los datos para un nuevo pedido de login
 routes.post ("/login", controllersUsers.processLogin);
 
+//realizo el create desde el user admin
+routes.get ("/create", authMiddleware, controllersUsers.create);
+//tomo los datos de registro para uno nuevo con las validaciones
+routes.post ("/create", upload.single('img'), validations, controllersUsers.processCreate);
+
 //render al profile
 routes.get ("/profile", authMiddleware, controllersUsers.profile);
 //get a la edición de usuario
@@ -53,5 +58,8 @@ routes.put ("/profile/edit/:id", upload.single('img'), validationsProfile, contr
 
 //situaciones de login
 routes.get ("/logout",controllersUsers.logout);
+
+//borrar un user desde el admin
+routes.delete('/:id', controllersUsers.erase);
 
 module.exports = routes;

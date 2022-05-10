@@ -5,31 +5,29 @@
     
     <!-- Inclución de Header -->
     <%- include ('../partials/header') %>
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>  
+
            
     <main class="register">
         <section class="conteiner-users">
-         <h3>Registrate</h3>
+         <h3>Crear Usuario</h3>
 
-            <form class="form-login" action="/users/register" method="POST" enctype="multipart/form-data">
+            <form class="form-login" action="/users/create" method="POST" enctype="multipart/form-data">
                 
                 <input type="text" id="firstName" name="firstName" placeholder="Nombre">
                 <input type="text" id="lastName" name="lastName" placeholder="Apellido">
                 <input type="text" id="email" name="email" placeholder="Correo electrónico">
                 <input type="password" id="password" name="password" placeholder="Contraseña">
                 <input type="password" id="confirmPsw" name="confirmPsw" placeholder="Confirmar contraseña">
+                <div class="recuerdame">
+                    <input type="checkbox" name="userPrivileges" id="userPrivileges" value="on">
+                    <label for="recuerdame">Permisos de administrador</label>
+                </div>
                 <input type="file" id="img" name="img">
                 <ul class="errores"></ul>
                
-                <button type="submit" class="enviar">Registrarme</button>
-                <div class="recuerdame">
-                <input type="checkbox" checked="checked" name="terminosYCondiciones" id="terminos-y-condiciones" value="terminos-y-condiciones">
-                <label for="terminos-y-condiciones">Al crear una cuenta, acepta nuestros <a href="#">Terminos & Condiciones</a></label>
-                </div>
+                <button type="submit" class="enviar">Crear</button>
                
                 <button type="reset" class="borrar">Borrar</button>
-  
-                    <p><a href="./login">Ya tengo una cuenta en HiBox</a></p>
 
             </form>
         </section>

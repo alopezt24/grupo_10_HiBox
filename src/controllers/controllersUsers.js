@@ -49,7 +49,6 @@ const controllers = {
             } else {
                 img = '/images/users/default-user.jpg'
             }
-            //let pass = 
 
             await db.User.create({
                 firstName: req.body.firstName,
@@ -120,6 +119,68 @@ const controllers = {
         });
     
     },
+    
+    create: (req , res) => {
+        res.render('../views/users/create');
+        console.log("aquí estoy!")
+    },    
+
+    processCreate: async (req , res) => {
+
+        //validacion de los campos del formulario
+        let resultValidation = validationResult(req);
+        if(resultValidation.errors.length > 0) {
+            return res.render('../views/users/create', {
+                errors: resultValidation.mapped(),
+                oldData: req.body
+            });
+        }
+        
+        //validacion de email repetido en la registracion
+        let userInDb = await db.User.findOne({
+            where: {
+                email: req.body.email
+            }
+        });
+
+        if(userInDb) {
+
+            return res.render('../views/users/create', {
+                errors: {
+                    email: {
+                        msg: 'El correo ya se encuentra registrado'
+                    }
+                },
+                oldData: req.body
+            });
+        } else {
+
+            let img="";
+            if(req.file != undefined){
+                img = "/images/users/" + req.file.filename
+            } else {
+                img = '/images/users/default-user.jpg'
+            }
+
+            let privilege = 0;
+            if(req.body.userPrivileges) {
+                privilege = 1;
+            }
+
+            await db.User.create({
+                firstName: req.body.firstName,
+                lastName: req.body.lastName,
+                email: req.body.email,
+                password: bcryptjs.hashSync(req.body.password, 10),
+                //birthDate: userData.birthDate,
+                userImage: img,
+                userPrivilege: privilege
+            })
+
+            let users = await db.User.findAll();
+            res.render('../views/users/adminUsers', { users });
+        }
+    },
 
     profile: (req,res) => {
         res.render('../views/users/profile', { user: req.session.userLogged});
@@ -149,11 +210,10 @@ const controllers = {
                             img = req.session.userLogged.userImage
                         }
                         
-                        if(req.body.privilege){
-                            privilege = 1
-                        } else {
-                            privilege = 0
-                        }
+                        let privilege = 0;
+                        if(req.body.userPrivileges) {
+                            privilege = 1;
+                            }
 
                         await db.User.update({
                             firstName: req.body.firstName,

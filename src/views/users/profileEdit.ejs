@@ -42,7 +42,14 @@
                         <p><%= errors.confirmPsw.msg %> </p>
                     </div>
                  <% } %>
-              
+                 <% if (locals.isLogged) { %>
+                    <% if(locals.userLogged.userPrivilege == 1) { %>
+                        <div class="recuerdame">
+                            <input type="checkbox" name="userPrivileges" id="userPrivileges" value="on">
+                            <label for="recuerdame">Permisos de administrador</label>
+                        </div>
+                    <% } %>
+                <% } %>    
                 <input type="file" name="img">
                 <% if (locals.errors && errors.img) { %>
                     <div class="invalid">

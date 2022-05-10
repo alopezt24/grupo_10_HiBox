@@ -33,7 +33,7 @@
         <ul>
             <% if (locals.isLogged) { %>
                 <li class="imgView"><img src="<%= locals.userLogged.userImage %>"> 
-                    <% if(locals.userLogged.userPrivilege) { %>
+                    <% if(locals.userLogged.userPrivilege == 1) { %>
                         <a href="/users/profile"><%= locals.userLogged.firstName %></a>
                     <% } else { %>
                         <a href="/users/profile/edit/<%= locals.userLogged.id %>"><%= locals.userLogged.firstName %></a>
