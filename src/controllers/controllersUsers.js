@@ -154,10 +154,16 @@ const controllers = {
         res.render('../views/users/profile', { user: req.session.userLogged});
     },
 
+    profileUser: async (req,res) => {
+        let user = await db.User.findByPk(req.params.id);
+        res.render('../views/users/userDetail', { user });
+    },
+
     profileEdit: async (req,res) => {
         let user = await db.User.findByPk(req.params.id);
         res.render('../views/users/profileEdit', { user });
     },
+
 
     profileSave: async (req,res) => {            
                         let img="";
