@@ -16,9 +16,6 @@
                 <input type="text" id="firstName" name="firstName" value="<%= locals.oldData ? oldData.firstName : user.firstName %>">
                 <input type="text" id="lastName" name="lastName" value="<%= locals.oldData ? oldData.lastName : user.lastName %>">
                 <input type="text" id="email" name="email" value="<%= locals.oldData ? oldData.email : user.email %>">
-                <input type="password" id="password" name="password" value="<%= locals.oldData ? oldData.password : user.password %>">
-                <input type="password" id="confirmPsw" name="confirmPsw" value="<%= locals.oldData ? oldData.password : user.password %>">
-                
                 
                  <% if (locals.isLogged) { %>
                     <% if(locals.userLogged.userPrivilege == 1) { %>
@@ -27,12 +24,7 @@
                             <label for="recuerdame">Permisos de administrador</label>
                         </div>
                     <% } %>
-                <% } %>    
-                <input type="file" id="img" name="img">
-                <ul class="errores"></ul>
-
-                <button type="submit" class="enviar">Confirmar</button>
-                <button type="reset" class="borrar">Borrar</button>
+                <% } %>
 
             </form>
         </section>

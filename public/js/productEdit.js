@@ -1,6 +1,6 @@
 
 window.onload = function() {
-    let form = document.querySelector('.form-newProduct');
+    let form = document.querySelector('.form-editProduct');
     
     let regNombre = /^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$/;
     let regDetalle = /^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$/;
@@ -19,7 +19,7 @@ window.onload = function() {
         let detalle = document.querySelector('#detalle');
     
 
-        if (!regNombre.test(nombre.value) || !nombre.value.trim() || nombre.value == "") {
+        if (nombre.value == "" || !regNombre.test(nombre.value) || !nombre.value.trim()) {
             errors.push('Por favor verificar el campo Nombre');
             nombre.classList.add('is-invalid');
         } else {
@@ -40,7 +40,7 @@ window.onload = function() {
             subCategoria.classList.add('is-valid');
             subCategoria.classList.remove('is-invalid');
         };
-        if (precio.value == "" ) {
+        if (precio.value == "" || precio.value == 0) {
             errors.push('Por favor verificar el campo Precio');
             precio.classList.add('is-invalid');
         } else {
@@ -60,22 +60,6 @@ window.onload = function() {
         } else {
             estado.classList.add('is-valid');
             estado.classList.remove('is-invalid');
-        };
-        if (img.files.length == 0) {
-            errors.push('Debe cargar una imagen');
-            img.classList.add('is-invalid');
-        } else if (img.value) {
-            fileName = img.value;
-            idxDot = fileName.lastIndexOf(".") + 1,
-            extFile = fileName.substr(idxDot, fileName.length).toLowerCase();
-            if (!(extFile == "jpg" || extFile == "jpeg" || extFile == "png")){
-                errors.push('Debe cargar una imagen en formato jpg/jpeg/png');
-                img.classList.add('is-invalid');
-
-            }
-        } else {
-            img.classList.add('is-valid');
-            img.classList.remove('is-invalid');
         };
         if (!regDetalle.test(detalle.value) || !detalle.value.trim() || detalle.value == "") {
             errors.push('Por favor verificar el campo Detalle');
