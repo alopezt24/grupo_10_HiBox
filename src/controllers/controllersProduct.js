@@ -23,6 +23,25 @@ const controllers = {
         let products = await db.Product.findAll();
         res.render('../views/products/productCart', { products });
     },
+
+    listarGastronomia: async (req,res) =>{
+        let products = await db.Product.findAll({
+            include: [{association: "states"}, {association: "categorys"}, {association: "subCategorys"}]
+        });
+        res.render(path.resolve(__dirname, '../views/products/gastronomia'), { products })
+    },
+    listarEntretenimiento: async (req,res) =>{
+        let products = await db.Product.findAll({
+            include: [{association: "states"}, {association: "categorys"}, {association: "subCategorys"}]
+        });
+        res.render(path.resolve(__dirname, '../views/products/entretenimiento'), { products })
+    },
+    listarAventura: async (req,res) =>{
+        let products = await db.Product.findAll({
+            include: [{association: "states"}, {association: "categorys"}, {association: "subCategorys"}]
+        });
+        res.render(path.resolve(__dirname, '../views/products/aventura'), { products })
+    }
 }
 
 module.exports = controllers;
