@@ -8,8 +8,6 @@ const routes = Router();
 
 //requiero los controladores
 const controllersAdmin = require('../controllers/controllersAdmin');
-//requiero las validaciones del formulario
-const validations = require('../middleware/middlewareProductCreateUpdate');
 
 //*** Configura el storage (destination, filename) ***/
 var storage = multer.diskStorage({
@@ -25,10 +23,10 @@ var upload = multer ({storage});
 //realizo las renderizaciones del main
 routes.get ("/adminProduct", controllersAdmin.product);
 routes.get ("/productCreate", controllersAdmin.create);
-routes.post('/productCreate', upload.single('img'), validations, controllersAdmin.save);
+routes.post('/productCreate', upload.single('img'), controllersAdmin.save);
 routes.get('/productDetail/:id', controllersAdmin.show);
 routes.get('/productEdit/:id', controllersAdmin.edit);
-routes.put('/productEdit/:id', upload.single('img'), validations, controllersAdmin.update);
+routes.put('/productEdit/:id', upload.single('img'), controllersAdmin.update);
 routes.delete('/:id', controllersAdmin.erase);
 
 

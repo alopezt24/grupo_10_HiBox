@@ -15,15 +15,6 @@ const controllers = {
     
     processRegister: async (req , res) => {
 
-        //validacion de los campos del formulario
-        let resultValidation = validationResult(req);
-        if(resultValidation.errors.length > 0) {
-            return res.render('../views/users/register', {
-                errors: resultValidation.mapped(),
-                oldData: req.body
-            });
-        }
-        
         //validacion de email repetido en la registracion
         let userInDb = await db.User.findOne({
             where: {
@@ -76,11 +67,7 @@ const controllers = {
             }
         });
         if(userToLogin) {
-            if(bcryptjs.compareSync(req.body.password, userToLogin.password)) {
-                delete userToLogin.password;
-                req.session.userLogged = userToLogin;
-
-                if (req.body.recuerdame) {
+               if (req.body.recuerdame) {
                     const token = crypto.randomBytes(64).toString('base64');
                     res.cookie('userToken', token, {maxAge: ((1000)*60)*60});
                     await db.TokenUser.create({
@@ -99,25 +86,15 @@ const controllers = {
                     });
                     return res.render('index', { products });
                 }
-            }
-            return res.render('../views/users/login', {
-                errors: {
-                    password: {
-                        msg: 'El password ingresado es incorrecto'
+            } else {
+                return res.render('../views/users/login', {
+                    errors: {
+                        email: {
+                            msg: 'El usuario ingresado no se encuentra registrado'
+                        }
                     }
-                },
-                oldData: req.body
-            });    
-        }
-
-        return res.render('../views/users/login', {
-            errors: {
-                email: {
-                    msg: 'El usuario ingresado no se encuentra registrado'
-                }
+                });
             }
-        });
-    
     },
     
     create: (req , res) => {
@@ -126,16 +103,7 @@ const controllers = {
     },    
 
     processCreate: async (req , res) => {
-
-        //validacion de los campos del formulario
-        let resultValidation = validationResult(req);
-        if(resultValidation.errors.length > 0) {
-            return res.render('../views/users/create', {
-                errors: resultValidation.mapped(),
-                oldData: req.body
-            });
-        }
-        
+ 
         //validacion de email repetido en la registracion
         let userInDb = await db.User.findOne({
             where: {
@@ -191,18 +159,7 @@ const controllers = {
         res.render('../views/users/profileEdit', { user });
     },
 
-    profileSave: async (req,res) => {        
-        //validacion de los campos del formulario
-        let userInDb = await db.User.findByPk(req.params.id);
-        let resultValidation = validationResult(req);
-        if(resultValidation.errors.length > 0) {
-            return res.render('../views/users/profileEdit', {
-                errors: resultValidation.mapped(),
-                oldData: req.body,
-                user: userInDb
-            });
-        }
-    
+    profileSave: async (req,res) => {            
                         let img="";
                         if(req.file != undefined){
                             img = "/images/users/" + req.file.filename
