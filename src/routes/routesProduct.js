@@ -12,6 +12,7 @@ const controllersProduct = require('../controllers/controllersProduct');
 
 //realizo las renderizaciones de products
 routes.get ("/", controllersProduct.index);
+routes.get ("/filter", controllersProduct.indexFormulario);
 routes.get('/productDetail/:id', controllersProduct.show);
 routes.get ("/productCart", controllersProduct.cart);
 routes.get ("/gastronomia", controllersProduct.listarGastronomia);
