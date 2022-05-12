@@ -8,7 +8,17 @@
            
     <main class="register">
         <section class="conteiner-users">
-            <div class="cancel-button"><a href="/users/adminUsers"><i class="fas fa-times"></i></a></div>
+            <% if (locals.isLogged) { %>
+                <% if(locals.userLogged.userPrivilege == 0  ) { %>
+                    <div class="cancel-button"><a href="javascript: history.go(-1)"><i class="fas fa-times"></i></a></div>
+                <% } %>
+            <% } %>
+            <% if (locals.isLogged) { %>
+                <% if(locals.userLogged.userPrivilege == 1  ) { %>
+                    <div class="cancel-button"><a href="/users/adminUsers"><i class="fas fa-times"></i></a></div>
+                <% } %>
+            <% } %>
+            
             <h3>Editar Perfil de Usuario</h3>
 
             <form class="form-login" action="/users/profile/edit/<%= user.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
