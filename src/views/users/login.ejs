@@ -12,19 +12,9 @@
             <form class="form-login" action="/users/login" method="post">
                 
                 <!--<label for="uname">Correo Electronico</label>-->
-                <input type="text" name="email" placeholder="Correo electrónico" value="<%= locals.oldData ? oldData.email : null %>" required>
-                <% if (locals.errors && errors.email) { %>
-                    <div class="invalid">
-                        <p><%= errors.email.msg %> </p>
-                    </div>
-                <% } %>
+                <input type="text" id="email" name="email" placeholder="Correo electrónico" value="<%= locals.oldData ? oldData.email : null %>">
                 <!--<label for="psw"><b>Contraseña</b></label>-->
-                <input type="password" name="password" placeholder="Contraseña" required>
-                <% if (locals.errors && errors.password) { %>
-                    <div class="invalid">
-                        <p><%= errors.password.msg %> </p>
-                    </div>
-                <% } %>
+                <input type="password" id="password" name="password" placeholder="Contraseña">
                 <ul class="errores"></ul>
 
                 <button type="submit" class="enviar">Enviar</button>

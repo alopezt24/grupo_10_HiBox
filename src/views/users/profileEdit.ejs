@@ -10,14 +10,15 @@
         <section class="conteiner-users">
             <div class="cancel-button"><a href="/users/adminUsers"><i class="fas fa-times"></i></a></div>
             <h3>Editar Perfil de Usuario</h3>
+
             <form class="form-login" action="/users/profile/edit/<%= user.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
-                
+            <!-- <form class="form-login" action="/users/profile/edit/<%= user.id %>?_method=PUT" method="POST" enctype="multipart/form-data"> -->
                 <img src="<%= user.userImage %>", alt="Imagen de usuario" />
                 <input type="text" id="firstName" name="firstName" value="<%= locals.oldData ? oldData.firstName : user.firstName %>">
                 <input type="text" id="lastName" name="lastName" value="<%= locals.oldData ? oldData.lastName : user.lastName %>">
                 <input type="text" id="email" name="email" value="<%= locals.oldData ? oldData.email : user.email %>">
-                <input type="password" id="password" name="password" value="<%= locals.oldData ? oldData.password : user.password %>">
-                <input type="password" id="confirmPsw" name="confirmPsw" value="<%= locals.oldData ? oldData.password : user.password %>">
+                <input type="password" id="password" name="password" value="******">
+                <input type="password" id="confirmPsw" name="confirmPsw" value="******">
                 
                 
                  <% if (locals.isLogged) { %>

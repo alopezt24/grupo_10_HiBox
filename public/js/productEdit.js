@@ -61,7 +61,7 @@ window.onload = function() {
             estado.classList.add('is-valid');
             estado.classList.remove('is-invalid');
         };
-        if (!regDetalle.test(detalle.value) || !detalle.value.trim() || detalle.value == "") {
+        if (detalle.value == "" || !regDetalle.test(detalle.value) || !detalle.value.trim()) {
             errors.push('Por favor verificar el campo Detalle');
             detalle.classList.add('is-invalid');
         } else {
