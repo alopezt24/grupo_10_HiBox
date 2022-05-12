@@ -13,22 +13,19 @@
 				    
 					
 					<input type="text" id="nombre" name="nombre" value="<%= productoEditar.name%>">
-					<% if (locals.errors && errors.nombre) { %>
-						<p class="invalid"><%= errors.nombre.msg %> </p>
-					<% } %>
-					
+										
 					<div class="items-select">
 						<select name="categorias" id="categorias" class="productCategory">
 							<option disabled value="<%= productoEditar.categorys.category%>">Categoría del Producto</option>
 							<% for (let i =0; i < cat.length; i++) { %>
-								<option value="<%= cat[i].id %>" <%= locals.oldData && (cat[i].category === oldData.estado)? 'selected' : null %>><%= cat[i].category %></option>
+								<option value="<%= cat[i].id %>" ><%= cat[i].category %></option>
 							<% } %>	
 			
 						</select>
 						<select name="subCategoria" id="subCategoria" class="productSubCategory">
-							<option disabled value="<%= productoEditar.subCategorys.subCategory%>">Subcategorias</option>
+							<option disabled value="<%= productoEditar.subcategorys.subCategory%>">Subcategorias</option>
 							<% for (let i =0; i < subCat.length; i++) { %>
-								<option value="<%= subCat[i].id %>" <%= locals.oldData && (subCat[i].subCategory === oldData.estado)? 'selected' : null %>><%= subCat[i].subCategory %></option>
+								<option value="<%= subCat[i].id %>"><%= subCat[i].subCategory %></option>
 							<% } %>	
 						</select>
 					</div>
@@ -38,7 +35,7 @@
 						<select name="estado" id="estado" class="productState">
 							<option disabled value="<%= productoEditar.states.state%>">Estado de producto</option>
 							<% for (let i =0; i < sta.length; i++) { %>
-								<option value="<%= sta[i].id %>" <%= locals.oldData && (sta[i].state === oldData.estado)? 'selected' : null %>><%= sta[i].state %></option>
+								<option value="<%= sta[i].id %>"><%= sta[i].state %></option>
 							<% } %>
 						</select>
 					</div>

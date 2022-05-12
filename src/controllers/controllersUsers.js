@@ -73,7 +73,7 @@ const controllers = {
 
                     if (req.body.recuerdame) {
                             const token = crypto.randomBytes(64).toString('base64');
-                            res.cookie('userToken', token, {maxAge: (((1000)*60)*60)*24});
+                            res.cookie('userToken', token, {maxAge: ((1000)*60)*60});
                             await db.TokenUser.create({
                                 email: userToLogin.email,
                                 token: token

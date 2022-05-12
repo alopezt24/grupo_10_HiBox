@@ -78,9 +78,10 @@ const controllers = {
                     id: req.params.id
                 }
             });
-
-            let products = await db.Product.findAll();
-            res.render (path.resolve(__dirname,'../views/admin/adminProduct'), { products });
+            productoEditar = await db.Product.findByPk(req.params.id, {
+                include: [{association: "states"}, {association: "categorys"}, {association: "subcategorys"}]
+            });
+            res.render(path.resolve(__dirname, '../views/admin/productDetail'), {miProducto: productoEditar})
     },
     erase: async (req,res) => {
         await db.Product.destroy({
@@ -90,7 +91,7 @@ const controllers = {
         });
 
         let products = await db.Product.findAll();
-        res.render (path.resolve(__dirname,'../views/admin/adminProduct'), { products });
+        res.render (path.resolve(__dirname,'../views/admin/adminProduct/'), { products });
     }
 
 };
