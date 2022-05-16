@@ -70,14 +70,18 @@
 			<section class="contenedor-novedades-productos">
 				<h3>DESTACADOS</h3>
 				<div class="products">
+					<% let contador = 0 %>
 					<% for(let producto of products) { %>
-						<% if (producto.states.state == "Destacado" && producto.id < 15) { %>
+						<% if (producto.states.state == "Destacado" && contador < 4) { %>
 					<article>
+						<% contador = contador + 1; %>
 						<div class="novedad-producto">
 							<p><%= producto.states.state%></p>
 						</div>
 						<img src="<%= producto.productImage%>", alt="Imagen Aventura" class="product_img">
-						<div class="icono-plus-prtoducto"><i class="fas fa-plus"></i></div>
+						<form class="icono-plus-prtoducto" action="/products/productCart/<%= producto.id%>" method="POST" enctype="multipart/form-data">
+                            <button type="submit" class="buttonCart"  ><i class="fas fa-plus"></i></button>
+                        </form>
 						<div class="nombre-producto">
 							<p><%= producto.name%></p>
 						</div>
@@ -90,6 +94,7 @@
 						</div>
 					</article>
 					  <% } %>
+						
 					<% } %>
 				</div>
 			</section>
