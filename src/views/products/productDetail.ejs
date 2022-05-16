@@ -56,9 +56,11 @@
         <section class="contenedor-novedades-productos">
             <h3>DESTACADOS</h3>
             <div class="products">
+                <% let contador = 0 %>
                 <% for(let producto of products) { %>
-                    <% if (producto.states.state == "Destacado" && producto.id < 15) { %>
+                    <% if (producto.states.state == "Destacado" && contador < 4) { %>
                 <article>
+                    <% contador = contador + 1; %>
                     <div class="novedad-producto">
                         <p><%= producto.states.state%></p>
                     </div>
