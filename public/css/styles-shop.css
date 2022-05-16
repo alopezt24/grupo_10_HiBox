@@ -41,6 +41,12 @@
     flex-wrap: wrap;
     align-items: center;
 }
+
+.delete {
+    border: none !important;
+    background-color: none !important;
+    color: gray;
+}
 .icono-trash-producto {
     position: absolute;
     font-size: 16px;
