@@ -323,12 +323,25 @@ main section div.products article{
         background-color: gray;
         color: white;
         text-align: center;
+        border-radius: 100px;
         width: 40px;
         height: 40px;
-        border-radius: 100px;
         left: 46%;
         top: 60%;
         transition: all 450ms;
+    }
+
+    .buttonCart {
+        position: absolute;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        border-radius: 100%;
+        background-color: transparent;
+        border: transparent;
+        text-align: center;
+        width: 40px;
+        height: 40px;
     }
 
     .icono-plus-prtoducto:hover {
