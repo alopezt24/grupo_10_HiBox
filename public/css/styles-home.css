@@ -316,7 +316,6 @@ main section div.products article{
     }
     .icono-plus-prtoducto {
         position: absolute;
-        font-size: 20px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -332,6 +331,7 @@ main section div.products article{
     }
 
     .buttonCart {
+        font-size: 20px;
         position: absolute;
         justify-content: center;
         align-items: center;
@@ -497,7 +497,7 @@ main section div.products article{
     .nav-bar-header-center .logo {
         /* width: 100px; */
         position: relative;
-        left: 18vw;
+        left: 14vw;
         margin: auto;
     }
     .nav-bar-header-center .logo img {
