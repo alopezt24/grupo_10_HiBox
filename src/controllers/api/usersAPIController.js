@@ -28,7 +28,7 @@ const UsersAPIController = {
                 res.json(respuesta);
             })
     },
-    
+
     'detail': (req, res) => {
         db.User.findByPk(req.params.id,
             {
@@ -103,7 +103,7 @@ const UsersAPIController = {
                 }
             }
             res.json(respuesta);
-        })    
+        })
         .catch(error => res.send(error))
     },
     update: (req,res) => {
