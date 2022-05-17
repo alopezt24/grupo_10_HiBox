@@ -47,9 +47,14 @@
                 <p><%= miProducto.detail%></p>
                 </div>
                 <div class="conteiner-comprando">
-                <form class="comprar" action="/products/productCart/<%= miProducto.id%>" method="POST" enctype="multipart/form-data">
-                    <button type="submit" class="enviar"><i class="fas fa-shopping-cart"></i> Comprar</button>
-                </form>
+                    <form class="comprar"
+                        <% if (locals.isLogged) { %>
+                            action="/products/productCart/<%= miProducto.id%>" method="POST" enctype="multipart/form-data"
+                        <% } else { %>
+                            action="/users/login" method="GET"
+                        <% } %> >
+                         <button type="submit" class="enviar"><i class="fas fa-shopping-cart"></i> Comprar</button>
+                     </form>
                 </div>
             </div>
         </section>
