@@ -65,7 +65,7 @@ CREATE TABLE `products` (
   CONSTRAINT `FK_cat` FOREIGN KEY (`categoryId`) REFERENCES `categorys` (`id`),
   CONSTRAINT `FK_state` FOREIGN KEY (`stateId`) REFERENCES `states` (`id`),
   CONSTRAINT `FK_subCat` FOREIGN KEY (`subCategoryId`) REFERENCES `subcategorys` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -74,8 +74,37 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` VALUES (1,'Salto en Paracaídas',3000,2000,'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos esse id odio nobis ipsum molestias fugit! Nemo dolore totam ratione nostrum aliquid veniam, illum, qui eligendi iure at et in!','/images/products/img-1652154468865.jpg',1,1,1,NULL,NULL),(2,'Clases de Surf',3000,2000,'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos esse id odio nobis ipsum molestias fugit! Nemo dolore totam ratione nostrum aliquid veniam, illum, qui eligendi iure at et in!','/images/products/img-1652154531357.jpg',1,1,1,NULL,NULL),(3,'Clases de Escalada',3000,2000,'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos esse id odio nobis ipsum molestias fugit! Nemo dolore totam ratione nostrum aliquid veniam, illum, qui eligendi iure at et in!','/images/products/img-1652154575550.jpg',2,1,1,NULL,NULL),(4,'Excursión a Machu Pichu',30000,18000,'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos esse id odio nobis ipsum molestias fugit! Nemo dolore totam ratione nostrum aliquid veniam, illum, qui eligendi iure at et in!','/images/products/img-1652154619516.jpg',1,1,2,NULL,NULL),(5,'Paseo por el Perito Moreno',30000,20000,'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos esse id odio nobis ipsum molestias fugit! Nemo dolore totam ratione nostrum aliquid veniam, illum, qui eligendi iure at et in!','/images/products/img-1652154665597.jpg',3,1,2,NULL,NULL),(6,'Trecking Valle de San Juan',30000,20000,'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos esse id odio nobis ipsum molestias fugit! Nemo dolore totam ratione nostrum aliquid veniam, illum, qui eligendi iure at et in!','/images/products/img-1652154728740.jpg',2,1,2,NULL,NULL),(7,'Rafting en Mendoza',30000,20000,'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos esse id odio nobis ipsum molestias fugit! Nemo dolore totam ratione nostrum aliquid veniam, illum, qui eligendi iure at et in!','/images/products/img-1652154770293.jpg',1,1,3,NULL,NULL),(8,'Alto Parque',30000,20000,'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos esse id odio nobis ipsum molestias fugit! Nemo dolore totam ratione nostrum aliquid veniam, illum, qui eligendi iure at et in!','/images/products/img-1652154811323.jpg',3,1,3,NULL,NULL),(9,'Parque de Diversiones',30000,20000,'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos esse id odio nobis ipsum molestias fugit! Nemo dolore totam ratione nostrum aliquid veniam, illum, qui eligendi iure at et in!','/images/products/img-1652154891269.jpg',2,1,3,NULL,NULL),(10,'Visita al Museo Nacional',3000,2000,'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos esse id odio nobis ipsum molestias fugit! Nemo dolore totam ratione nostrum aliquid veniam, illum, qui eligendi iure at et in!','/images/products/img-1652154959629.jpg',1,2,1,NULL,NULL),(11,'Clase de Yoga',3000,2000,'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos esse id odio nobis ipsum molestias fugit! Nemo dolore totam ratione nostrum aliquid veniam, illum, qui eligendi iure at et in!','/images/products/img-1652154993539.jpg',3,2,1,NULL,NULL),(12,'Meet & Greet Lio Messi',50000,30000,'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos esse id odio nobis ipsum molestias fugit! Nemo dolore totam ratione nostrum aliquid veniam, illum, qui eligendi iure at et in!','/images/products/img-1652155052124.jpg',2,2,1,NULL,NULL),(13,'Palco Teatro Colón',3000,2000,'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos esse id odio nobis ipsum molestias fugit! Nemo dolore totam ratione nostrum aliquid veniam, illum, qui eligendi iure at et in!','/images/products/img-1652155095355.jpg',1,2,2,NULL,NULL),(14,'Show en Vivo',3000,2000,'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos esse id odio nobis ipsum molestias fugit! Nemo dolore totam ratione nostrum aliquid veniam, illum, qui eligendi iure at et in!','/images/products/img-1652155133531.jpg',3,2,2,NULL,NULL),(15,'Entradas de Cine',1500,960,'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos esse id odio nobis ipsum molestias fugit! Nemo dolore totam ratione nostrum aliquid veniam, illum, qui eligendi iure at et in!','/images/products/img-1652155169875.jpg',2,2,2,NULL,NULL),(16,'Piñon Fijo, en familia',7000,3500,'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos esse id odio nobis ipsum molestias fugit! Nemo dolore totam ratione nostrum aliquid veniam, illum, qui eligendi iure at et in!','/images/products/img-1652155205356.jpg',1,2,3,NULL,NULL),(17,'Entradas Temaiken',8500,6500,'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos esse id odio nobis ipsum molestias fugit! Nemo dolore totam ratione nostrum aliquid veniam, illum, qui eligendi iure at et in!','/images/products/img-1652155268748.jpg',3,2,3,NULL,NULL),(18,'Parque de los Niños',5500,2380,'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos esse id odio nobis ipsum molestias fugit! Nemo dolore totam ratione nostrum aliquid veniam, illum, qui eligendi iure at et in!','/images/products/img-1652155312523.jpg',2,2,3,NULL,NULL),(19,'Cena 7 pasos',5000,3000,'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos esse id odio nobis ipsum molestias fugit! Nemo dolore totam ratione nostrum aliquid veniam, illum, qui eligendi iure at et in!','/images/products/img-1652155374611.jpg',1,3,1,NULL,NULL),(20,'Curso Sommeliere Wisky',4500,1700,'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos esse id odio nobis ipsum molestias fugit! Nemo dolore totam ratione nostrum aliquid veniam, illum, qui eligendi iure at et in!','/images/products/img-1652155410309.jpg',3,3,1,NULL,NULL),(21,'Curso de Cocina',4500,3900,'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos esse id odio nobis ipsum molestias fugit! Nemo dolore totam ratione nostrum aliquid veniam, illum, qui eligendi iure at et in!','/images/products/img-1652155451004.jpg',2,3,1,NULL,NULL),(22,'Cata de Vinos',4500,3600,'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos esse id odio nobis ipsum molestias fugit! Nemo dolore totam ratione nostrum aliquid veniam, illum, qui eligendi iure at et in!','/images/products/img-1652155507324.jpg',1,3,2,NULL,NULL),(23,'Roof Bar MALAMIA',8000,3500,'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos esse id odio nobis ipsum molestias fugit! Nemo dolore totam ratione nostrum aliquid veniam, illum, qui eligendi iure at et in!','/images/products/img-1652155559197.jpg',3,3,2,NULL,NULL),(24,'Brunch Palacio Duho',9000,5600,'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos esse id odio nobis ipsum molestias fugit! Nemo dolore totam ratione nostrum aliquid veniam, illum, qui eligendi iure at et in!','/images/products/img-1652155590564.jpg',2,3,2,NULL,NULL),(25,'Restaurant Tematico',10500,8500,'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos esse id odio nobis ipsum molestias fugit! Nemo dolore totam ratione nostrum aliquid veniam, illum, qui eligendi iure at et in!','/images/products/img-1652155630870.jpg',1,3,3,NULL,NULL),(26,'Kansas Palermo',12500,9500,'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos esse id odio nobis ipsum molestias fugit! Nemo dolore totam ratione nostrum aliquid veniam, illum, qui eligendi iure at et in!','/images/products/img-1652155678403.jpg',3,3,3,NULL,NULL),(27,'Pedro Pica & Hierve',50000,15000,'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos esse id odio nobis ipsum molestias fugit! Nemo dolore totam ratione nostrum aliquid veniam, illum, qui eligendi iure at et in!','/images/products/img-1652155716548.jpg',2,3,3,NULL,NULL),(28,'Producto Prueba',1111111111,1.1111111111111112e18,'Detalle de producto nuevo','/images/products/img-1652206614336.jpg',3,2,2,NULL,NULL);
+INSERT INTO `products` VALUES (1,'Salto en Paracaídas',3000,2000,'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos esse id odio nobis ipsum molestias fugit! Nemo dolore totam ratione nostrum aliquid veniam, illum, qui eligendi iure at et in!','/images/products/img-1652154468865.jpg',1,1,1,NULL,NULL),(2,'Clases de Surf',3000,2000,'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos esse id odio nobis ipsum molestias fugit! Nemo dolore totam ratione nostrum aliquid veniam, illum, qui eligendi iure at et in!','/images/products/img-1652154531357.jpg',1,1,1,NULL,NULL),(3,'Clases de Escalada',3000,2000,'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos esse id odio nobis ipsum molestias fugit! Nemo dolore totam ratione nostrum aliquid veniam, illum, qui eligendi iure at et in!','/images/products/img-1652154575550.jpg',2,1,1,NULL,NULL),(4,'Excursión a Machu Pichu',30000,18000,'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos esse id odio nobis ipsum molestias fugit! Nemo dolore totam ratione nostrum aliquid veniam, illum, qui eligendi iure at et in!','/images/products/img-1652154619516.jpg',1,1,2,NULL,NULL),(5,'Paseo por el Perito Moreno',30000,20000,'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos esse id odio nobis ipsum molestias fugit! Nemo dolore totam ratione nostrum aliquid veniam, illum, qui eligendi iure at et in!','/images/products/img-1652154665597.jpg',3,1,2,NULL,NULL),(6,'Trecking Valle de San Juan',30000,20000,'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos esse id odio nobis ipsum molestias fugit! Nemo dolore totam ratione nostrum aliquid veniam, illum, qui eligendi iure at et in!','/images/products/img-1652154728740.jpg',2,1,2,NULL,NULL),(7,'Rafting en Mendoza',30000,20000,'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos esse id odio nobis ipsum molestias fugit! Nemo dolore totam ratione nostrum aliquid veniam, illum, qui eligendi iure at et in!','/images/products/img-1652154770293.jpg',1,1,3,NULL,NULL),(8,'Alto Parque',30000,20000,'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos esse id odio nobis ipsum molestias fugit! Nemo dolore totam ratione nostrum aliquid veniam, illum, qui eligendi iure at et in!','/images/products/img-1652154811323.jpg',3,1,3,NULL,NULL),(9,'Parque de Diversiones',30000,20000,'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos esse id odio nobis ipsum molestias fugit! Nemo dolore totam ratione nostrum aliquid veniam, illum, qui eligendi iure at et in!','/images/products/img-1652154891269.jpg',2,1,3,NULL,NULL),(10,'Visita al Museo Nacional',3000,2000,'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos esse id odio nobis ipsum molestias fugit! Nemo dolore totam ratione nostrum aliquid veniam, illum, qui eligendi iure at et in!','/images/products/img-1652154959629.jpg',1,2,1,NULL,NULL),(11,'Clase de Yoga',3000,2000,'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos esse id odio nobis ipsum molestias fugit! Nemo dolore totam ratione nostrum aliquid veniam, illum, qui eligendi iure at et in!','/images/products/img-1652154993539.jpg',3,2,1,NULL,NULL),(12,'Meet & Greet Lio Messi',50000,30000,'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos esse id odio nobis ipsum molestias fugit! Nemo dolore totam ratione nostrum aliquid veniam, illum, qui eligendi iure at et in!','/images/products/img-1652155052124.jpg',2,2,1,NULL,NULL),(13,'Palco Teatro Colón',3000,2000,'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos esse id odio nobis ipsum molestias fugit! Nemo dolore totam ratione nostrum aliquid veniam, illum, qui eligendi iure at et in!','/images/products/img-1652155095355.jpg',1,2,2,NULL,NULL),(14,'Show en Vivo',3000,2000,'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos esse id odio nobis ipsum molestias fugit! Nemo dolore totam ratione nostrum aliquid veniam, illum, qui eligendi iure at et in!','/images/products/img-1652155133531.jpg',3,2,2,NULL,NULL),(15,'Entradas de Cine',1500,960,'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos esse id odio nobis ipsum molestias fugit! Nemo dolore totam ratione nostrum aliquid veniam, illum, qui eligendi iure at et in!','/images/products/img-1652155169875.jpg',2,2,2,NULL,NULL),(16,'Piñon Fijo, en familia',7000,3500,'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos esse id odio nobis ipsum molestias fugit! Nemo dolore totam ratione nostrum aliquid veniam, illum, qui eligendi iure at et in!','/images/products/img-1652155205356.jpg',1,2,3,NULL,NULL),(17,'Entradas Temaiken',8500,6500,'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos esse id odio nobis ipsum molestias fugit! Nemo dolore totam ratione nostrum aliquid veniam, illum, qui eligendi iure at et in!','/images/products/img-1652155268748.jpg',3,2,3,NULL,NULL),(18,'Parque de los Niños',5500,2380,'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos esse id odio nobis ipsum molestias fugit! Nemo dolore totam ratione nostrum aliquid veniam, illum, qui eligendi iure at et in!','/images/products/img-1652155312523.jpg',2,2,3,NULL,NULL),(19,'Cena 7 pasos',5000,3000,'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos esse id odio nobis ipsum molestias fugit! Nemo dolore totam ratione nostrum aliquid veniam, illum, qui eligendi iure at et in!','/images/products/img-1652155374611.jpg',1,3,1,NULL,NULL),(20,'Curso Sommeliere Wisky',4500,1700,'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos esse id odio nobis ipsum molestias fugit! Nemo dolore totam ratione nostrum aliquid veniam, illum, qui eligendi iure at et in!','/images/products/img-1652155410309.jpg',3,3,1,NULL,NULL),(21,'Curso de Cocina',4500,3900,'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos esse id odio nobis ipsum molestias fugit! Nemo dolore totam ratione nostrum aliquid veniam, illum, qui eligendi iure at et in!','/images/products/img-1652155451004.jpg',2,3,1,NULL,NULL),(22,'Cata de Vinos',4500,3600,'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos esse id odio nobis ipsum molestias fugit! Nemo dolore totam ratione nostrum aliquid veniam, illum, qui eligendi iure at et in!','/images/products/img-1652155507324.jpg',1,3,2,NULL,NULL),(23,'Roof Bar MALAMIA',8000,3500,'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos esse id odio nobis ipsum molestias fugit! Nemo dolore totam ratione nostrum aliquid veniam, illum, qui eligendi iure at et in!','/images/products/img-1652155559197.jpg',3,3,2,NULL,NULL),(24,'Brunch Palacio Duho',9000,5600,'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos esse id odio nobis ipsum molestias fugit! Nemo dolore totam ratione nostrum aliquid veniam, illum, qui eligendi iure at et in!','/images/products/img-1652155590564.jpg',2,3,2,NULL,NULL),(25,'Restaurant Tematico',10500,8500,'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos esse id odio nobis ipsum molestias fugit! Nemo dolore totam ratione nostrum aliquid veniam, illum, qui eligendi iure at et in!','/images/products/img-1652155630870.jpg',1,3,3,NULL,NULL),(26,'Kansas Palermo',12500,9500,'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos esse id odio nobis ipsum molestias fugit! Nemo dolore totam ratione nostrum aliquid veniam, illum, qui eligendi iure at et in!','/images/products/img-1652155678403.jpg',3,3,3,NULL,NULL),(27,'Pedro Pica & Hierve',50000,15000,'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos esse id odio nobis ipsum molestias fugit! Nemo dolore totam ratione nostrum aliquid veniam, illum, qui eligendi iure at et in!','/images/products/img-1652155716548.jpg',2,3,3,NULL,NULL);
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `productscart`
+--
+
+DROP TABLE IF EXISTS `productscart`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `productscart` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `userId` int(11) NOT NULL,
+  `productId` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `productscart_FK` (`userId`),
+  KEY `productscart_FK_1` (`productId`),
+  CONSTRAINT `productscart_FK` FOREIGN KEY (`userId`) REFERENCES `users` (`id`),
+  CONSTRAINT `productscart_FK_1` FOREIGN KEY (`productId`) REFERENCES `products` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `productscart`
+--
+
+LOCK TABLES `productscart` WRITE;
+/*!40000 ALTER TABLE `productscart` DISABLE KEYS */;
+INSERT INTO `productscart` VALUES (9,3,2);
+/*!40000 ALTER TABLE `productscart` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -138,7 +167,7 @@ CREATE TABLE `tokenusers` (
   `email` varchar(30) NOT NULL,
   `token` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -147,39 +176,13 @@ CREATE TABLE `tokenusers` (
 
 LOCK TABLES `tokenusers` WRITE;
 /*!40000 ALTER TABLE `tokenusers` DISABLE KEYS */;
+INSERT INTO `tokenusers` VALUES (17,'niconovikov@gmail.com','LzzPPYWuxBgzmKleX1jPWXLgov8N2U3uZx5kAfH2p4ULrIC0ECgNO3I559K+c9IXYWJ4CmW2k5511ISv59fo+w=='),(18,'niconovikov@gmail.com','H8dsGibFL9yQUiitb3WXDwlIwIHE31vxZKPcQDnF94Y2SNagrSZrDvSEyQwq+P4dnCaBQyWi2orrMqMV3ts0Lw=='),(19,'niconovikov@gmail.com','81xXwHTekOrjszzYTGSkBMZlqAI62Q1+mUiLTKzSX4spkiACqZINxh89HTibQu0QeqV5pp6a+5ZjT/JXTVexRA=='),(20,'niconovikov@gmail.com','Yeq7vMwRywk390AsNVEV3U/7QaJkISEaXWJq1Pgvk/GJqgYN/K5sH5wP+twpehvL3H1RCoC76UJ+q7ToVNK+EQ=='),(21,'niconovikov@gmail.com','q018kHGJiCfCTMe1geAksOGxVIiTkNf8SSJonku2XszTGVPz/ag+X+fFjlrOB5nF+hBJtGEDUHOVPRL83Qxs3Q==');
 /*!40000 ALTER TABLE `tokenusers` ENABLE KEYS */;
 UNLOCK TABLES;
-
-
---
--- Table structure for table `productscart`
---
-
-DROP TABLE IF EXISTS `productscart`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `productscart` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `userId` int(11) NOT NULL,
-  `productId` int(11) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `productscart`
---
-
-LOCK TABLES `productscart` WRITE;
-/*!40000 ALTER TABLE `productscart` DISABLE KEYS */;
-/*!40000 ALTER TABLE `productscart` ENABLE KEYS */;
-UNLOCK TABLES;
-
 
 --
 -- Table structure for table `users`
 --
-
 
 DROP TABLE IF EXISTS `users`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
@@ -193,7 +196,7 @@ CREATE TABLE `users` (
   `userImage` varchar(255) NOT NULL,
   `userPrivilege` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -202,7 +205,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'nico','novikov','niconovikov@gmail.com','$2a$10$ts9OPjjUFB3HKtxRAgydfeAP.aK2B9.MaAUQq730nTHihC4Kt8RL2','/images/users/default-user.jpg',1);
+INSERT INTO `users` VALUES (2,'asas','novikov','asasas@gmail.com','$2a$10$3H/uarvXYHy5cEX2yqyKNOlArc3ky4F7dMu2vvdOsgVFa3E/Mk3na','/images/users/default-user.jpg',0),(3,'nico','Novikov','niconovikov@gmail.com','$2a$10$0K4yWtvRDzpahQmn54kK9.OQ7TiUbdzSEH3EKPDx4M0IuhKN31HcO','/images/users/default-user.jpg',1);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -219,4 +222,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-05-10 21:22:26
+-- Dump completed on 2022-05-16 23:02:46
