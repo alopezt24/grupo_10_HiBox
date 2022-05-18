@@ -31,33 +31,36 @@ class User extends Component{
     render(){
         return (
             <React.Fragment>
-            {/*<!-- users LIST -->*/}
-            <h1 className="h3 mb-2 text-gray-800 ">All the users in the Database</h1>
-            {/*<!-- DataTales Example -->*/}
-            <div className="card shadow mb-4">
-                <div className="card-body">
+            
+            {/*<!-- products LIST -->*/}
+            <div className="col-lg-12 mb-4">						
+                        <div className="card shadow mb-4">
+                            <div className="card-header py-3">
+                                <h5 className="m-0 font-weight-bold text-gray-800">All the users in the Database</h5>
+                            </div>
+                            <div className="card-body">
                     <div className="table-responsive">
                         <table className="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                             <thead>
                                 <tr>
                                     <th>Id</th>
-                                    <th>Titulo</th>
-                                    <th>Calificación</th>
-                                    <th>Premios</th>
-                                    <th>Duración</th>
+                                    <th>Nombre</th>
+                                    <th>Apellido</th>
+                                    <th>Mail</th>
+                                    <th>Privilegios</th>
                                 </tr>
                             </thead>
-                            <tfoot>
+                             <tfoot>
                                 <tr>
                                     <th>Id</th>
-                                    <th>Titulo</th>
-                                    <th>Calificación</th>
-                                    <th>Premios</th>
-                                    <th>Duración</th>
+                                    <th>Nombre</th>
+                                    <th>Apellido</th>
+                                    <th>Mail</th>
+                                    <th>Privilegios</th>
                                 </tr>
-                            </tfoot>
+                            </tfoot> 
                             <tbody>
-                                {
+                            {
                                     //console.log(this.state.users)
                                     this.state.users.map((user,index)=>{
                                         return <UserList  {...user} key={index}  />
@@ -67,7 +70,8 @@ class User extends Component{
                         </table>
                     </div>
                 </div>
-        </div>
+                        </div>
+                    </div>
 
     </React.Fragment>
     )
