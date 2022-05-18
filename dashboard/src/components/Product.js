@@ -35,7 +35,7 @@ class Product extends Component{
             <div className="col-lg-12 mb-4">						
                         <div className="card shadow mb-4">
                             <div className="card-header py-3">
-                                <h5 className="m-0 font-weight-bold text-gray-800">All the products in the Database</h5>
+                                <h5 className="m-0 font-weight-bold text-gray-800">Todos los productos en Base de Datos</h5>
                             </div>
                             <div className="card-body">
                     <div className="table-responsive">
@@ -43,19 +43,19 @@ class Product extends Component{
                             <thead>
                                 <tr>
                                     <th>Id</th>
-                                    <th>Name</th>
-                                    <th>Category_id</th>
-                                    <th>Detail</th>
-                                    <th>Price</th>
+                                    <th>Nombre</th>
+                                    <th>Categoría</th>
+                                    <th>Detalle</th>
+                                    <th>Precio</th>
                                 </tr>
                             </thead>
                              <tfoot>
                                 <tr>
                                     <th>Id</th>
-                                    <th>Name</th>
-                                    <th>Category_id</th>
-                                    <th>Detail</th>
-                                    <th>Price</th>
+                                    <th>Nombre</th>
+                                    <th>Categoría</th>
+                                    <th>Detalle</th>
+                                    <th>Precio</th>
                                 </tr>
                             </tfoot> 
                             <tbody>

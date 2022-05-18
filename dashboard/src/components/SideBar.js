@@ -1,5 +1,11 @@
 import React from 'react';
 import image from '../assets/images/logo-Hibox.png';
+import ContentWrapper from './ContentWrapper';
+import {Link, Route, Routes} from 'react-router-dom'
+import CategorysInDb from './CategorysInDb';
+import User from './User';
+import Product from './Product';
+import Error404 from './Error404';
 
 function SideBar(){
     return(
@@ -8,54 +14,63 @@ function SideBar(){
             <ul className="navbar-nav bg-gradient-secondary sidebar sidebar-dark accordion" id="accordionSidebar">
 
                 {/*<!-- Sidebar - Brand -->*/}
-                <a className="sidebar-brand d-flex align-items-center justify-content-center" href="/">
+                <Link className="sidebar-brand d-flex align-items-center justify-content-center" to="/">
                     <div className="sidebar-brand-icon">
                         <img className="w-100" src={image} alt="Digital House"/>
                     </div>
-                </a>
+                </Link>
 
                 {/*<!-- Divider -->*/}
                 <hr className="sidebar-divider my-0"/>
 
                 {/*<!-- Nav Item - Dashboard -->*/}
                 <li className="nav-item active">
-                    <a className="nav-link" href="/">
+                    <Link className="nav-link" to="/">
                         <i className="fas fa-fw fa-tachometer-alt"></i>
-                        <span>Dashboard - DH HiBox</span></a>
+                        <span>Dashboard - DH HiBox</span></Link>
                 </li>
 
                 {/*<!-- Divider -->*/}
                 <hr className="sidebar-divider"/>
 
                 {/*<!-- Heading -->*/}
-                <div className="sidebar-heading">Actions</div>
+                <div className="sidebar-heading">Acciones</div>
 
                 {/*<!-- Nav Item - Pages -->*/}
                 <li className="nav-item">
-                    <a className="nav-link collapsed" href="/">
-                        <i className="fas fa-fw fa-folder"></i>
-                        <span>TODO</span>
-                    </a>
+                    <Link className="nav-link collapsed" to="/Product">
+                        <i className="fas fa-boxes"></i>
+                        <span>Productos</span>
+                    </Link>
                 </li>
 
-                {/*<!-- Nav Item - Charts -->*/}
-                {/* <li className="nav-item">
-                    <a className="nav-link" href="/">
-                        <i className="fas fa-fw fa-chart-area"></i>
-                        <span>Charts</span></a>
-                </li> */}
-
-                {/*<!-- Nav Item - Tables -->*/}
                 <li className="nav-item">
-                    <a className="nav-link" href="/">
-                        <i className="fas fa-fw fa-table"></i>
-                        <span>TODO</span></a>
+                    <Link className="nav-link collapsed" to="/CategorysInDb">
+                        <i className="fas fa-list"></i>
+                        <span>Categorías</span>
+                    </Link>
                 </li>
+                
+                <li className="nav-item">
+                    <Link className="nav-link collapsed" to="/User">
+                        <i className="fas fa-user"></i>
+                        <span>Users</span>
+                    </Link>
+                </li>
+
 
                 {/*<!-- Divider -->*/}
                 <hr className="sidebar-divider d-none d-md-block"/>
             </ul>
             {/*<!-- End of Sidebar -->*/}
+            <Routes>
+                <Route exact path="/" element={<ContentWrapper />}/>
+                <Route path="/CategorysInDb" element={<CategorysInDb />}/>
+                <Route path="/Product" element={<Product />}/>
+                <Route path="/User" element={<User />}/>
+                <Route path="*" element={<Error404 />}/>
+               
+            </Routes> 
         </React.Fragment>
     )
 }
