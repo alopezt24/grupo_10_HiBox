@@ -31,12 +31,11 @@ class User extends Component{
     render(){
         return (
             <React.Fragment>
-            
             {/*<!-- products LIST -->*/}
-            <div className="col-lg-12 mb-4">						
+            <div className="col-lg-12 mb-4">
                         <div className="card shadow mb-4">
                             <div className="card-header py-3">
-                                <h5 className="m-0 font-weight-bold text-gray-800">All the users in the Database</h5>
+                                <h5 className="m-0 font-weight-bold text-gray-800">Todos los usuarios en base de datos</h5>
                             </div>
                             <div className="card-body">
                     <div className="table-responsive">
@@ -46,19 +45,10 @@ class User extends Component{
                                     <th>Id</th>
                                     <th>Nombre</th>
                                     <th>Apellido</th>
-                                    <th>Mail</th>
+                                    <th>E-mail</th>
                                     <th>Privilegios</th>
                                 </tr>
                             </thead>
-                             <tfoot>
-                                <tr>
-                                    <th>Id</th>
-                                    <th>Nombre</th>
-                                    <th>Apellido</th>
-                                    <th>Mail</th>
-                                    <th>Privilegios</th>
-                                </tr>
-                            </tfoot> 
                             <tbody>
                             {
                                     //console.log(this.state.users)

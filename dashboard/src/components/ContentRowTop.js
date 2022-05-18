@@ -12,7 +12,7 @@ function ContentRowTop(){
 				{/*<!-- Content Row Top -->*/}
 				<div className="container-fluid">
 					<div className="d-sm-flex aligns-items-center justify-content-between mb-4">
-						<h1 className="h3 mb-0 text-gray-800">App Dashboard</h1>
+						<h1 className="h3 mb-0 text-gray-800">Panel de control de la aplicación</h1>
 					</div>
 
 					{/*<!-- Content Row Products-->*/}
@@ -25,7 +25,7 @@ function ContentRowTop(){
 						<div className="col-lg-6 mb-4">
 							<div className="card shadow mb-4">
 								<div className="card-header py-3">
-									<h5 className="m-0 font-weight-bold text-gray-800">Last Product in DataBase</h5>
+									<h5 className="m-0 font-weight-bold text-gray-800">Último producto en la base de datos</h5>
 								</div>
 								<div className="card-body">
 									<div className="text-center">
@@ -33,7 +33,7 @@ function ContentRowTop(){
 									</div>
 									<h3>Clases de Surf</h3>
 									<p ref={parrafo}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, consequatur explicabo officia inventore libero veritatis iure voluptate reiciendis a magnam, vitae, aperiam voluptatum non corporis quae dolorem culpa citationem ratione aperiam voluptatum non corporis ratione aperiam voluptatum quae dolorem culpa ratione aperiam voluptatum?</p>
-									<a className="btn btn-danger" target="_blank" rel="nofollow" href="/">View product detail</a>
+									<a className="btn btn-danger" target="_blank" rel="nofollow" href="/">Ver detalle de producto</a>
 								</div>
 							</div>
 						</div>

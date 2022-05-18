@@ -1,5 +1,5 @@
 import React from 'react';
-import image from '../assets/images/logo-Hibox.png';
+import image from '../assets/images/logo-HiBox.png';
 
 function SideBar(){
     return(

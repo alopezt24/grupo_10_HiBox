@@ -7,7 +7,7 @@ const moment = require('moment');
 
 //Aqui tienen otra forma de llamar a cada uno de los modelos
 
-const Categorys = db.Category;
+// const Categorys = db.Category;
 
 //---------------------------
 //Dentro del actorsAPIController uso las dos forma de poder llamar a nuestros modelo

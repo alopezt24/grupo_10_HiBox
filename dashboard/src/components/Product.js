@@ -30,12 +30,11 @@ class Product extends Component{
     render(){
         return (
             <React.Fragment>
-            
             {/*<!-- products LIST -->*/}
-            <div className="col-lg-12 mb-4">						
+            <div className="col-lg-12 mb-4">
                         <div className="card shadow mb-4">
                             <div className="card-header py-3">
-                                <h5 className="m-0 font-weight-bold text-gray-800">All the products in the Database</h5>
+                                <h5 className="m-0 font-weight-bold text-gray-800">Todo los productos en la base de datos</h5>
                             </div>
                             <div className="card-body">
                     <div className="table-responsive">
@@ -43,21 +42,12 @@ class Product extends Component{
                             <thead>
                                 <tr>
                                     <th>Id</th>
-                                    <th>Name</th>
-                                    <th>Category_id</th>
-                                    <th>Detail</th>
-                                    <th>Price</th>
+                                    <th>Nombre</th>
+                                    <th>Categoria</th>
+                                    <th>Detalle</th>
+                                    <th>Precio</th>
                                 </tr>
                             </thead>
-                             <tfoot>
-                                <tr>
-                                    <th>Id</th>
-                                    <th>Name</th>
-                                    <th>Category_id</th>
-                                    <th>Detail</th>
-                                    <th>Price</th>
-                                </tr>
-                            </tfoot> 
                             <tbody>
                                 {
                                     //console.log(this.state.products)
