@@ -30,12 +30,14 @@ class Product extends Component{
     render(){
         return (
             <React.Fragment>
-            {/*<!-- products LIST -->*/}
-            <h1 className="h3 mb-2 text-gray-800 ">All the products in the Database</h1>
             
-            {/*<!-- DataTales Example -->*/}
-            <div className="card shadow mb-4">
-                <div className="card-body">
+            {/*<!-- products LIST -->*/}
+            <div className="col-lg-12 mb-4">						
+                        <div className="card shadow mb-4">
+                            <div className="card-header py-3">
+                                <h5 className="m-0 font-weight-bold text-gray-800">All the products in the Database</h5>
+                            </div>
+                            <div className="card-body">
                     <div className="table-responsive">
                         <table className="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                             <thead>
@@ -67,7 +69,8 @@ class Product extends Component{
                         </table>
                     </div>
                 </div>
-        </div>
+                        </div>
+                    </div>
 
     </React.Fragment>
     )

@@ -1,5 +1,5 @@
 import React ,{ useEffect, useState } from 'react';
-import Category from './Category';
+import Category  from './Category';
 
 
 function CategorysInDb () {
@@ -13,22 +13,22 @@ function CategorysInDb () {
                 return respuesta.json()
             })
             .then(categorys => {
-
+                
                 setCategorys(categorys.data)
-
+                
             })
             .catch(error => console.log(error))
 
     },[])
-
+    
 
         return (
             <React.Fragment>
                     {/*<!-- Categories in DB -->*/}
-                    <div className="col-lg-6 mb-4">
+                    <div className="col-lg-6 mb-4">						
                         <div className="card shadow mb-4">
                             <div className="card-header py-3">
-                                <h6  className="m-0 font-weight-bold text-gray-800">Categories in DataBase</h6>
+                                <h5 className="m-0 font-weight-bold text-gray-800">Categories in Data Base</h5>
                             </div>
                             <div className="card-body fondoCaja">
                                 <div className="row">
@@ -41,11 +41,11 @@ function CategorysInDb () {
                             </div>
                         </div>
                     </div>
-
+               
             </React.Fragment>
-
+        
         )
-
+    
 
 }
 export default CategorysInDb;
