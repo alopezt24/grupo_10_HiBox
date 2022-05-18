@@ -1,13 +1,12 @@
 const express = require('express');
 const router = express.Router();
-const CategorysAPIController = require('../../controllers/api/categorysAPIController');
+const categorysAPIController = require('../../controllers/api/categorysAPIController');
 
 //Rutas
-//Listado de todos los generos
+//Listado de todos los categorias
 router.get('/', categorysAPIController.list);
-//Detalle del genero
+//Detalle del categorias
 router.get('/:id', categorysAPIController.detail);
-//Películas por genero
-// router.get('/:id/movies', categorysAPIController.genreMovies);
+
 
 module.exports = router;

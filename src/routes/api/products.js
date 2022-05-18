@@ -7,14 +7,5 @@ const productsAPIController = require('../../controllers/api/productsAPIControll
 router.get('/', productsAPIController.list);
 //Detalle del productos
 router.get('/:id', productsAPIController.detail);
-//En que peliculas trabajo el actor con id tal
-// router.get('/:id/movies', productsAPIController.actorMovies);
-
-//Agregar un actor
-router.post('/create', productsAPIController.create);
-//Modificar un actor
-router.put('/update/:id', productsAPIController.update);
-//Eliminar un actor
-router.delete('/delete/:id', productsAPIController.destroy);
 
 module.exports = router;

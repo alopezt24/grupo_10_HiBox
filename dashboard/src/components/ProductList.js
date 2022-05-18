@@ -5,10 +5,10 @@ function ProductList(props){
         <React.Fragment>
             <tr>
                 <td>{props.id}</td>
-                <td>{props.title}</td>
-                <td>{props.rating}</td>
-                <td>{props.awards}</td>
-                <td>{props.length}</td>
+                <td>{props.name}</td>
+                <td>{props.categoryId}</td>
+                <td>{props.detail}</td>
+                <td>{props.price}</td>
             </tr>
         </React.Fragment>
     )

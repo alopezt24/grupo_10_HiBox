@@ -24,7 +24,6 @@ class Product extends Component{
             this.setState({products: products.data})
         })
         .catch(error => console.log(error))
-
     }
 
 
@@ -70,8 +69,6 @@ class Product extends Component{
                 </div>
         </div>
 
-
-    
     </React.Fragment>
     )
     }
