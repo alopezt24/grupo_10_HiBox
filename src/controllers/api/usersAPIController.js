@@ -28,10 +28,7 @@ const UsersAPIController = {
     },
 
     'detail': (req, res) => {
-        db.User.findByPk(req.params.id,
-            {
-                include : ['genre']
-            })
+        db.User.findByPk(req.params.id)
             .then(User => {
                 let respuesta = {
                     meta: {
