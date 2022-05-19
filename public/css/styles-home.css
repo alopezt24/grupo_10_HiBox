@@ -35,12 +35,39 @@ body {
 
 .error h1{
     margin-top: 30px;
-    font-size: 40px;
+    font-size: 4em;
 }
 
-.error p{
+.error p {
     margin-top: 10px;
     font-size: 20px;
+}
+
+.error img {
+    width: 50%;
+}
+
+.btn-error {
+    display: flex;
+    justify-content:center;
+    flex-direction: column;
+    margin: auto;
+    margin-top: 40px;
+    background-color: #fa5f63;
+    width: 200px;
+    padding: 10px;
+    border-radius: 30px;
+    transition: all 450ms;
+}
+
+.btn-error a{
+    color: white;
+    margin-top: -10px;
+    text-decoration: none !important;
+}
+
+.btn-error:hover {
+    background-color: #7d92a5;
 }
 
 .main-header {
