@@ -16,8 +16,10 @@ class ProductDetail extends Component{
             return respuesta.json()
         })
         .then(products =>{
-            // console.log(props)
-            this.setState({product: products.data})
+            console.log(products.data)
+            this.setState({
+                product: products.data
+            })
         })
         .catch(error => console.log(error))
     }
@@ -58,12 +60,12 @@ class ProductDetail extends Component{
                                     <td>{this.state.product.id}</td>
                                 </tr>
                                 <tr>
-                                    <th>Categoría</th>
-                                    <td>{this.state.product.categorys}</td>
+                                    <th>ID Categoría</th>
+                                    <td>{this.state.product.categoryId}</td>
                                 </tr>
                                 <tr>
-                                    <th>Sub Categoría</th>
-                                    <td>{this.state.product.subCategory}</td>
+                                    <th>ID SubCategoría</th>
+                                    <td>{this.state.product.subCategoryId}</td>
                                 </tr>
                                 <tr>
                                     <th>Precio</th>

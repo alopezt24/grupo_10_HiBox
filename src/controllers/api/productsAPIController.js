@@ -25,19 +25,19 @@ const ProductsAPIController = {
             })
     },
 
-    'detail': (req, res) => {
-        db.Product.findByPk(req.params.id)
-            .then(Product => {
-                let respuesta = {
+    'detail': async (req, res) => {
+        let Products = await db.Product.findAll({include: [{association: "categorys"}, {association: "subcategorys"}]});
+        let Product = Products.find(item => { return item.id == req.params.id})
+        
+        let respuesta = {
                     meta: {
                         status: 200,
                         total: Product.length,
                         url: '/api/Product/:id'
                     },
                     data: Product
-                }
+                    }
                 res.json(respuesta);
-            });
     },
 }
 
