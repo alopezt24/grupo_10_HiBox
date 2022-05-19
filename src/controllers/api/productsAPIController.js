@@ -11,7 +11,7 @@ const Products = db.Product;
 //----------------------------------
 const ProductsAPIController = {
     'list': (req, res) => {
-        db.Product.findAll()
+        db.Product.findAll({include: [{association: "categorys"}]})
         .then(Products => {
             let respuesta = {
                 meta: {
