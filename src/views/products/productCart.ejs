@@ -57,9 +57,10 @@
 							<div class="total">
 								<p><%= acum %></p>
 							</div>
-							<div class="comprar">
-								<p ><a href="#">Comprar</a></p>
-							</div>
+								<form class="comprar" action="/products/productCart/<%= productUser.id%>?_method=DELETE" method="POST" enctype="multipart/form-data">	
+									<button type="submit" class="comprar"><i class="fas fa-shopping-cart"></i> Comprar</button>
+								</form>
+							
 						</div>
 				
 				</div>
