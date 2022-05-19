@@ -1,6 +1,12 @@
 import React from 'react';
 
 function UserList(props){
+    let user= "";
+    if (props.userPrivilege) {
+        user = "Administrador"
+    } else {
+        user = "Usuario"
+    };
     return (
         <React.Fragment>
             <tr>
@@ -8,7 +14,7 @@ function UserList(props){
                 <td>{props.firstName}</td>
                 <td>{props.lastName}</td>
                 <td>{props.email}</td>
-                <td>{props.userPrivilege}</td>
+                <td>{user}</td>
             </tr>
         </React.Fragment>
     )
