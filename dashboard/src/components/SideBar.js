@@ -1,5 +1,5 @@
 import React from 'react';
-import image from '../assets/images/logo-Hibox.png';
+import image from '../assets/images/logo-HiBox.png';
 import ContentWrapper from './ContentWrapper';
 import {Link, Route, Routes} from 'react-router-dom'
 import CategorysInDb from './CategorysInDb';
