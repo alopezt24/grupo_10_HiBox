@@ -69,7 +69,6 @@ function SideBar(){
                 <Route path="/Product" element={<Product />}/>
                 <Route path="/User" element={<User />}/>
                 <Route path="*" element={<Error404 />}/>
-               
             </Routes> 
         </React.Fragment>
     )

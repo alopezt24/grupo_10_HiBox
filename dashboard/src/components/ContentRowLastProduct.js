@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import {Link, Route, Routes} from 'react-router-dom';
 import ProductDetail from './ProductDetail';
-import Error404 from './Error404';
 //import imagenFondo from '../assets/images/img-product.jpg';
 
 class ContentRowLastProduct extends Component {
@@ -39,7 +38,7 @@ class ContentRowLastProduct extends Component {
                                         </div>
                                         <h3>{this.state.lastProduct.name}</h3>
                                         
-                                        <Link className="btn btn-danger" target="_blank" rel="nofollow" to={"/ProductDetail/:" + this.state.lastProduct.id}>Detalle</Link>
+                                        <Link className="btn btn-danger" to={"/ProductDetail/:" + this.state.lastProduct.id}>Detalle</Link>
                                     </div>
                                 </div>
                  </div>
