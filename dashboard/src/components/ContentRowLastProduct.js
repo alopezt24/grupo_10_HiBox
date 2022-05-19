@@ -1,7 +1,7 @@
  
 import React, {Component} from 'react';
-import {Link, Route, Routes} from 'react-router-dom';
-import ProductDetail from './ProductDetail';
+import {Link} from 'react-router-dom';
+//import ProductDetail from './ProductDetail';
 //import imagenFondo from '../assets/images/img-product.jpg';
 
 class ContentRowLastProduct extends Component {

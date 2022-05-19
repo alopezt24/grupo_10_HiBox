@@ -31,7 +31,8 @@ class User extends Component{
     render(){
         return (
             <React.Fragment>
-            {/*<!-- products LIST -->*/}
+            {/*<!-- users LIST -->*/}
+            <div id="content-wrapper" className="d-flex flex-column">
             <div className="col-lg-12 mb-4">
                         <div className="card shadow mb-4">
                             <div className="card-header py-3">
@@ -59,9 +60,10 @@ class User extends Component{
                             </tbody>
                         </table>
                     </div>
-                </div>
-                        </div>
-                    </div>
+                 </div>
+            </div>
+        </div>
+    </div>
 
     </React.Fragment>
     )

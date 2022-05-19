@@ -31,6 +31,7 @@ class Product extends Component{
         return (
             <React.Fragment>
             {/*<!-- products LIST -->*/}
+            <div id="content-wrapper" className="d-flex flex-column">
             <div className="col-lg-12 mb-4">
                         <div className="card shadow mb-4">
                             <div className="card-header py-3">
@@ -68,8 +69,9 @@ class Product extends Component{
                         </table>
                     </div>
                 </div>
-                        </div>
-                    </div>
+              </div>
+            </div>
+        </div>
 
     </React.Fragment>
     )
