@@ -3,9 +3,9 @@ const router = express.Router();
 const usersAPIController = require('../../controllers/api/usersAPIController');
 
 //Rutas
-//Listado de películas
+//Listado de usuarios
 router.get('/', usersAPIController.list);
-//Detalle de una película
+//Detalle de una usuarios
 router.get('/:id', usersAPIController.detail);
 
 module.exports = router;

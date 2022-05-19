@@ -1,42 +1,110 @@
-import React from 'react';
+import React, { Component, Fragment } from 'react';
 import SmallCard from './SmallCard';
 
-let productInDataBase = {
-    color:   "primary",
-    titulo: "Products in DataBase",
-    valor: 50,
-    icono: "fas fa-boxes text-gray-300",
-}
+// let productInDataBase = {
+//     color:   "primary",
+//     titulo: "Products in DataBase",
+//     valor: 50,
+//     icono: "fas fa-boxes text-gray-300",
+// }
 
-let amount ={
-    color:   "success",
-    titulo: "Categories in DataBase",
-    valor: 50,
-    icono: "fas fa-list text-gray-300",
-}
+// let amount ={
+//     color:   "success",
+//     titulo: "Categories in DataBase",
+//     valor: 50,
+//     icono: "fas fa-list text-gray-300",
+// }
 
-let user = {
-    color:   "warning",
-    titulo: "Users in DataBase",
-    valor: 50,
-    icono: "fas fa-user",
-}
+// let user = {
+//     color:   "warning",
+//     titulo: "Users in DataBase",
+//     valor: 50,
+//     icono: "fas fa-user",
+// }
 
-let cardProps = [productInDataBase,amount,user];
+// let cardProps = [productInDataBase,amount,user];
+
+//definir componente tipo clase para usar State...
+class ContentRowTop extends Component{
+    constructor(props){
+        super(props);
+        this.state = {
+            cardProps: []
+        }
+    }
+
+    //se llama a los usuarios y se guarda en el estado...
+    callUser(url){
+        fetch(url)
+        .then(response => response.json())
+        .then(data => this.setState(prevState => ({
+            cardProps: [...prevState.cardProps, {
+                color:   "warning",
+                titulo: "Users in DataBase",
+                valor: data.meta.total,
+                icono: "fas fa-user",
+            }]
+        }))
+        )
+        .catch(error => console.log(error))
+    }
+
+    callCategories(url){
+        fetch(url)
+        .then(response => response.json())
+        .then(data => this.setState(prevState => ({
+            cardProps: [...prevState.cardProps, {
+                color:   "success",
+                titulo: "Categories in DataBase",
+                valor: data.meta.total,
+                icono: "fas fa-list text-gray-300",
+            }]
+        }))
+        )
+        .catch(error => console.log(error))
+    }
+
+    callProducts(url){
+        fetch(url)
+        .then(response => response.json())
+        .then(data => this.setState(prevState => ({
+            cardProps: [...prevState.cardProps, {
+                color:   "primary",
+                titulo: "Products in DataBase",
+                valor: data.meta.total,
+                icono: "fas fa-boxes text-gray-300",
+            }]
+        }))
+        )
+        .catch(error => console.log(error))
+    }
 
 
-function ContentRowTop(){
+    //llamamos a los metodos para llenar el array de cardProps: []
+    componentDidMount(){
+        console.log('Mounted');
+        this.callUser('/api/users/')
+        this.callCategories('/api/categorys/')
+        this.callProducts('/api/products/')
+    }
+
+    render(){
+        console.log('Rendered');
+
+    //rederizado....
     return (
-        <React.Fragment>
+        <Fragment>
         {/*<!-- Content Row -->*/}
         <div className="row">
             {
-                cardProps.map((producto,index)=>{
-                    return <SmallCard  {...producto}  key= {index}/>
+                this.state.cardProps.map((cardItem,index)=>{
+                    return <SmallCard  {...cardItem}  key= {index}/>
                 })
             }
         </div>
-        </React.Fragment>
+        </Fragment>
     )
 }
+}
+
 export default ContentRowTop;

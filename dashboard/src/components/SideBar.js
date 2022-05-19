@@ -1,5 +1,5 @@
 import React from 'react';
-import image from '../assets/images/logo-Hibox.png';
+import image from '../assets/images/logo-HiBox.png';
 import ContentWrapper from './ContentWrapper';
 import {Link, Route, Routes} from 'react-router-dom'
 import CategorysInDb from './CategorysInDb';
@@ -50,7 +50,6 @@ function SideBar(){
                         <span>Categorías</span>
                     </Link>
                 </li>
-                
                 <li className="nav-item">
                     <Link className="nav-link collapsed" to="/User">
                         <i className="fas fa-user"></i>
@@ -69,8 +68,7 @@ function SideBar(){
                 <Route path="/Product" element={<Product />}/>
                 <Route path="/User" element={<User />}/>
                 <Route path="*" element={<Error404 />}/>
-               
-            </Routes> 
+            </Routes>
         </React.Fragment>
     )
 }

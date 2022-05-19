@@ -48,7 +48,7 @@ class Product extends Component{
                                     <th>Precio</th>
                                 </tr>
                             </thead>
-                             <tfoot>
+                            <tfoot>
                                 <tr>
                                     <th>Id</th>
                                     <th>Nombre</th>
@@ -56,7 +56,7 @@ class Product extends Component{
                                     <th>Detalle</th>
                                     <th>Precio</th>
                                 </tr>
-                            </tfoot> 
+                            </tfoot>
                             <tbody>
                                 {
                                     //console.log(this.state.products)
