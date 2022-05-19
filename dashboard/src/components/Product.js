@@ -30,9 +30,8 @@ class Product extends Component{
     render(){
         return (
             <React.Fragment>
-            
             {/*<!-- products LIST -->*/}
-            <div className="col-lg-12 mb-4">						
+            <div className="col-lg-12 mb-4">
                         <div className="card shadow mb-4">
                             <div className="card-header py-3">
                                 <h5 className="m-0 font-weight-bold text-gray-800">Todos los productos en Base de Datos</h5>
@@ -49,7 +48,7 @@ class Product extends Component{
                                     <th>Precio</th>
                                 </tr>
                             </thead>
-                             <tfoot>
+                            <tfoot>
                                 <tr>
                                     <th>Id</th>
                                     <th>Nombre</th>
@@ -57,7 +56,7 @@ class Product extends Component{
                                     <th>Detalle</th>
                                     <th>Precio</th>
                                 </tr>
-                            </tfoot> 
+                            </tfoot>
                             <tbody>
                                 {
                                     //console.log(this.state.products)
