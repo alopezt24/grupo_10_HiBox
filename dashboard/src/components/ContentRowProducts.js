@@ -1,28 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import SmallCard from './SmallCard';
 
-// let productInDataBase = {
-//     color:   "primary",
-//     titulo: "Products in DataBase",
-//     valor: 50,
-//     icono: "fas fa-boxes text-gray-300",
-// }
-
-// let amount ={
-//     color:   "success",
-//     titulo: "Categories in DataBase",
-//     valor: 50,
-//     icono: "fas fa-list text-gray-300",
-// }
-
-// let user = {
-//     color:   "warning",
-//     titulo: "Users in DataBase",
-//     valor: 50,
-//     icono: "fas fa-user",
-// }
-
-// let cardProps = [productInDataBase,amount,user];
 
 //definir componente tipo clase para usar State...
 class ContentRowTop extends Component{
@@ -40,7 +18,7 @@ class ContentRowTop extends Component{
         .then(data => this.setState(prevState => ({
             cardProps: [...prevState.cardProps, {
                 color:   "warning",
-                titulo: "Users in DataBase",
+                titulo: "Usuarios en la Base de datos",
                 valor: data.meta.total,
                 icono: "fas fa-user",
             }]
@@ -55,7 +33,7 @@ class ContentRowTop extends Component{
         .then(data => this.setState(prevState => ({
             cardProps: [...prevState.cardProps, {
                 color:   "success",
-                titulo: "Categories in DataBase",
+                titulo: "Categorias en la Base de datos",
                 valor: data.meta.total,
                 icono: "fas fa-list text-gray-300",
             }]
@@ -70,7 +48,7 @@ class ContentRowTop extends Component{
         .then(data => this.setState(prevState => ({
             cardProps: [...prevState.cardProps, {
                 color:   "primary",
-                titulo: "Products in DataBase",
+                titulo: "Productos en la Base de datos",
                 valor: data.meta.total,
                 icono: "fas fa-boxes text-gray-300",
             }]

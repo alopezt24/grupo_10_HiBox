@@ -5,6 +5,7 @@ import {Link, Route, Routes} from 'react-router-dom'
 import CategorysInDb from './CategorysInDb';
 import User from './User';
 import Product from './Product';
+import ProductDetail from './ProductDetail';
 import Error404 from './Error404';
 
 function SideBar(){
@@ -63,6 +64,7 @@ function SideBar(){
             </ul>
             {/*<!-- End of Sidebar -->*/}
             <Routes>
+                <Route path="/ProductDetail/:id" element={<ProductDetail />}/>
                 <Route exact path="/" element={<ContentWrapper />}/>
                 <Route path="/CategorysInDb" element={<CategorysInDb />}/>
                 <Route path="/Product" element={<Product />}/>

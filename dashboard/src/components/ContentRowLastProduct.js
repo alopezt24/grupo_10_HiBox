@@ -40,15 +40,13 @@ class ContentRowLastProduct extends Component {
                                         </div>
                                         <h3>{this.state.lastProduct.name}</h3>
                                         
-                                        <Link className="btn btn-danger" to={"/ProductDetail"}>
+                                        <Link className="btn btn-danger" to={"/ProductDetail/" + this.state.lastProduct.id }>
                                             <span>Detalle</span>
                                         </Link>
                                     </div>
                                 </div>
                  </div>
-                <Routes>
-                    <Route path="/ProductDetail" element={<ProductDetail />}/> 
-                </Routes>
+               
             </React.Fragment>
         )
     }
