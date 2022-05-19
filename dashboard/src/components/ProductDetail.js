@@ -6,6 +6,8 @@ class ProductDetail extends Component{
         super(props)
         this.state ={
             product : {},
+            cat: {},
+            sub: {}
         }
     }
     //obtenemos la url del nav, se separa por / y se toma el ultimo valor (en este caso seria 2 = id)
@@ -18,7 +20,9 @@ class ProductDetail extends Component{
         .then(products =>{
             console.log(products.data)
             this.setState({
-                product: products.data
+                product: products.data,
+                cat: products.data.categorys,
+                sub: products.data.subcategorys
             })
         })
         .catch(error => console.log(error))
@@ -42,7 +46,7 @@ class ProductDetail extends Component{
                     </div>
                 </div>
             </div>
-            <div className="col-lg-3 mb-4">
+            <div className="col-lg-4 mb-4">
                 <div className="card shadow mb-4">
                     <div className="card-header py-3">
                         <h5 className="m-0 font-weight-bold text-gray-800">Detalle de Producto</h5>
@@ -61,11 +65,11 @@ class ProductDetail extends Component{
                                 </tr>
                                 <tr>
                                     <th>ID Categoría</th>
-                                    <td>{this.state.product.categoryId}</td>
+                                    <td>{this.state.cat.category}</td>
                                 </tr>
                                 <tr>
                                     <th>ID SubCategoría</th>
-                                    <td>{this.state.product.subCategoryId}</td>
+                                    <td>{this.state.sub.subCategory}</td>
                                 </tr>
                                 <tr>
                                     <th>Precio</th>
