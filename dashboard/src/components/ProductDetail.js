@@ -1,7 +1,7 @@
-
 import React, {Component} from 'react';
 
 class ProductDetail extends Component{
+
     constructor(props){
         super(props)
         this.state ={
@@ -27,39 +27,60 @@ class ProductDetail extends Component{
         return (
             <React.Fragment>
             {/*<!-- product Detail -->*/}
-            <div id="content-wrapper" className="d-flex flex-column">
-            <div className="col-lg-12 mb-4">
-                        <div className="card shadow mb-4">
-                            <div className="card-header py-3">
-                                <h5 className="m-0 font-weight-bold text-gray-800">Detalle de ultimo producto</h5>
-                            </div>
-                            <div className="card-body">
-                    <div className="table-responsive">
-                        <table className="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                            <thead>
-                                <tr>
-                                    <th>Id</th>
-                                    <th>Nombre</th>
-                                    <th>Categoría</th>
-                                    <th>Detalle</th>
-                                    <th>Precio</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <td>{this.state.product.id}</td>
-                                <td>{this.state.product.name}</td>
-                                <td>{this.state.product.categorys}</td>
-                                <td>{this.state.product.detail}</td>
-                                <td>{this.state.product.price}</td>
-                                </tr>
-                            </tbody>
-                        </table>
+            <div id="content-wrapper" className="d-flex flex-row">
+            <div className="col-lg-6 mb-4">
+                <div className="card shadow mb-4">
+                    <div className="card-header py-3">
+                        <h5 className="m-0 font-weight-bold text-gray-800">Imagen de Producto</h5>
+                    </div>
+                    <div className="card-body">
+                        <div className="text-center">
+                            <img className="img-fluid px-3 px-sm-4 mt-3 mb-4" style={{width: 40 +'rem'}} src={this.state.product.productImage} alt="Producto - Hibox "/>
+                        </div>
                     </div>
                 </div>
-              </div>
             </div>
-        </div>
+            <div className="col-lg-3 mb-4">
+                <div className="card shadow mb-4">
+                    <div className="card-header py-3">
+                        <h5 className="m-0 font-weight-bold text-gray-800">Detalle de Producto</h5>
+                    </div>
+                    <div className="card-body">
+                        <div className="text-left">
+                            <h3>{this.state.product.name}</h3>
+                            <p>{this.state.product.detail}</p>
+                        </div>
+                        <div className="table-responsive">
+                        <table className="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                            <thead>
+                                 <tr>
+                                    <th>Id</th>
+                                    <td>{this.state.product.id}</td>
+                                </tr>
+                                <tr>
+                                    <th>Categoría</th>
+                                    <td>{this.state.product.categorys}</td>
+                                </tr>
+                                <tr>
+                                    <th>Sub Categoría</th>
+                                    <td>{this.state.product.subCategory}</td>
+                                </tr>
+                                <tr>
+                                    <th>Precio</th>
+                                    <td>{this.state.product.price}</td>
+                                </tr>
+                                <tr>
+                                    <th>Precio Anterior</th>
+                                    <td>{this.state.product.priceBefore}</td>
+                                </tr>
+                            </thead>
+                        </table>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
 
     </React.Fragment>
         )
