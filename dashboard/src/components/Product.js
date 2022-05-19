@@ -49,15 +49,6 @@ class Product extends Component{
                                     <th>Precio</th>
                                 </tr>
                             </thead>
-                            <tfoot>
-                                <tr>
-                                    <th>Id</th>
-                                    <th>Nombre</th>
-                                    <th>Categoría</th>
-                                    <th>Detalle</th>
-                                    <th>Precio</th>
-                                </tr>
-                            </tfoot>
                             <tbody>
                                 {
                                     //console.log(this.state.products)

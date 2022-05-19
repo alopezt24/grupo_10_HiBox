@@ -22,4 +22,5 @@ function ContentWrapper(){
         </React.Fragment>
     )
 }
+
 export default ContentWrapper;

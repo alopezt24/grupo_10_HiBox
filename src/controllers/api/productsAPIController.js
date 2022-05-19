@@ -24,7 +24,7 @@ const ProductsAPIController = {
                 res.json(respuesta);
             })
     },
-    
+
     'detail': (req, res) => {
         db.Product.findByPk(req.params.id)
             .then(Product => {

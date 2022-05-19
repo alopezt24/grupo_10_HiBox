@@ -24,7 +24,7 @@ class ContentRowLastProduct extends Component {
         })
         .catch(error => console.log(error))
     }
-    
+
     render () {
         return(
             <React.Fragment>
@@ -45,7 +45,6 @@ class ContentRowLastProduct extends Component {
                                     </div>
                                 </div>
                  </div>
-               
             </React.Fragment>
         )
     }
