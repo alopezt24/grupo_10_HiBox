@@ -29,6 +29,21 @@
         border: solid 1px #666;
 }
 
+.comprar button{
+    border-radius: 30px;
+    width: 100%;
+    padding: 10px 20px;
+    color: white;
+    text-align: center;
+    background-color: #7d92a5;
+    border: none !important;
+    transition: all 450ms;
+}
+
+.comprar button:hover {
+    background-color: #F95F62;
+}
+
 .conteiner-productos-shop {
         position: relative;
         background-color: white;
