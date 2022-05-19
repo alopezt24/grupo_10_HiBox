@@ -2,8 +2,6 @@
 import React, {Component} from 'react';
 import {Link, Route, Routes} from 'react-router-dom';
 import ProductDetail from './ProductDetail';
-import Error404 from './Error404';
-import User from './User';
 //import imagenFondo from '../assets/images/img-product.jpg';
 
 class ContentRowLastProduct extends Component {
