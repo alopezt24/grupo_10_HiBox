@@ -34,7 +34,10 @@
                  <% if (locals.isLogged) { %>
                     <% if(locals.userLogged.userPrivilege == 1) { %>
                         <div class="recuerdame">
-                            <input type="checkbox" name="userPrivileges" id="userPrivileges" value="on">
+                            <input type="checkbox" 
+                            <% if(user.userPrivilege) { %>
+                                checked="checked" 
+                            <% } %> name="userPrivileges" id="userPrivileges" value="on">
                             <label for="recuerdame">Permisos de administrador</label>
                         </div>
                     <% } %>
