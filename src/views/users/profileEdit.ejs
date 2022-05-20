@@ -10,7 +10,7 @@
         <section class="conteiner-users">
             <% if (locals.isLogged) { %>
                 <% if(locals.userLogged.userPrivilege == 0  ) { %>
-                    <div class="cancel-button"><a href="javascript: history.go(-1)"><i class="fas fa-times"></i></a></div>
+                    <div class="cancel-button"><a href="/"><i class="fas fa-times"></i></a></div>
                 <% } %>
             <% } %>
             <% if (locals.isLogged) { %>
